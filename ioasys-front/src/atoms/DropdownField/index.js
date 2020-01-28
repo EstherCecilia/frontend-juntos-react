@@ -3,7 +3,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
 
-import { renderListaAutoCompleta } from "components/Formularios/ReduxFields";
+// import { renderListaAutoCompleta } from "components/Formularios/ReduxFields";
 
 import { Field } from "./styles";
 
@@ -36,7 +36,7 @@ export default function DropdownField({
                 label={placeholder}
                 dados={data}
                 valueToSet={value}
-                component={renderListaAutoCompleta}
+                // component={renderListaAutoCompleta}
                 {...props}
             />
         </FormControl>

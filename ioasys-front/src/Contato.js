@@ -1,0 +1,70 @@
+import React from "react";
+import { Field, reduxForm } from "redux-form";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import TextField from "./atoms/TextField";
+
+const useStyles = makeStyles(theme => ({
+
+  root: {
+    '& .MuiTextField-root': {
+        margin: theme.spacing(1),
+        width: 200,
+      }
+    },
+  submit: {
+    margin: theme.spacing(3, 0, 2), 
+    display: "flex",
+    backgroundColor: "#f50057",
+    color:"#fafafa",
+    margin:"10px"
+ },
+ divSubmit:{display: "-webkit-inline-box",
+  margin: "auto"
+  }
+
+}));
+
+const Contato = props => {
+  const { handleSubmit, pristine, reset, submitting } = props;
+  const classes = useStyles();
+  return (
+    <form className={classes.root} onSubmit={handleSubmit}>
+      <h1>ENTRE EM CONTATO</h1>
+      <div>
+      <TextField
+            show
+            type="email"
+            width="180px"
+            id="login"
+            placeholder="Login"
+          />
+          </div>
+      <div>
+      <TextField
+        show
+          id="outlined-multiline-static"
+          label="Texto"
+          multiline
+          rows="4"
+          defaultValue="Default Value"
+          variant="outlined"
+        />
+        
+      </div>
+      <div>
+        <div className={classes.divSubmit}>
+      <Button type="submit" color="primary" className={classes.submit} disabled={pristine || submitting}>
+            Submit
+          </Button>
+          <Button type="button" className={classes.submit} disabled={pristine || submitting} onClick={reset}>Clear values</Button>
+        
+        </div>
+      </div>
+    </form>
+  );
+};
+
+export default reduxForm({
+  form: "contato" // a unique identifier for this form
+})(Contato);

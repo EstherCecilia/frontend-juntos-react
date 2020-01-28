@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import App from "./App";
 import Form from "./Form";
 import Login from "./Login";
+import Contato from "./Contato";
 import { slide as Menu } from "react-burger-menu";
 import store from "./store";
 import { Switch, Route, Link } from "react-router-dom";
@@ -38,7 +39,7 @@ CADASTRAR      </Link>
       <Link className="menu-item" to="/page1">
       SOBRE NÓS
       </Link>
-      <Link className="menu-item" to="/page1">
+      <Link className="menu-item" to="/page4">
       ENTRE EM CONTATO
       </Link>
 
@@ -51,6 +52,7 @@ CADASTRAR      </Link>
         <Route path="/page1" component={App}/>
         <Route path="/page2" component={() => <Login onSubmit={Submit}/>}/>
         <Route path="/page3" component={() => <Form onSubmit={Submit}/>}/>
+        <Route path="/page4" component={() => <Contato onSubmit={Submit}/>}/>
             
     </Switch>
     </Provider></div>

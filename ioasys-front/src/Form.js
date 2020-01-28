@@ -2,6 +2,8 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
+import TextField from "./atoms/TextField";
+// import DropdownField from "./atoms/DropdownField"
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -32,6 +34,11 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
+const handleChangeType = item => {
+  if(!item) return;
+  this.setState({type:item.value})
+};
+
 const Form = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   const classes = useStyles();
@@ -39,89 +46,79 @@ const Form = props => {
     <form className={classes.form} onSubmit={handleSubmit}>
       <h1>CADASTRO</h1>
       <div>
-        <label>Nome</label>
-        <div>
-          <Field name="nome" component="input" type="text" placeholder="" />
-        </div>
+      <TextField
+            show
+            type="text"
+            width="180px"
+            id="nome"
+            placeholder="Nome"
+          />
       </div>
   
       <div>
-        <label>Faculdade</label>
-        <div>
-          <Field
-            name="faculdade"
-            component="input"
+      <TextField
+            show
             type="text"
-            placeholder=""
+            width="180px"
+            id="faculdade"
+            placeholder="Faculdade"
           />
-        </div>
       </div>
       <div>
-        <label>Matricula</label>
-        <div>
-          <Field
-            name="matricula"
-            component="input"
-            type="matricula"
-            placeholder=""
+      <TextField
+            show
+            type="text"
+            width="180px"
+            id="matricula"
+            placeholder="Matricula"
           />
-        </div>
       </div>
       <div>
-        <label>Telefone</label>
-        <div>
-          <Field
-            name="telefone"
-            component="input"
-            type="telefone"
-            placeholder=""
+        
+      <TextField
+            show
+            type="text"
+            width="180px"
+            id="telefone"
+            placeholder="Telefone"
           />
-        </div>
       </div>
       <div>
-        <label>Email</label>
-        <div>
-          <Field name="email" component="input" type="email" placeholder="" />
-        </div>
+      <TextField
+            show
+            type="email"
+            width="180px"
+            id="email"
+            placeholder="Email"
+          />
       </div>
+      {/* <div>
+        <DropdownField 
+        show 
+        id="sexo" 
+        placeholder="Sexo" widht="210px" 
+        data={[{label:"Feminino", value:"f"},{label:"Masculino", value:"m"},{label:"Prefiro não informar"}]}
+        custom={{isCrearable:false}}
+        onChange={handleChangeType()} />
+      </div> */}
       <div>
-        <label>Sex</label>
-        <div>
-          <label>
-            <Field name="sex" component="input" type="radio" value="male" />{" "}
-            Male
-          </label>
-          <label>
-            <Field name="sex" component="input" type="radio" value="female" />{" "}
-            Female
-          </label>
-          <label>
-            <Field
-              name="sex"
-              component="input"
-              type="radio"
-              value="Ninformado"
-            />{" "}
-            Não informar
-          </label>
-        </div>
-      </div>
-      <div>
-        <label>Senha</label>
-        <div>
-          <Field name="senha" component="input" type="senha" placeholder="" />
-        </div>
+      <TextField
+            show
+            type="password"
+            width="180px"
+            id="senha"
+            placeholder="Senha"
+          />
       </div>{" "}
       <div>
-        <label>Confirmar senha</label>
-        <div>
-          <Field
-            name="confirmSenha"
-            component="input"
-            type="confirmSenha"
-            placeholder=""
+        
+      <TextField
+            show
+            type="password"
+            width="180px"
+            id="senhaConfirma"
+            placeholder="Confirma senha"
           />
-        </div>
       </div>
       <div>
         <div className={classes.divSubmit}>
