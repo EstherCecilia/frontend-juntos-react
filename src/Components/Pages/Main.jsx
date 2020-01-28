@@ -3,6 +3,8 @@ import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../../GlobalStyle/global';
 import { theme } from '../../GlobalStyle/theme';
 import BurgerMenu from './BurgerMenu';
+import googlePlay from '../../images/googlePlay.png';
+import appStore from '../../images/appStore.png';
 
 const Main = () => {
     return (
@@ -10,11 +12,13 @@ const Main = () => {
         <>
             <GlobalStyles />
             <div>
-              <div>
                 <BurgerMenu/>
                 <StyledH1>Nome</StyledH1>
                 <StyledP>Encontre monitores dentro da sua faculdade!</StyledP>
-              </div>
+                <ImageDiv>
+                  <Image/>
+                  <Image/>
+                </ImageDiv>
             </div>
         </>
         </ThemeProvider>
@@ -23,7 +27,7 @@ const Main = () => {
 
 const StyledH1 = styled.h1`
   @media only screen and (min-width: 600px) {
-    font-size: 25px;
+    font-size: 30px;
     margin-bottom: 20px;
     margin-left: 10px;
   }
@@ -48,6 +52,15 @@ const StyledP = styled.p`
     margin-bottom: 50px;
     margin-right: 50px;
   }
+`;
+
+const ImageDiv = styled.div`
+  display: inline;
+`;
+
+const Image = styled.image`
+  width: 100px;
+  height: 100px;
 `;
 
 export default Main;

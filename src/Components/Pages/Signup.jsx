@@ -8,8 +8,7 @@ import { Link } from "react-router-dom";
 import { theme } from "../../GlobalStyle/theme";
 import BurgerMenu from './BurgerMenu';
 import TextField from "./atoms/TextField";
-import Burger from '../Burger/Burger';
-import Menu from '../Menu/Menu';
+import backgroundImage from '../../images/background.jpeg';
 
 const SignupForm = ({ onSubmit, props }) => {
   const [gender, setGender] = useState("");
@@ -43,9 +42,9 @@ const SignupForm = ({ onSubmit, props }) => {
 
   const classes = useStyles();
   return (
-    <>
-    <BurgerMenu/>
-    <StyledMainDiv>
+    <ThemeProvider theme={theme}>
+    <StyledMainDiv>  
+      <BurgerMenu/>
       <form className={classes.form} onSubmit={handleSignUp}>
         <h1>CADASTRO</h1>
         <StyledOtherDiv>
@@ -140,7 +139,7 @@ const SignupForm = ({ onSubmit, props }) => {
         </Link>
       </form>
     </StyledMainDiv>
-    </>
+    </ThemeProvider>
   );
 };
 
@@ -150,7 +149,6 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "#08D9D6"
   },
   avatar: {
     margin: theme.spacing(1),
@@ -187,7 +185,7 @@ const useStyles = makeStyles(theme => ({
 const StyledMainDiv = styled.div`
   background-attachment: fixed;
   width: 320px;
-  background: ${({ theme }) => theme.primaryGreen};
+  background-image: url(${backgroundImage});
   border-radius: 2px;
   padding: 30px 20px;
   margin: 0 auto;
