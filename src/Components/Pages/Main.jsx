@@ -3,8 +3,6 @@ import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../../GlobalStyle/global';
 import { theme } from '../../GlobalStyle/theme';
 import BurgerMenu from './BurgerMenu';
-import googlePlay from '../../images/googlePlay.png';
-import appStore from '../../images/appStore.png';
 
 const Main = () => {
     return (
@@ -13,12 +11,19 @@ const Main = () => {
             <GlobalStyles />
             <div>
                 <BurgerMenu/>
-                <StyledH1>Nome</StyledH1>
-                <StyledP>Encontre monitores dentro da sua faculdade!</StyledP>
-                <ImageDiv>
-                  <Image/>
-                  <Image/>
-                </ImageDiv>
+                <div>
+                  <StyledH1>Nome</StyledH1>
+                  <StyledP>Encontre monitores dentro da sua faculdade!</StyledP>
+                  <ImageDiv>
+                    <img src="https://play.google.com/intl/pt-BR/badges/static/images/badges/pt-br_badge_web_generic.png" 
+                          alt="googlePlay"
+                          width="150px"
+                          position="absolute"></img>
+                    <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" 
+                          alt="appStore"
+                          position="absolute"></img>
+                  </ImageDiv>
+                </div>
             </div>
         </>
         </ThemeProvider>
@@ -43,7 +48,7 @@ const StyledP = styled.p`
 
   @media screen and (min-width: 600px) {
     font-size: 25px;
-    margin-bottom: 250px;
+    margin-bottom: 200px;
     margin-right: 600px;
   }
 
@@ -56,11 +61,6 @@ const StyledP = styled.p`
 
 const ImageDiv = styled.div`
   display: inline;
-`;
-
-const Image = styled.image`
-  width: 100px;
-  height: 100px;
 `;
 
 export default Main;

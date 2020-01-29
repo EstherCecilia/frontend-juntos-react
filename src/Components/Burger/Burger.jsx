@@ -40,7 +40,6 @@ const StyledBurger = styled.button`
         outline: none;
     }
     
-
     span {
         width: 2rem;
         height: 0.25rem;
