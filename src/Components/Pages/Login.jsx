@@ -9,10 +9,8 @@ import BurgerMenu from "./BurgerMenu";
 import TextField from "./atoms/TextField";
 
 import backgroundImage from "../../images/background.jpeg";
-import {
-  FacebookLoginButton,
-  GoogleLoginButton
-} from "react-social-login-buttons";
+import facebook from "../../images/facebook.png";
+import gmail from "../../images/gmail.png";
 
 const LoginForm = props => {
   const { handleSubmit } = props;
@@ -46,7 +44,7 @@ const LoginForm = props => {
 
           <Button
             type="submit"
-            style={{ width: "200px" }}
+            style={{ width: "200px", color:"#fafafa" }}
             color="primary"
             className={classes.submit}
           >
@@ -56,21 +54,17 @@ const LoginForm = props => {
             <span>-OU-</span>
           </div>
           <StyledOtherDiv>
-            <FacebookLoginButton
-              style={{ width: "200px", margin: "auto" }}
-              onClick={() => alert("Hello")}
-            />
-            <GoogleLoginButton
-              style={{ width: "200px", margin: "auto", marginTop: "10px" }}
-              onClick={() => alert("Hello")}
-            />
+            <img style={{width:"40px"}} onClick={()=> {alert("Hello")}} src={facebook}></img>
+            
+            <img style={{width:"40px", marginLeft:"5px"}} onClick={()=> {alert("Hello")}} src={gmail}></img>
+
           </StyledOtherDiv>
           <StyledOtherDiv>
-            <Link to="/">
-              <p className="otherOptions">Esqueceu sua senha?</p>
+            <Link style={{color:"#000"}} to="/">
+              <p style={{color:"#000"}} className="otherOptions">Esqueceu sua senha?</p>
             </Link>
-            <Link to="/register">
-              <p className="otherOptions">Cadastre-se</p>
+            <Link style={{color:"#ff2e63"}} to="/register">
+              <p  style={{color:"#ff2e63"}} className="otherOptions">Cadastre-se</p>
             </Link>
           </StyledOtherDiv>
         </form>
@@ -166,7 +160,7 @@ const StyledOtherDiv = styled.div`
   }
 
   label {
-    color: #ff2e63;
+    color: #000;
     font-size: 14px;
     font-weight: bold;
     display: block;
