@@ -10,6 +10,8 @@ const Menu = ({ open }) => {
 
   return (
     <StyledMenu open={open}>
+      <span>Menu</span>
+      <p/>
       <Link to="/">
         Home
             </Link>
@@ -52,6 +54,15 @@ const StyledMenu = styled.nav`
   
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
+  }
+
+  span {
+    letter-spacing: 0.3rem;
+    position: center;
+    color: #FF2E63;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 
   p {
