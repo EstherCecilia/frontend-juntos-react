@@ -62,7 +62,7 @@ const StyledMenu = styled.nav`
   }
 
   a {
-    font-size: 20px;
+    font-size: 1.5vw;
     text-transform: uppercase;
     padding: auto 0;
     margin-bottom: 30px;
