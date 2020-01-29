@@ -14,18 +14,17 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import backgroundImage from '../../images/background.jpeg';
 
 
 const SignupForm = props => {
   const { handleSubmit } = props;
   const [gender, setGender] = useState("");
 
- 
 
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-      <div style={{backgroundColor:"red"}}>
         <>
             {/* <GlobalStyles /> */}
             <div>
@@ -133,7 +132,6 @@ const SignupForm = props => {
     </div>
             </div>
         </>
-        </div>
         </ThemeProvider>
   );
 };

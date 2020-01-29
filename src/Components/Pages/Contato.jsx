@@ -3,6 +3,10 @@ import { Field, reduxForm } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TextField from "./atoms/TextField";
+import styled, { ThemeProvider } from "styled-components";
+import { Link } from "react-router-dom";
+import { theme } from "../../GlobalStyle/theme";
+import BurgerMenu from './BurgerMenu';
 
 const useStyles = makeStyles(theme => ({
 
@@ -28,7 +32,12 @@ const useStyles = makeStyles(theme => ({
 const Contato = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   const classes = useStyles();
-  return (
+  return (    <ThemeProvider theme={theme}>
+  <>  
+<BurgerMenu/>
+</>
+<>
+<div style={{marginLeft:"35%"}}>
     <form className={classes.root} onSubmit={handleSubmit}>
       <h1>ENTRE EM CONTATO</h1>
       <div>
@@ -37,7 +46,7 @@ const Contato = props => {
             type="email"
             width="180px"
             id="login"
-            placeholder="Login"
+            placeholder="Email"
           />
           </div>
       <div>
@@ -62,6 +71,9 @@ const Contato = props => {
         </div>
       </div>
     </form>
+    </div>
+    </>
+    </ThemeProvider>
   );
 };
 
