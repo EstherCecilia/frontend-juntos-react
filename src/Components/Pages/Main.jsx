@@ -42,6 +42,12 @@ const StyledH1 = styled.h1`
     margin-bottom: 20px;
     margin-left: 10px;
   }
+
+  @media only screen and (min-width: 1400px) {
+    font-size: 5vw;
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
 `;
 
 const StyledP = styled.p`
@@ -56,6 +62,12 @@ const StyledP = styled.p`
     font-size: 15px;
     margin-bottom: 50px;
     margin-right: 50px;
+  }
+
+  @media only screen and (min-width: 1400px) {
+    font-size: 5vw;
+    margin-bottom: 20px;
+    margin-left: 10px;
   }
 `;
 
