@@ -3,6 +3,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Main from './Components/Pages/Main';
 import Login from './Components/Pages/Login';
 import Signup from './Components/Pages/Signup';
+import Contato from './Components/Pages/Contato';
 import api from './services/api';
 import store from "./store";
 import { Provider } from 'react-redux';
@@ -35,6 +36,26 @@ export default function Routes() {
         console.log(data);
     }
 
+    const Submit = values => {
+        // axios.get(`https://jsonplaceholder.typicode.com/users`)
+        //       .then(res => {
+        //         const persons = res.data;
+        //   console.log(persons);
+        //       })
+        
+        console.log(values);
+        }
+
+        const Contact = values => {
+            // axios.get(`https://jsonplaceholder.typicode.com/users`)
+            //       .then(res => {
+            //         const persons = res.data;
+            //   console.log(persons);
+            //       })
+            
+            console.log(values);
+            }
+
     return (
         <div>
         <Provider store={store}>
@@ -42,7 +63,8 @@ export default function Routes() {
             <Switch>
                 <Route exact path="/" component={Main}/>
                 <Route path="/login" component={() => <Login onSubmit={handleSignIn}/>} />
-                <Route path="/register" component={() => <Signup onSubmit={handleAddUser}/>} />
+                <Route path="/register" component={() => <Signup onSubmit={Submit}/>} />
+                <Route path="/contact" component={() => <Contato onSubmit={Contact}/>} />
             </Switch>
             </BrowserRouter>
         </Provider>

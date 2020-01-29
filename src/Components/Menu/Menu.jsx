@@ -23,7 +23,7 @@ const Menu = ({ open }) => {
       <Link to="/">
         Sobre nós
             </Link>
-      <Link to="/">
+      <Link to="/contact">
         Contato
             </Link>
 

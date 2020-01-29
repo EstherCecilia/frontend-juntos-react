@@ -10,43 +10,29 @@ import BurgerMenu from './BurgerMenu';
 import TextField from "./atoms/TextField";
 import Burger from '../Burger/Burger';
 import Menu from '../Menu/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
-const SignupForm = ({ onSubmit, props }) => {
+
+const SignupForm = props => {
+  const { handleSubmit } = props;
   const [gender, setGender] = useState("");
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-  const [university, setUniversity] = useState("");
-  const [registrationCode, setRegistrationCode] = useState("");
-  const [celNumber, setCelNumber] = useState("");
 
-  async function handleSignUp(e) {
-    e.preventDefault();
-    await onSubmit({
-      name,
-      university,
-      registrationCode,
-      celNumber,
-      gender,
-      email,
-      password
-    });
-
-    setName("");
-    setUniversity("");
-    setRegistrationCode("");
-    setCelNumber("");
-    setGender("");
-    setEmail("");
-    setPassword("");
-  }
+ 
 
   const classes = useStyles();
   return (
-    <>
+    <ThemeProvider theme={theme}>
+        <>
+            {/* <GlobalStyles /> */}
+            <div>
+              <div>
     <BurgerMenu/>
     <StyledMainDiv>
-      <form className={classes.form} onSubmit={handleSignUp}>
+      <form className={classes.form} onSubmit={handleSubmit}>
         <h1>CADASTRO</h1>
         <StyledOtherDiv>
           <TextField
@@ -89,18 +75,22 @@ const SignupForm = ({ onSubmit, props }) => {
         </StyledOtherDiv>
 
         <StyledOtherDiv>
-          <label>Gênero</label>
-          <div>
-            <Field
-              name="gender"
-              component="input"
-              type="String"
-              value={gender}
-              placeholder="Digite seu gênero"
-              onChange={e => setGender(e.target.value)}
-            />
-          </div>
-        </StyledOtherDiv>
+        <FormControl style={{width:"180px"}}>
+        <InputLabel id="demo-simple-select-label" >Gênero</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={gender}
+          onChange={e => setGender(e.target.value)}
+         
+        >
+          <MenuItem value={"Feminino"}>Feminino</MenuItem>
+          <MenuItem value={"Masculino"}>Masculino</MenuItem>
+          <MenuItem value={"NaoInformado"}>Não informar</MenuItem>
+        </Select>
+      </FormControl>
+      
+      </StyledOtherDiv>
 
         <StyledOtherDiv>
           <TextField
@@ -133,14 +123,17 @@ const SignupForm = ({ onSubmit, props }) => {
         </StyledOtherDiv>
 
         <Button type="submit" color="primary" className={classes.submit}>
-          >Inscrever-se
+          Inscrever-se
         </Button>
         <Link to="/login">
           <p>Já é cadastrado?</p>
         </Link>
       </form>
     </StyledMainDiv>
-    </>
+    </div>
+            </div>
+        </>
+        </ThemeProvider>
   );
 };
 
