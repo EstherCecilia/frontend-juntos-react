@@ -9,7 +9,6 @@ import store from "./store";
 import { Provider } from 'react-redux';
 
 export default function Routes() {
-    const [user, setUser] = useState([]);
 
     /*useEffect(() => {
         async function loadUsers(){
@@ -19,21 +18,16 @@ export default function Routes() {
         loadUsers();
     }, []);*/
 
-    async function handleAddUser(data){
-        //const response = await api.post('/register', data);
-        //setUser([...user, response.data]);
-        //console.log(data);
-    }
 
-    async function handleSignIn(data) {
+    const handleSignIn = values => {
         
-        try{
-            await api.post("/login", data);
-        }catch(erro){
-            alert("erro, verifique suas credenciais");
-        }
-        /*const response = await api.post('/login', data);*/
-        console.log(data);
+        // try{
+        //     await api.post("/login", values);
+        // }catch(erro){
+        //     alert("erro, verifique suas credenciais");
+        // }
+        /*const response = await api.post('/login', values);*/
+        console.log(values);
     }
 
     const Submit = values => {

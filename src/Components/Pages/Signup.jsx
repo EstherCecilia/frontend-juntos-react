@@ -1,21 +1,17 @@
 import React, { useState } from "react";
-import { Field, reduxForm, autofill } from "redux-form";
+import { reduxForm } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import styled, { ThemeProvider } from "styled-components";
 import { Link } from "react-router-dom";
 import { theme } from "../../GlobalStyle/theme";
-import BurgerMenu from './BurgerMenu';
 import TextField from "./atoms/TextField";
-import Burger from '../Burger/Burger';
-import Menu from '../Menu/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import backgroundImage from '../../images/background.jpeg';
-
+import BurgerMenu from './BurgerMenu';
 
 const SignupForm = props => {
   const { handleSubmit } = props;
@@ -25,10 +21,6 @@ const SignupForm = props => {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-        <>
-            {/* <GlobalStyles /> */}
-            <div>
-              <div>
     <BurgerMenu/>
     <StyledMainDiv>
       <form className={classes.form} onSubmit={handleSubmit}>
@@ -129,9 +121,7 @@ const SignupForm = props => {
         </Link>
       </form>
     </StyledMainDiv>
-    </div>
-            </div>
-        </>
+    
         </ThemeProvider>
   );
 };

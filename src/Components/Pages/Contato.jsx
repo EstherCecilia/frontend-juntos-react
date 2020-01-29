@@ -1,10 +1,9 @@
 import React from "react";
-import { Field, reduxForm } from "redux-form";
+import {  reduxForm } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TextField from "./atoms/TextField";
-import styled, { ThemeProvider } from "styled-components";
-import { Link } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
 import { theme } from "../../GlobalStyle/theme";
 import BurgerMenu from './BurgerMenu';
 
