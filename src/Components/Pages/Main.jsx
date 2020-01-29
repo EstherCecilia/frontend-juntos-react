@@ -15,13 +15,13 @@ const Main = () => {
                   <StyledH1>Nome</StyledH1>
                   <StyledP>Encontre monitores dentro da sua faculdade!</StyledP>
                 </div>
-                <div position="relative">  
+                <div>  
                     <img src="https://play.google.com/intl/pt-BR/badges/static/images/badges/pt-br_badge_web_generic.png" 
                           alt="googlePlay"
                           width="150px"
                           position="absolute"></img>
                   </div>
-                  <div position="relative">
+                  <div>
                     <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" 
                           alt="appStore"
                           margin-bottom="15px"
@@ -35,7 +35,6 @@ const Main = () => {
 }
 
 const StyledH1 = styled.h1`
-  position: relative;
   @media only screen and (min-width: 600px) {
     font-size: 3vw;
     margin-bottom: 2vw;
@@ -56,8 +55,6 @@ const StyledH1 = styled.h1`
 `;
 
 const StyledP = styled.p`
-  position: relative;
-  font-weight: bold;
   @media screen and (min-width: 601px) {
     font-size: 2vw;
     margin-bottom: 12vw;
