@@ -3,7 +3,6 @@ import { Field, reduxForm, autofill } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import styled, { ThemeProvider } from "styled-components";
-import { FormStyle } from "../../GlobalStyle/formStyle";
 import { Link } from "react-router-dom";
 import { theme } from "../../GlobalStyle/theme";
 import BurgerMenu from './BurgerMenu';
@@ -145,7 +144,6 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "#08D9D6"
   },
   avatar: {
     margin: theme.spacing(1),
@@ -182,7 +180,7 @@ const useStyles = makeStyles(theme => ({
 const StyledMainDiv = styled.div`
   background-attachment: fixed;
   width: 320px;
-  background: ${({ theme }) => theme.primaryGreen};
+  background-image: url(${backgroundImage});
   border-radius: 2px;
   padding: 30px 20px;
   margin: 0 auto;

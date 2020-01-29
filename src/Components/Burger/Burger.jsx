@@ -40,11 +40,10 @@ const StyledBurger = styled.button`
         outline: none;
     }
     
-
     span {
         width: 2rem;
         height: 0.25rem;
-        background: ${({ theme, open }) => open ? theme.primaryDark : theme.primaryLight};
+        background: ${({ theme, open }) => open ? theme.primaryDark : theme.primaryDark};
         border-radius: 10px;
         transition: all 0s linear;
         position: relative;

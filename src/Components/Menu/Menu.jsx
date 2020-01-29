@@ -58,7 +58,7 @@ const StyledMenu = styled.nav`
     display: block;
     padding: 15px;
     border: 0;
-    border-top: 3px solid #FF2E63;
+    border-top: 2px solid #FF2E63;
   }
 
   a {
