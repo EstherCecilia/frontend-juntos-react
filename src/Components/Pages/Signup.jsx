@@ -26,6 +26,7 @@ const SignupForm = props => {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
+      <div style={{backgroundColor:"red"}}>
         <>
             {/* <GlobalStyles /> */}
             <div>
@@ -133,6 +134,7 @@ const SignupForm = props => {
     </div>
             </div>
         </>
+        </div>
         </ThemeProvider>
   );
 };
