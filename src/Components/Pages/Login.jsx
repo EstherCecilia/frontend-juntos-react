@@ -5,68 +5,77 @@ import Button from "@material-ui/core/Button";
 import styled, { ThemeProvider } from "styled-components";
 import { Link } from "react-router-dom";
 import { theme } from "../../GlobalStyle/theme";
-import BurgerMenu from './BurgerMenu';
+import BurgerMenu from "./BurgerMenu";
 import TextField from "./atoms/TextField";
 
-import backgroundImage from '../../images/background.jpeg';
-import { FacebookLoginButton, GoogleLoginButton } from "react-social-login-buttons";
-
-
+import backgroundImage from "../../images/background.jpeg";
+import {
+  FacebookLoginButton,
+  GoogleLoginButton
+} from "react-social-login-buttons";
 
 const LoginForm = props => {
   const { handleSubmit } = props;
-  
 
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-    <BurgerMenu/>
-    <StyledMainDiv>
-      <form className={classes.form} onSubmit={handleSubmit}>
-        <h1>Login</h1>
-        <StyledOtherDiv>
-          <TextField
-            show
-            type="email"
-            width="180px"
-            id="email"
-            placeholder="Email"
-          />
-        </StyledOtherDiv>
+      <BurgerMenu />
+      <StyledMainDiv>
+        <form className={classes.form} onSubmit={handleSubmit}>
+          <h1>Login</h1>
+          <StyledOtherDiv>
+            <TextField
+              show
+              type="email"
+              width="180px"
+              id="email"
+              placeholder="Email"
+            />
+          </StyledOtherDiv>
 
-        
-        <StyledOtherDiv>
-          <TextField
-            show
-            type="password"
-            width="180px"
-            id="password"
-            placeholder="Password"
-          />
-        </StyledOtherDiv>
+          <StyledOtherDiv>
+            <TextField
+              show
+              type="password"
+              width="180px"
+              id="password"
+              placeholder="Password"
+            />
+          </StyledOtherDiv>
 
-        <Button type="submit" color="primary" className={classes.submit}>
-          Logar
-        </Button>
-        <span>-OU-</span>
-        <StyledOtherDiv>
-        <FacebookLoginButton onClick={() => alert("Hello")} />
-        <GoogleLoginButton onClick={() => alert("Hello")} />
-
-
-            </StyledOtherDiv>
-        <StyledOtherDiv>
-                <Link to="/">
-                <p className="otherOptions">Esqueceu sua senha?</p>
-                </Link>
-                <Link to="/register">
-                <p className="otherOptions">Cadastre-se</p>
-                </Link>
-            </StyledOtherDiv>
-      </form>
-    </StyledMainDiv>
-    
-        </ThemeProvider>
+          <Button
+            type="submit"
+            style={{ width: "200px" }}
+            color="primary"
+            className={classes.submit}
+          >
+            Logar
+          </Button>
+          <div>
+            <span>-OU-</span>
+          </div>
+          <StyledOtherDiv>
+            <FacebookLoginButton
+              style={{ width: "200px", margin: "auto" }}
+              onClick={() => alert("Hello")}
+            />
+            <GoogleLoginButton
+              style={{ width: "200px", margin: "auto", marginTop: "10px" }}
+              onClick={() => alert("Hello")}
+            />
+          </StyledOtherDiv>
+          <StyledOtherDiv>
+            <Link to="/">
+              <p className="otherOptions">Esqueceu sua senha?</p>
+            </Link>
+            <Link to="/register">
+              <p className="otherOptions">Cadastre-se</p>
+            </Link>
+          </StyledOtherDiv>
+        </form>
+      </StyledMainDiv>
+    </ThemeProvider>
   );
 };
 
@@ -75,7 +84,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "center"
   },
   avatar: {
     margin: theme.spacing(1),
@@ -111,7 +120,7 @@ const useStyles = makeStyles(theme => ({
 
 const StyledMainDiv = styled.div`
   background-attachment: fixed;
-  width: 320px;
+  /* width: 320px; */
   background-image: url(${backgroundImage});
   border-radius: 2px;
   padding: 30px 20px;

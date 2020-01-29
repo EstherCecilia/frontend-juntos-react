@@ -6,123 +6,124 @@ import styled, { ThemeProvider } from "styled-components";
 import { Link } from "react-router-dom";
 import { theme } from "../../GlobalStyle/theme";
 import TextField from "./atoms/TextField";
-import MenuItem from '@material-ui/core/MenuItem';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import backgroundImage from '../../images/background.jpeg';
-import BurgerMenu from './BurgerMenu';
+import MenuItem from "@material-ui/core/MenuItem";
+import InputLabel from "@material-ui/core/InputLabel";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import backgroundImage from "../../images/background.jpeg";
+import BurgerMenu from "./BurgerMenu";
 
 const SignupForm = props => {
   const { handleSubmit } = props;
   const [gender, setGender] = useState("");
 
-
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-    <BurgerMenu/>
-    <StyledMainDiv>
-      <form className={classes.form} onSubmit={handleSubmit}>
-        <h1>CADASTRO</h1>
-        <StyledOtherDiv>
-          <TextField
-            show
-            type="text"
-            width="180px"
-            id="nome"
-            placeholder="Nome"
-          />
-        </StyledOtherDiv>
+      <BurgerMenu />
+      <StyledMainDiv>
+        <form className={classes.form} onSubmit={handleSubmit}>
+          <h1>CADASTRO</h1>
+          <StyledOtherDiv>
+            <TextField
+              show
+              type="text"
+              width="180px"
+              id="nome"
+              placeholder="Nome"
+            />
+          </StyledOtherDiv>
 
-        <StyledOtherDiv>
-          <TextField
-            show
-            type="text"
-            width="180px"
-            id="faculdade"
-            placeholder="Faculdade"
-          />
-        </StyledOtherDiv>
+          <StyledOtherDiv>
+            <TextField
+              show
+              type="text"
+              width="180px"
+              id="faculdade"
+              placeholder="Faculdade"
+            />
+          </StyledOtherDiv>
 
-        <StyledOtherDiv>
-          <TextField
-            show
-            type="text"
-            width="180px"
-            id="matricula"
-            placeholder="Matricula"
-          />
-        </StyledOtherDiv>
+          <StyledOtherDiv>
+            <TextField
+              show
+              type="text"
+              width="180px"
+              id="matricula"
+              placeholder="Matricula"
+            />
+          </StyledOtherDiv>
 
-        <StyledOtherDiv>
-          <TextField
-            show
-            type="text"
-            width="180px"
-            id="telefone"
-            placeholder="Telefone"
-          />
-        </StyledOtherDiv>
+          <StyledOtherDiv>
+            <TextField
+              show
+              type="text"
+              width="180px"
+              id="telefone"
+              placeholder="Telefone"
+            />
+          </StyledOtherDiv>
 
-        <StyledOtherDiv>
-        <FormControl style={{width:"180px"}}>
-        <InputLabel id="demo-simple-select-label" >Gênero</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={gender}
-          onChange={e => setGender(e.target.value)}
-         
-        >
-          <MenuItem value={"Feminino"}>Feminino</MenuItem>
-          <MenuItem value={"Masculino"}>Masculino</MenuItem>
-          <MenuItem value={"NaoInformado"}>Não informar</MenuItem>
-        </Select>
-      </FormControl>
-      
-      </StyledOtherDiv>
+          <StyledOtherDiv>
+            <FormControl style={{ width: "180px" }}>
+              <InputLabel id="demo-simple-select-label">Gênero</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={gender}
+                onChange={e => setGender(e.target.value)}
+              >
+                <MenuItem value={"Feminino"}>Feminino</MenuItem>
+                <MenuItem value={"Masculino"}>Masculino</MenuItem>
+                <MenuItem value={"NaoInformado"}>Não informar</MenuItem>
+              </Select>
+            </FormControl>
+          </StyledOtherDiv>
 
-        <StyledOtherDiv>
-          <TextField
-            show
-            type="email"
-            width="180px"
-            id="email"
-            placeholder="Email"
-          />
-        </StyledOtherDiv>
+          <StyledOtherDiv>
+            <TextField
+              show
+              type="email"
+              width="180px"
+              id="email"
+              placeholder="Email"
+            />
+          </StyledOtherDiv>
 
-        <StyledOtherDiv>
-          <TextField
-            show
-            type="password"
-            width="180px"
-            id="senha"
-            placeholder="Senha"
-          />
-        </StyledOtherDiv>
+          <StyledOtherDiv>
+            <TextField
+              show
+              type="password"
+              width="180px"
+              id="senha"
+              placeholder="Senha"
+            />
+          </StyledOtherDiv>
 
-        <StyledOtherDiv>
-          <TextField
-            show
-            type="password"
-            width="180px"
-            id="senhaConfirma"
-            placeholder="Confirmar senha"
-          />
-        </StyledOtherDiv>
+          <StyledOtherDiv>
+            <TextField
+              show
+              type="password"
+              width="180px"
+              id="senhaConfirma"
+              placeholder="Confirmar senha"
+            />
+          </StyledOtherDiv>
 
-        <Button type="submit" color="primary" className={classes.submit}>
-          Inscrever-se
-        </Button>
-        <Link to="/login">
-          <p>Já é cadastrado?</p>
-        </Link>
-      </form>
-    </StyledMainDiv>
-    
-        </ThemeProvider>
+          <Button
+            type="submit"
+            style={{ width: "200px" }}
+            color="primary"
+            className={classes.submit}
+          >
+            Inscrever-se
+          </Button>
+          <Link to="/login">
+            <p>Já é cadastrado?</p>
+          </Link>
+        </form>
+      </StyledMainDiv>
+    </ThemeProvider>
   );
 };
 
@@ -131,7 +132,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "center"
   },
   avatar: {
     margin: theme.spacing(1),
@@ -167,7 +168,7 @@ const useStyles = makeStyles(theme => ({
 
 const StyledMainDiv = styled.div`
   background-attachment: fixed;
-  width: 320px;
+  /* width: 320px; */
   background-image: url(${backgroundImage});
   border-radius: 2px;
   padding: 30px 20px;
