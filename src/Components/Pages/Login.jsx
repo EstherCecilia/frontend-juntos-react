@@ -93,7 +93,7 @@ const LoginForm = props => {
     open={open}
     onClose={handleClose}
   >
-    <div style={{backgroundColor: "#f50057",
+    <div style={{backgroundColor: "#717171",
     color: "#fafafa",
     width: "500px",
      margin: "auto"}} className={classes.paper}>

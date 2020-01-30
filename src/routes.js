@@ -7,6 +7,7 @@ import Contato from './Components/Pages/Contato';
 import api from './services/api';
 import store from "./store";
 import { Provider } from 'react-redux';
+import axios from 'axios';
 
 export default function Routes() {
 
@@ -31,13 +32,48 @@ export default function Routes() {
     }
 
     const Submit = values => {
-        // axios.get(`https://jsonplaceholder.typicode.com/users`)
-        //       .then(res => {
-        //         const persons = res.data;
-        //   console.log(persons);
-        //       })
-        
-        console.log(values);
+        axios.post(`http://api-edu.herokuapp.com/register`,{
+               "id": "3",
+               "student": {
+                 "id": "3",
+                 "name": values.nome,
+                 "course": {
+                   "id": "string",
+                   "name": "string",
+                   "coursetype": "string",
+                   "campus": "string"
+                 },
+                 "gender": "string",
+                 "birthdate": "string"
+               },
+               "email": values.email,
+               "password": values.password
+             })
+             .then(res => {
+           console.log(res);
+           })
+        // try{
+        //     await api.post("/register", {
+        //        "id": "3",
+        //        "student": {
+        //          "id": "3",
+        //          "name": values.nome,
+        //          "course": {
+        //            "id": "string",
+        //            "name": "string",
+        //            "coursetype": "string",
+        //            "campus": "string"
+        //          },
+        //          "gender": "string",
+        //          "birthdate": "string"
+        //        },
+        //        "email": values.email,
+        //        "password": values.passwod
+        //      });
+        // }catch(erro){
+        //    alert("erro, verifique suas credenciais");
+        // }
+        // console.log(values);
         }
 
         const Contact = values => {
