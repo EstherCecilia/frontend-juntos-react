@@ -169,6 +169,11 @@ const StyledMainDiv = styled.div`
   background-attachment: fixed;
   /* width: 320px; */
   background-image: url(${backgroundImage});
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100% 100%;
   border-radius: 2px;
   padding: 30px 20px;
   margin: 0 auto;
