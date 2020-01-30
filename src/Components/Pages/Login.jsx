@@ -39,7 +39,7 @@ const LoginForm = props => {
         <StyledMainDiv>
           <form className={classes.form} onSubmit={handleSubmit}>
             <h1>Login</h1>
-            <StyledOtherDiv style={{ alignContent: "colum" }}>
+            <StyledOtherDiv>
               <TextField
                 show
                 type="email"
@@ -65,15 +65,14 @@ const LoginForm = props => {
                 height: "50px",
                 color: "#fafafa",
                 borderRadius: "10px",
-                textAlign: "center",
               }}
-              color="primary"
+              color="#FF2E63"
               className={classes.submit}
             >
               Logar
           </Button>
             <div>
-              <span display="center">-OU-</span>
+              <span>-OU-</span>
             </div>
             <StyledOtherDiv>
               <img style={{ width: "40px" }} onClick={() => { alert("Hello") }} src={facebook}></img>
@@ -82,7 +81,7 @@ const LoginForm = props => {
 
             </StyledOtherDiv>
             <StyledOtherDiv>
-              <a style={{ color: "#ff2e63", cursor: "pointer" }} onClick={handleOpen}>
+              <a style={{ color: "#ff2e63", cursor: "pointer", textDecoration: "underline" }} onClick={handleOpen}>
                 <p style={{ color: "#ff2e63" }} className="otherOptions">Esqueceu sua senha?</p>
               </a>
               <Link style={{ color: "#ff2e63" }} to="/register">
@@ -118,7 +117,6 @@ const LoginForm = props => {
           <Button
             type="submit"
             style={{ width: "200px", color: "#fafafa", borderRadius:"10px" }}
-            color="primary"
             className={classes.submit}
           >
             ENVIAR
