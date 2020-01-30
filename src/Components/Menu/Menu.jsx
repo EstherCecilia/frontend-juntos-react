@@ -10,6 +10,8 @@ const Menu = ({ open }) => {
 
   return (
     <StyledMenu open={open}>
+      <span>Menu</span>
+      <p/>
       <Link to="/">
         Home
             </Link>
@@ -54,6 +56,15 @@ const StyledMenu = styled.nav`
     width: 100%;
   }
 
+  span {
+    letter-spacing: 0.3rem;
+    position: center;
+    color: #FF2E63;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
   p {
     display: block;
     padding: 15px;
@@ -62,7 +73,7 @@ const StyledMenu = styled.nav`
   }
 
   a {
-    font-size: 20px;
+    font-size: 1.5vw;
     text-transform: uppercase;
     padding: auto 0;
     margin-bottom: 30px;

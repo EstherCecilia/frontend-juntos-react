@@ -9,21 +9,103 @@ import BurgerMenu from "./BurgerMenu";
 import TextField from "./atoms/TextField";
 
 import backgroundImage from "../../images/background.jpeg";
-import {
-  FacebookLoginButton,
-  GoogleLoginButton
-} from "react-social-login-buttons";
+import facebook from "../../images/facebook.png";
+import gmail from "../../images/gmail.png";
+
+import Modal from '@material-ui/core/Modal';
+
+function rand() {
+  return Math.round(Math.random() * 20) - 10;
+}
+
+
 
 const LoginForm = props => {
   const { handleSubmit } = props;
+  const [open, setOpen] = React.useState(false);
 
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  }
   const classes = useStyles();
   return (
-    <ThemeProvider theme={theme}>
-      <BurgerMenu />
-      <StyledMainDiv>
-        <form className={classes.form} onSubmit={handleSubmit}>
-          <h1>Login</h1>
+    <>
+      <ThemeProvider theme={theme}>
+        <BurgerMenu />
+        <StyledMainDiv>
+          <form className={classes.form} onSubmit={handleSubmit}>
+            <h1>Login</h1>
+            <StyledOtherDiv style={{ alignContent: "colum" }}>
+              <TextField
+                show
+                type="email"
+                width="180px"
+                id="email"
+                placeholder="Email"
+              />
+            </StyledOtherDiv>
+            <StyledOtherDiv>
+              <TextField
+                show
+                type="password"
+                width="180px"
+                id="password"
+                placeholder="Password"
+              />
+            </StyledOtherDiv>
+
+            <Button
+              type="submit"
+              style={{
+                width: "200px",
+                height: "50px",
+                color: "#fafafa",
+                borderRadius: "10px",
+                textAlign: "center",
+              }}
+              color="primary"
+              className={classes.submit}
+            >
+              Logar
+          </Button>
+            <div>
+              <span display="center">-OU-</span>
+            </div>
+            <StyledOtherDiv>
+              <img style={{ width: "40px" }} onClick={() => { alert("Hello") }} src={facebook}></img>
+
+              <img style={{ width: "40px", marginLeft: "5px" }} onClick={() => { alert("Hello") }} src={gmail}></img>
+
+            </StyledOtherDiv>
+            <StyledOtherDiv>
+              <a style={{ color: "#ff2e63", cursor: "pointer" }} onClick={handleOpen}>
+                <p style={{ color: "#ff2e63" }} className="otherOptions">Esqueceu sua senha?</p>
+              </a>
+              <Link style={{ color: "#ff2e63" }} to="/register">
+                <p style={{ color: "#ff2e63" }} className="otherOptions">Cadastre-se</p>
+              </Link>
+            </StyledOtherDiv>
+          </form>
+        </StyledMainDiv>
+      </ThemeProvider>
+      <Modal
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+        open={open}
+        onClose={handleClose}
+      >
+        <div style={{
+          backgroundColor: "#08D9D6",
+          color: "#000",
+          width: "500px",
+          margin: "auto"
+        }} className={classes.paper}>
+          <h2 id="simple-modal-title">ATUALIZAR SENHA</h2>
+          <p>Informe o seu email:</p>
           <StyledOtherDiv>
             <TextField
               show
@@ -33,49 +115,17 @@ const LoginForm = props => {
               placeholder="Email"
             />
           </StyledOtherDiv>
-
-          <StyledOtherDiv>
-            <TextField
-              show
-              type="password"
-              width="180px"
-              id="password"
-              placeholder="Password"
-            />
-          </StyledOtherDiv>
-
           <Button
             type="submit"
-            style={{ width: "200px" }}
+            style={{ width: "200px", color: "#fafafa", borderRadius:"10px" }}
             color="primary"
             className={classes.submit}
           >
-            Logar
+            ENVIAR
           </Button>
-          <div>
-            <span>-OU-</span>
-          </div>
-          <StyledOtherDiv>
-            <FacebookLoginButton
-              style={{ width: "200px", margin: "auto" }}
-              onClick={() => alert("Hello")}
-            />
-            <GoogleLoginButton
-              style={{ width: "200px", margin: "auto", marginTop: "10px" }}
-              onClick={() => alert("Hello")}
-            />
-          </StyledOtherDiv>
-          <StyledOtherDiv>
-            <Link to="/">
-              <p className="otherOptions">Esqueceu sua senha?</p>
-            </Link>
-            <Link to="/register">
-              <p className="otherOptions">Cadastre-se</p>
-            </Link>
-          </StyledOtherDiv>
-        </form>
-      </StyledMainDiv>
-    </ThemeProvider>
+        </div>
+      </Modal>
+    </>
   );
 };
 
@@ -121,6 +171,9 @@ const useStyles = makeStyles(theme => ({
 const StyledMainDiv = styled.div`
   background-attachment: fixed;
   /* width: 320px; */
+  align-content: center;
+  align-items: center;
+  vertical-align: middle;
   background-image: url(${backgroundImage});
   border-radius: 2px;
   padding: 30px 20px;
@@ -170,6 +223,10 @@ const StyledOtherDiv = styled.div`
     font-size: 14px;
     font-weight: bold;
     display: block;
+  }
+
+  a {
+    text-align: center;
   }
 `;
 

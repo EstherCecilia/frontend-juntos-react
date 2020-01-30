@@ -112,14 +112,14 @@ const SignupForm = props => {
 
           <Button
             type="submit"
-            style={{ width: "200px" }}
+            style={{ width: "200px", borderRadius:"10px", color:"#fafafa"}}
             color="primary"
             className={classes.submit}
           >
             Inscrever-se
           </Button>
-          <Link to="/login">
-            <p>Já é cadastrado?</p>
+          <Link style={{color:"#ff2e63"}} to="/login">
+            <p style={{color:"#FF2E63"}}>Já é cadastrado?</p>
           </Link>
         </form>
       </StyledMainDiv>
@@ -152,7 +152,7 @@ const useStyles = makeStyles(theme => ({
     height: "32px",
     fontSize: "14px",
     display: "center",
-    color: "grey",
+    color: "#000",
     border: 0,
     borderBottom: ("1px", "solid", "#0D0C1D")
   },
@@ -160,7 +160,7 @@ const useStyles = makeStyles(theme => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
     display: "center",
-    backgroundColor: "#f50057",
+    backgroundColor: "#000",
     color: "#fafafa"
   },
   divSubmit: { display: "-webkit-inline-box", margin: "auto" }
