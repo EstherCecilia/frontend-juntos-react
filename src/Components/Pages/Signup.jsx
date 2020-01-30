@@ -32,15 +32,13 @@ const SignupForm = props => {
               id="nome"
               placeholder="Nome"
             />
-          </StyledOtherDiv>
-
-          <StyledOtherDiv>
+    
             <TextField
               show
               type="text"
               width="180px"
-              id="faculdade"
-              placeholder="Faculdade"
+              id="curso"
+              placeholder="Curso"
             />
           </StyledOtherDiv>
 
@@ -52,9 +50,6 @@ const SignupForm = props => {
               id="matricula"
               placeholder="Matricula"
             />
-          </StyledOtherDiv>
-
-          <StyledOtherDiv>
             <TextField
               show
               type="text"
@@ -88,6 +83,13 @@ const SignupForm = props => {
               id="email"
               placeholder="Email"
             />
+            <TextField
+              show
+              type="text"
+              width="180px"
+              id="aniversario"
+              placeholder="Data de Nascimento"
+            />
           </StyledOtherDiv>
 
           <StyledOtherDiv>
@@ -98,9 +100,6 @@ const SignupForm = props => {
               id="senha"
               placeholder="Senha"
             />
-          </StyledOtherDiv>
-
-          <StyledOtherDiv>
             <TextField
               show
               type="password"
