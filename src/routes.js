@@ -32,22 +32,14 @@ export default function Routes() {
     }
 
     const Submit = values => {
+        console.log(values);
         axios.post(`http://api-edu.herokuapp.com/register`,{
-               "id": "3",
-               "student": {
-                 "id": "3",
-                 "name": values.nome,
-                 "course": {
-                   "id": "string",
-                   "name": "string",
-                   "coursetype": "string",
-                   "campus": "string"
-                 },
-                 "gender": "string",
-                 "birthdate": "string"
-               },
-               "email": values.email,
-               "password": values.password
+               name: values.nome,
+                course:"Engenharia",
+                gender: "F",
+                birthdate: "07//09/1998",
+               email: values.email,
+               password: values.senha
              })
              .then(res => {
            console.log(res);
