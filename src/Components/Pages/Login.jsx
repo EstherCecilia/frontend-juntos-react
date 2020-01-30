@@ -166,7 +166,7 @@ const StyledOtherDiv = styled.div`
   }
 
   label {
-    color: #ff2e63;
+    color: #000;
     font-size: 14px;
     font-weight: bold;
     display: block;
