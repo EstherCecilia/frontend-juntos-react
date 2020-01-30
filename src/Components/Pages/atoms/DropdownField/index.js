@@ -18,6 +18,7 @@ export default function DropdownField({
     disabled,
     id,
     placeholder,
+    color,
     data,
     value,
     width,

@@ -75,9 +75,9 @@ const LoginForm = props => {
               <span>-OU-</span>
             </div>
             <StyledOtherDiv>
-              <img style={{ width: "40px" }} onClick={() => { alert("Hello") }} src={facebook}></img>
+              <img style={{ width: "40px", cursor: "pointer" }} onClick={() => { alert("Hello") }} src={facebook}></img>
 
-              <img style={{ width: "40px", marginLeft: "5px" }} onClick={() => { alert("Hello") }} src={gmail}></img>
+              <img style={{ width: "40px", marginLeft: "5px", cursor: "pointer" }} onClick={() => { alert("Hello") }} src={gmail}></img>
 
             </StyledOtherDiv>
             <StyledOtherDiv>
@@ -152,7 +152,7 @@ const useStyles = makeStyles(theme => ({
     height: "32px",
     fontSize: "14px",
     display: "center",
-    color: "grey",
+    color: "black",
     border: 0,
     borderBottom: ("1px", "solid", "#0D0C1D")
   },
@@ -205,7 +205,7 @@ const StyledMainDiv = styled.div`
 `;
 
 const StyledOtherDiv = styled.div`
-  margin-top: 20px;
+  margin-top: 10px;
 
   input {
     width: 100%;

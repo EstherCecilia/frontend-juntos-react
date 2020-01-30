@@ -11,9 +11,6 @@ const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing.unit
   },
-  input: {
-    color: "black"
-  }
 }));
 
 export default function TextField({
