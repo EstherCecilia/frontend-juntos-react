@@ -12,11 +12,28 @@ import backgroundImage from "../../images/background.jpeg";
 import facebook from "../../images/facebook.png";
 import gmail from "../../images/gmail.png";
 
+import Modal from '@material-ui/core/Modal';
+
+function rand() {
+  return Math.round(Math.random() * 20) - 10;
+}
+
+
+
 const LoginForm = props => {
   const { handleSubmit } = props;
+  const [open, setOpen] = React.useState(false);
 
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  }
   const classes = useStyles();
   return (
+    <>
     <ThemeProvider theme={theme}>
       <BurgerMenu />
       <StyledMainDiv>
@@ -60,9 +77,9 @@ const LoginForm = props => {
 
           </StyledOtherDiv>
           <StyledOtherDiv>
-            <Link style={{color:"#000"}} to="/">
+            <a style={{color:"#000"}} onClick={handleOpen}>
               <p style={{color:"#000"}} className="otherOptions">Esqueceu sua senha?</p>
-            </Link>
+            </a>
             <Link style={{color:"#ff2e63"}} to="/register">
               <p  style={{color:"#ff2e63"}} className="otherOptions">Cadastre-se</p>
             </Link>
@@ -70,6 +87,38 @@ const LoginForm = props => {
         </form>
       </StyledMainDiv>
     </ThemeProvider>
+    <Modal
+    aria-labelledby="simple-modal-title"
+    aria-describedby="simple-modal-description"
+    open={open}
+    onClose={handleClose}
+  >
+    <div style={{backgroundColor: "#f50057",
+    color: "#fafafa",
+    width: "500px",
+     margin: "auto"}} className={classes.paper}>
+      <h2 id="simple-modal-title">ATUALIZAR SENHA</h2>
+      <p>Informe o seu email:</p>
+      <StyledOtherDiv>
+            <TextField
+              show
+              type="email"
+              width="180px"
+              id="email"
+              placeholder="Email"
+            />
+          </StyledOtherDiv>
+          <Button
+            type="submit"
+            style={{ width: "200px", color:"#fafafa" }}
+            color="primary"
+            className={classes.submit}
+          >
+            Logar
+          </Button>
+    </div>
+  </Modal>
+  </>
   );
 };
 
