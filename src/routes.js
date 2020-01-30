@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import Main from './Components/Pages/Main';
-import Login from './Components/Pages/Login';
-import Signup from './Components/Pages/Signup';
-import Contato from './Components/Pages/Contato';
-import api from './services/api';
+import React, { useState } from "react";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
+import Main from "./Components/Pages/Main";
+import Login from "./Components/Pages/Login";
+import Signup from "./Components/Pages/Signup";
+import Contato from "./Components/Pages/Contato";
+import api from "./services/api";
 import store from "./store";
-import { Provider } from 'react-redux';
-import axios from 'axios';
+import { Provider } from "react-redux";
+import axios from "axios";
 
 export default function Routes() {
-
-    /*useEffect(() => {
+  /*useEffect(() => {
         async function loadUsers(){
             const response = await api.get('/students');
             setUser(response.data);
@@ -19,78 +18,64 @@ export default function Routes() {
         loadUsers();
     }, []);*/
 
+  const handleSignIn = values => {
+    // try{
+    //     await api.post("/login", values);
+    // }catch(erro){
+    //     alert("erro, verifique suas credenciais");
+    // }
+    /*const response = await api.post('/login', values);*/
+    console.log(values);
+  };
 
-    const handleSignIn = values => {
-        
-        // try{
-        //     await api.post("/login", values);
-        // }catch(erro){
-        //     alert("erro, verifique suas credenciais");
-        // }
-        /*const response = await api.post('/login', values);*/
-        console.log(values);
-    }
+  const Submit = values => {
+    axios
+      .post(`http://api-edu.herokuapp.com/register`, {
+        name: values.nome,
+        course: "5e24dc32d07b5d29174b98a6",
+        gender: "F",
+        birthdate: "07//09/1998",
+        email: values.email,
+        password: values.senha
+      })
+      .then(res => {
+        console.log(res);
+      });
 
-    const Submit = values => {
-        console.log(values);
-        axios.post(`http://api-edu.herokuapp.com/register`,{
-               name: values.nome,
-                course:"Engenharia",
-                gender: "F",
-                birthdate: "07/09/1998",
-               email: values.email,
-               password: values.senha
-             })
-             .then(res => {
-           console.log(res);
-           })
-        // try{
-        //     await api.post("/register", {
-        //        "id": "3",
-        //        "student": {
-        //          "id": "3",
-        //          "name": values.nome,
-        //          "course": {
-        //            "id": "string",
-        //            "name": "string",
-        //            "coursetype": "string",
-        //            "campus": "string"
-        //          },
-        //          "gender": "string",
-        //          "birthdate": "string"
-        //        },
-        //        "email": values.email,
-        //        "password": values.passwod
-        //      });
-        // }catch(erro){
-        //    alert("erro, verifique suas credenciais");
-        // }
-        // console.log(values);
-        }
+    console.log(values);
+  };
 
-        const Contact = values => {
-            // axios.get(`https://jsonplaceholder.typicode.com/users`)
-            //       .then(res => {
-            //         const persons = res.data;
-            //   console.log(persons);
-            //       })
-            
-            console.log(values);
-            }
+  const Contact = values => {
+    // axios.get(`https://jsonplaceholder.typicode.com/users`)
+    //       .then(res => {
+    //         const persons = res.data;
+    //   console.log(persons);
+    //       })
 
-    return (
-        <div>
-        <Provider store={store}>
-            <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={Main}/>
-                <Route path="/login" component={() => <Login onSubmit={handleSignIn}/>} />
-                <Route path="/register" component={() => <Signup onSubmit={Submit}/>} />
-                <Route path="/contact" component={() => <Contato onSubmit={Contact}/>} />
-            </Switch>
-            </BrowserRouter>
-        </Provider>
-        </div>
-    );
+    console.log(values);
+  };
+
+  return (
+    <div>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={Main} />
+            <Route
+              path="/login"
+              component={() => <Login onSubmit={handleSignIn} />}
+            />
+            <Route
+              path="/register"
+              component={() => <Signup onSubmit={Submit} />}
+            />
+            <Route
+              path="/contact"
+              component={() => <Contato onSubmit={Contact} />}
+            />
+          </Switch>
+        </BrowserRouter>
+      </Provider>
+    </div>
+  );
 }
-

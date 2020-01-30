@@ -64,7 +64,7 @@ const SignupForm = props => {
               <InputLabel id="demo-simple-select-label">Gênero</InputLabel>
               <Select
                 labelId="demo-simple-select-label"
-                id="demo-simple-select"
+                id="sexo"
                 value={gender}
                 onChange={e => setGender(e.target.value)}
               >
@@ -213,7 +213,7 @@ const StyledOtherDiv = styled.div`
   }
 
   label {
-    color: #ff2e63;
+    color: #000;
     font-size: 14px;
     font-weight: bold;
     display: block;
