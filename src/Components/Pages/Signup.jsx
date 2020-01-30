@@ -87,7 +87,7 @@ const SignupForm = props => {
               show
               type="text"
               width="180px"
-              id="aniversario"
+              id="data"
               placeholder="Data de Nascimento"
             />
           </StyledOtherDiv>
