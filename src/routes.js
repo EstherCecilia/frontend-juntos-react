@@ -37,7 +37,7 @@ export default function Routes() {
                name: values.nome,
                 course:"Engenharia",
                 gender: "F",
-                birthdate: "07//09/1998",
+                birthdate: "07/09/1998",
                email: values.email,
                password: values.senha
              })
