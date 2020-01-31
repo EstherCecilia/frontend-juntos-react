@@ -3,6 +3,8 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import FormHelperText from "@material-ui/core/FormHelperText";
+import { makeStyles } from "@material-ui/core/styles";
+
 const renderFromHelper = ({ touched, error }) => {
   if (!(touched && error)) {
     return;
@@ -14,18 +16,20 @@ const renderFromHelper = ({ touched, error }) => {
 const renderSelectField = ({
   input,
   label,
+  width,
   meta: { touched, error },
   children,
+  theme,
   ...custom
 }) => (
-  <FormControl error={touched && error}>
-    <InputLabel htmlFor="age-native-simple">Gênero</InputLabel>
+  <FormControl error={touched && error} style={{width: width, minWidth: "100px", margin: "8px"}}>
+    <InputLabel htmlFor="age-native-simple">{label}</InputLabel>
     <Select
       native
       {...input}
       {...custom}
       inputProps={{
-        name: "genero",
+        name: {label},
         id: "age-native-simple"
       }}
     >

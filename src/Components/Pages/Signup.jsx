@@ -6,70 +6,10 @@ import styled, { ThemeProvider } from "styled-components";
 import { Link } from "react-router-dom";
 import { theme } from "../../GlobalStyle/theme";
 import TextField from "./atoms/TextField";
-import MenuItem from "@material-ui/core/MenuItem";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
 import backgroundImage from "../../images/background.jpeg";
 import BurgerMenu from "./BurgerMenu";
 import InputMask from "redux-form-input-masks";
-import FormHelperText from "@material-ui/core/FormHelperText";
-
-const renderFromHelper = ({ touched, error }) => {
-  if (!(touched && error)) {
-    return;
-  } else {
-    return <FormHelperText>{touched && error}</FormHelperText>;
-  }
-};
-
-const renderSelectField = ({
-  input,
-  label,
-  meta: { touched, error },
-  children,
-  ...custom
-}) => (
-  <FormControl error={touched && error}>
-    <InputLabel htmlFor="age-native-simple">Gênero</InputLabel>
-    <Select
-      native
-      {...input}
-      {...custom}
-      inputProps={{
-        name: "genero",
-        id: "age-native-simple"
-      }}
-    >
-      {children}
-    </Select>
-    {renderFromHelper({ touched, error })}
-  </FormControl>
-);
-
-const renderSelectFieldCursos = ({
-  input,
-  label,
-  meta: { touched, error },
-  children,
-  ...custom
-}) => (
-  <FormControl error={touched && error}>
-    <InputLabel htmlFor="age-native-simple">Cursos</InputLabel>
-    <Select
-      native
-      {...input}
-      {...custom}
-      inputProps={{
-        name: "cursos",
-        id: "cursos-native-simple"
-      }}
-    >
-      {children}
-    </Select>
-    {renderFromHelper({ touched, error })}
-  </FormControl>
-);
+import RenderSelectField from "./atoms/SelectField/renderSelectField";
 
 const SignupForm = props => {
   const { handleSubmit } = props;
@@ -102,10 +42,10 @@ const SignupForm = props => {
 
           <StyledOtherDiv>
             <Field
-              classes={classes}
               name="genero"
-              component={renderSelectField}
+              component={RenderSelectField}
               label="Gênero"
+              width="180px"
             >
               <option value={""}></option>
               <option value={"F"}>Feminino</option>
@@ -114,10 +54,11 @@ const SignupForm = props => {
             </Field>
 
             <Field
-              classes={classes}
               name="cursos"
-              component={renderSelectFieldCursos}
+              component={RenderSelectField}
               label="Cursos"
+              width="180px"
+              marginLeft="10px"
             >
               <option value={""}></option>
               {data.map(person => (
@@ -143,7 +84,7 @@ const SignupForm = props => {
             />
             <TextField
               show
-              type="textr"
+              type="text"
               width="180px"
               id="data"
               placeholder="Data de Nascimento"
@@ -171,7 +112,7 @@ const SignupForm = props => {
 
           <Button
             type="submit"
-            style={{ width: "200px", borderRadius: "10px", color: "#fafafa" }}
+            style={{ width: "200px", borderRadius: "10px", color: "#fafafa", padding: "10px" }}
             color="primary"
             className={classes.submit}
           >
@@ -193,6 +134,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     alignItems: "center"
   },
+
   avatar: {
     margin: theme.spacing(1),
     backgroundColor: theme.palette.secondary.main
@@ -241,7 +183,7 @@ const StyledMainDiv = styled.div`
   strong {
     font-size: 20px;
     text-align: center;
-    display: block;
+    display: flex;
     color: ${({ theme }) => theme.primaryRed};
   }
 
