@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Field, reduxForm } from "redux-form";
+import { Field, reduxForm } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import styled, { ThemeProvider } from "styled-components";
@@ -13,15 +13,15 @@ import Select from "@material-ui/core/Select";
 import backgroundImage from "../../images/background.jpeg";
 import BurgerMenu from "./BurgerMenu";
 import InputMask from "redux-form-input-masks";
-import FormHelperText from '@material-ui/core/FormHelperText'
+import FormHelperText from "@material-ui/core/FormHelperText";
 
 const renderFromHelper = ({ touched, error }) => {
   if (!(touched && error)) {
-    return
+    return;
   } else {
-    return <FormHelperText>{touched && error}</FormHelperText>
+    return <FormHelperText>{touched && error}</FormHelperText>;
   }
-}
+};
 
 const renderSelectField = ({
   input,
@@ -37,18 +37,44 @@ const renderSelectField = ({
       {...input}
       {...custom}
       inputProps={{
-        name: 'genero',
-        id: 'age-native-simple'
+        name: "genero",
+        id: "age-native-simple"
       }}
     >
       {children}
     </Select>
     {renderFromHelper({ touched, error })}
   </FormControl>
-)
+);
+
+const renderSelectFieldCursos = ({
+  input,
+  label,
+  meta: { touched, error },
+  children,
+  ...custom
+}) => (
+  <FormControl error={touched && error}>
+    <InputLabel htmlFor="age-native-simple">Cursos</InputLabel>
+    <Select
+      native
+      {...input}
+      {...custom}
+      inputProps={{
+        name: "cursos",
+        id: "cursos-native-simple"
+      }}
+    >
+      {children}
+    </Select>
+    {renderFromHelper({ touched, error })}
+  </FormControl>
+);
 
 const SignupForm = props => {
   const { handleSubmit } = props;
+  const { data } = props;
+  console.log(data);
 
   const classes = useStyles();
   return (
@@ -65,24 +91,6 @@ const SignupForm = props => {
               id="nome"
               placeholder="Nome"
             />
-    
-            <TextField
-              show
-              type="text"
-              width="180px"
-              id="curso"
-              placeholder="Curso"
-            />
-          </StyledOtherDiv>
-
-          <StyledOtherDiv>
-            <TextField
-              show
-              type="text"
-              width="180px"
-              id="matricula"
-              placeholder="Matricula"
-            />
             <TextField
               show
               type="text"
@@ -93,17 +101,36 @@ const SignupForm = props => {
           </StyledOtherDiv>
 
           <StyledOtherDiv>
-          <Field
-          classes={classes}
-          name="genero"
-          component={renderSelectField}
-          label="Gênero"
-        >
-        <option value={""}></option>
-                <option value={"F"}>Feminino</option>
-                <option value={"M"}>Masculino</option>
-                <option value={"N"}>Não informar</option>
-              </Field>
+            <Field
+              classes={classes}
+              name="genero"
+              component={renderSelectField}
+              label="Gênero"
+            >
+              <option value={""}></option>
+              <option value={"F"}>Feminino</option>
+              <option value={"M"}>Masculino</option>
+              <option value={"N"}>Não informar</option>
+            </Field>
+
+            <Field
+              classes={classes}
+              name="cursos"
+              component={renderSelectFieldCursos}
+              label="Cursos"
+            >
+              <option value={""}></option>
+              {data.map(person => (
+                <option value={person._id}>{person.name}</option>
+              ))}
+            </Field>
+            {/* <TextField
+              show
+              type="text"
+              width="180px"
+              id="curso"
+              placeholder="Curso"
+            /> */}
           </StyledOtherDiv>
 
           <StyledOtherDiv>
@@ -119,7 +146,8 @@ const SignupForm = props => {
               type="textr"
               width="180px"
               id="data"
-              placeholder="Data de Nascimento">
+              placeholder="Data de Nascimento"
+            >
               <InputMask mask="99/99/9999" maskChar=" " />
             </TextField>
           </StyledOtherDiv>
@@ -143,14 +171,14 @@ const SignupForm = props => {
 
           <Button
             type="submit"
-            style={{ width: "200px", borderRadius:"10px", color:"#fafafa"}}
+            style={{ width: "200px", borderRadius: "10px", color: "#fafafa" }}
             color="primary"
             className={classes.submit}
           >
             Inscrever-se
           </Button>
-          <Link style={{color:"#ff2e63"}} to="/login">
-            <p style={{color:"#FF2E63"}}>Já é cadastrado?</p>
+          <Link style={{ color: "#ff2e63" }} to="/login">
+            <p style={{ color: "#FF2E63" }}>Já é cadastrado?</p>
           </Link>
         </form>
       </StyledMainDiv>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import Main from "./Components/Pages/Main";
 import Login from "./Components/Pages/Login";
@@ -10,13 +10,15 @@ import { Provider } from "react-redux";
 import axios from "axios";
 
 export default function Routes() {
-  /*useEffect(() => {
-        async function loadUsers(){
-            const response = await api.get('/students');
-            setUser(response.data);
-        }
-        loadUsers();
-    }, []);*/
+  const [curses, setCurses] = useState([]);
+
+  useEffect(() => {
+    axios.get(`https://api-edu.herokuapp.com/courses?page=1`).then(res => {
+      console.log("Cursos buscado com sucesso!");
+      console.log(res.data.docs);
+      setCurses(res.data.docs);
+    });
+  }, []);
 
   const handleSignIn = values => {
     // try{
@@ -29,24 +31,22 @@ export default function Routes() {
   };
 
   const Submit = values => {
-    if(values.senha===values.senhaConfirma){
-    axios
-      .post(`http://api-edu.herokuapp.com/register`, {
-        name: values.nome,
-        course: "5e24dc32d07b5d29174b98a6",
-        gender: values.genero,
-        birthdate: values.data,
-        email: values.email,
-        password: values.senha
-      })
-      .then(res => {
-          alert("Dados cadastrados com sucesso!")
-        console.log(res);
-      })
-
-      .catch(alert("Erro ao cadastrar usuario"));
-    }else{
-      alert("Senha incorreta!")
+    if (values.senha === values.senhaConfirma) {
+      axios
+        .post(`http://api-edu.herokuapp.com/register`, {
+          name: values.nome,
+          course: "5e24dc32d07b5d29174b98a6",
+          gender: values.genero,
+          birthdate: values.data,
+          email: values.email,
+          password: values.senha
+        })
+        .then(res => {
+          alert("Dados cadastrados com sucesso!");
+          console.log(res);
+        });
+    } else {
+      alert("Senha incorreta!");
     }
 
     console.log(values);
@@ -61,6 +61,7 @@ export default function Routes() {
 
     console.log(values);
   };
+  console.log(curses);
 
   return (
     <div>
@@ -74,7 +75,7 @@ export default function Routes() {
             />
             <Route
               path="/register"
-              component={() => <Signup onSubmit={Submit} />}
+              component={() => <Signup onSubmit={Submit} data={curses} />}
             />
             <Route
               path="/contact"
