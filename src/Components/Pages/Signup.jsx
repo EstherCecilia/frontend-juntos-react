@@ -61,8 +61,8 @@ const SignupForm = props => {
               marginLeft="10px"
             >
               <option value={""}></option>
-              {data.map(person => (
-                <option value={person._id}>{person.name}</option>
+              {data.map(course => (
+                <option value={course._id}>{course.name} ({course.campus})</option>
               ))}
             </Field>
             {/* <TextField
