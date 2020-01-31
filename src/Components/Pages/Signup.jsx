@@ -12,6 +12,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import backgroundImage from "../../images/background.jpeg";
 import BurgerMenu from "./BurgerMenu";
+import InputMask from "redux-form-input-masks";
 
 const SignupForm = props => {
   const { handleSubmit } = props;
@@ -63,8 +64,7 @@ const SignupForm = props => {
             <FormControl style={{ width: "180px" }}>
               <InputLabel id="demo-simple-select-label">Gênero</InputLabel>
               <Select
-                labelId="demo-simple-select-label"
-                id="sexo"
+                id="gender"
                 value={gender}
                 onChange={e => setGender(e.target.value)}
               >
@@ -85,11 +85,12 @@ const SignupForm = props => {
             />
             <TextField
               show
-              type="text"
+              type="number"
               width="180px"
               id="data"
-              placeholder="Data de Nascimento"
-            />
+              placeholder="Data de Nascimento">
+              <InputMask mask="99/99/9999" maskChar=" " />
+            </TextField>
           </StyledOtherDiv>
 
           <StyledOtherDiv>

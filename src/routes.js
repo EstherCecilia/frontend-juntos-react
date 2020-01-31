@@ -29,18 +29,25 @@ export default function Routes() {
   };
 
   const Submit = values => {
+    if(values.senha===values.senhaConfirma){
     axios
       .post(`http://api-edu.herokuapp.com/register`, {
         name: values.nome,
         course: "5e24dc32d07b5d29174b98a6",
         gender: "F",
-        birthdate: "07//09/1998",
+        birthdate: values.data,
         email: values.email,
         password: values.senha
       })
       .then(res => {
+          alert("Dados cadastrados com sucesso!")
         console.log(res);
-      });
+      })
+
+      .catch(alert("Erro ao cadastrar usuario"));
+    }else{
+      alert("Senha incorreta!")
+    }
 
     console.log(values);
   };
