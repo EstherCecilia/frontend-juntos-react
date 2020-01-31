@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { reduxForm } from "redux-form";
+import {Field, reduxForm } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import styled, { ThemeProvider } from "styled-components";
@@ -13,10 +13,42 @@ import Select from "@material-ui/core/Select";
 import backgroundImage from "../../images/background.jpeg";
 import BurgerMenu from "./BurgerMenu";
 import InputMask from "redux-form-input-masks";
+import FormHelperText from '@material-ui/core/FormHelperText'
+
+const renderFromHelper = ({ touched, error }) => {
+  if (!(touched && error)) {
+    return
+  } else {
+    return <FormHelperText>{touched && error}</FormHelperText>
+  }
+}
+
+const renderSelectField = ({
+  input,
+  label,
+  meta: { touched, error },
+  children,
+  ...custom
+}) => (
+  <FormControl error={touched && error}>
+    <InputLabel htmlFor="age-native-simple">Gênero</InputLabel>
+    <Select
+      native
+      {...input}
+      {...custom}
+      inputProps={{
+        name: 'genero',
+        id: 'age-native-simple'
+      }}
+    >
+      {children}
+    </Select>
+    {renderFromHelper({ touched, error })}
+  </FormControl>
+)
 
 const SignupForm = props => {
   const { handleSubmit } = props;
-  const [gender, setGender] = useState("");
 
   const classes = useStyles();
   return (
@@ -61,18 +93,17 @@ const SignupForm = props => {
           </StyledOtherDiv>
 
           <StyledOtherDiv>
-            <FormControl style={{ width: "180px" }}>
-              <InputLabel id="demo-simple-select-label">Gênero</InputLabel>
-              <Select
-                id="gender"
-                value={gender}
-                onChange={e => setGender(e.target.value)}
-              >
-                <MenuItem value={"Feminino"}>Feminino</MenuItem>
-                <MenuItem value={"Masculino"}>Masculino</MenuItem>
-                <MenuItem value={"NaoInformado"}>Não informar</MenuItem>
-              </Select>
-            </FormControl>
+          <Field
+          classes={classes}
+          name="genero"
+          component={renderSelectField}
+          label="Gênero"
+        >
+        <option value={""}></option>
+                <option value={"F"}>Feminino</option>
+                <option value={"M"}>Masculino</option>
+                <option value={"N"}>Não informar</option>
+              </Field>
           </StyledOtherDiv>
 
           <StyledOtherDiv>
@@ -85,7 +116,7 @@ const SignupForm = props => {
             />
             <TextField
               show
-              type="number"
+              type="textr"
               width="180px"
               id="data"
               placeholder="Data de Nascimento">
