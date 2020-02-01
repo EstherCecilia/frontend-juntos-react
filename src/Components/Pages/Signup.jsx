@@ -8,7 +8,6 @@ import { theme } from "../../GlobalStyle/theme";
 import TextField from "./atoms/TextField";
 import backgroundImage from "../../images/background.jpeg";
 import BurgerMenu from "./BurgerMenu";
-import InputMask from "redux-form-input-masks";
 import RenderSelectField from "./atoms/SelectField/renderSelectField";
 
 const SignupForm = props => {
@@ -84,12 +83,11 @@ const SignupForm = props => {
             />
             <TextField
               show
-              type="text"
+              type="date"
               width="180px"
               id="data"
               placeholder="Data de Nascimento"
             >
-              <InputMask mask="99/99/9999" maskChar=" " />
             </TextField>
           </StyledOtherDiv>
 
