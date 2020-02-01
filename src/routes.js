@@ -3,6 +3,7 @@ import { Route, Switch, BrowserRouter } from "react-router-dom";
 import Main from "./Components/Pages/Main";
 import Login from "./Components/Pages/Login";
 import Signup from "./Components/Pages/Signup";
+import Perfil from "./Components/Pages/Perfil";
 import Contato from "./Components/Pages/Contato";
 import api from "./services/api";
 import store from "./store";
@@ -80,6 +81,10 @@ export default function Routes() {
             <Route
               path="/contact"
               component={() => <Contato onSubmit={Contact} />}
+            />
+            <Route
+              path="/sobre"
+              component={() => <Perfil/>}
             />
           </Switch>
         </BrowserRouter>

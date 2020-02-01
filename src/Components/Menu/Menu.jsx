@@ -22,7 +22,7 @@ const Menu = ({ open }) => {
         Cadastrar
             </Link>
       <p/>
-      <Link to="/">
+      <Link to="/sobre">
         Sobre nós
             </Link>
       <Link to="/contact">
