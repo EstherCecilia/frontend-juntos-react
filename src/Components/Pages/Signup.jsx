@@ -9,6 +9,7 @@ import TextField from "./atoms/TextField";
 import backgroundImage from "../../images/background.jpeg";
 import BurgerMenu from "./BurgerMenu";
 import RenderSelectField from "./atoms/SelectField/renderSelectField";
+import DatePicker from './atoms/DatePicker/index';
 
 const SignupForm = props => {
   const { handleSubmit } = props;
@@ -84,9 +85,13 @@ const SignupForm = props => {
             <TextField
               show
               type="date"
+              component={DatePicker}
               width="180px"
               id="data"
               placeholder="Data de Nascimento"
+              InputLabelProps={{
+                shrink: true,
+              }}
             >
             </TextField>
           </StyledOtherDiv>
@@ -216,6 +221,15 @@ const StyledOtherDiv = styled.div`
     border: 0;
     border-bottom: 1px solid ${({ theme }) => theme.primaryDark};
   }
+
+  input[type=date]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none;
+  }
+
+  input[type=date]::-webkit-input-placeholder {
+      color: white;
+    }
 
   label {
     color: #000;

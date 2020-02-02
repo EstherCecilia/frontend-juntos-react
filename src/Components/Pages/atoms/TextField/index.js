@@ -17,6 +17,7 @@ const useStyles = makeStyles(theme => ({
 export default function TextField({
   show,
   disabled,
+  type,
   id,
   placeholder = "",
   data,
@@ -33,7 +34,7 @@ export default function TextField({
       <Field
         name={id}
         disabled={disabled}
-        type="text"
+        type={type}
         label={placeholder}
         valueToSet={value}
         {...props}
