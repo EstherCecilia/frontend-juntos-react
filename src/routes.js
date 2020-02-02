@@ -5,19 +5,18 @@ import Login from "./Components/Pages/Login";
 import Signup from "./Components/Pages/Signup";
 import Perfil from "./Components/Pages/Perfil";
 import Contato from "./Components/Pages/Contato";
-import api from "./services/api";
 import store from "./store";
 import { Provider } from "react-redux";
 import axios from "axios";
 
 export default function Routes() {
-  const [curses, setCurses] = useState([]);
+  const [courses, setCourses] = useState([]);
 
   useEffect(() => {
     axios.get(`https://api-edu.herokuapp.com/courses?page=1`).then(res => {
       console.log("Cursos buscado com sucesso!");
-      console.log(res.data.docs);
-      setCurses(res.data.docs);
+      //console.log(res.data.docs);
+      setCourses(res.data.docs);
     });
   }, []);
 
@@ -62,7 +61,7 @@ export default function Routes() {
 
     console.log(values);
   };
-  console.log(curses);
+  console.log(courses);
 
   return (
     <div>
@@ -76,7 +75,7 @@ export default function Routes() {
             />
             <Route
               path="/register"
-              component={() => <Signup onSubmit={Submit} data={curses} />}
+              component={() => <Signup onSubmit={Submit} data={courses} />}
             />
             <Route
               path="/contact"

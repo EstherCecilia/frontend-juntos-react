@@ -14,9 +14,9 @@ import gmail from "../../images/gmail.png";
 
 import Modal from '@material-ui/core/Modal';
 
-function rand() {
+/*function rand() {
   return Math.round(Math.random() * 20) - 10;
-}
+}*/
 
 
 
@@ -75,9 +75,15 @@ const LoginForm = props => {
               <span>-OU-</span>
             </div>
             <StyledOtherDiv>
-              <img style={{ width: "40px", cursor: "pointer" }} onClick={() => { alert("Hello") }} src={facebook}></img>
+              <img 
+                style={{ width: "40px", cursor: "pointer" }} 
+                onClick={() => { alert("Hello") }} 
+                src={facebook} alt="Facebook"></img>
 
-              <img style={{ width: "40px", marginLeft: "5px", cursor: "pointer" }} onClick={() => { alert("Hello") }} src={gmail}></img>
+              <img 
+                style={{ width: "40px", marginLeft: "5px", cursor: "pointer" }} 
+                onClick={() => { alert("Hello") }} 
+                src={gmail} alt="Gmail"></img>
 
             </StyledOtherDiv>
             <StyledOtherDiv>

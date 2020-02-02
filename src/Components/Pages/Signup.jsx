@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -10,11 +10,15 @@ import backgroundImage from "../../images/background.jpeg";
 import BurgerMenu from "./BurgerMenu";
 import RenderSelectField from "./atoms/SelectField/renderSelectField";
 import DatePicker from './atoms/DatePicker/index';
+import ComboBox from "./atoms/ComboBox";
 
 const SignupForm = props => {
   const { handleSubmit } = props;
   const { data } = props;
+  const optionLabel = (courses => courses.name);
+  
   console.log(data);
+  //console.log(optionLabel);
 
   const classes = useStyles();
   return (
@@ -54,24 +58,15 @@ const SignupForm = props => {
             </Field>
 
             <Field
+              classes={classes}
               name="cursos"
-              component={RenderSelectField}
+              component={ComboBox}
+              options={data}
+              getOptionLabel={optionLabel}
               label="Cursos"
               width="180px"
-              marginLeft="10px"
             >
-              <option value={""}></option>
-              {data.map(course => (
-                <option value={course._id}>{course.name} ({course.campus})</option>
-              ))}
             </Field>
-            {/* <TextField
-              show
-              type="text"
-              width="180px"
-              id="curso"
-              placeholder="Curso"
-            /> */}
           </StyledOtherDiv>
 
           <StyledOtherDiv>
@@ -158,7 +153,7 @@ const useStyles = makeStyles(theme => ({
     display: "center",
     color: "#000",
     border: 0,
-    borderBottom: ("1px", "solid", "#0D0C1D")
+    borderBottom: ("1px", "solid", "black")
   },
 
   submit: {
@@ -217,7 +212,7 @@ const StyledOtherDiv = styled.div`
     width: 100%;
     height: 32px;
     font-size: 14px;
-    color: grey;
+    color: black;
     border: 0;
     border-bottom: 1px solid ${({ theme }) => theme.primaryDark};
   }
@@ -226,10 +221,6 @@ const StyledOtherDiv = styled.div`
     -webkit-appearance: none;
     display: none;
   }
-
-  input[type=date]::-webkit-input-placeholder {
-      color: white;
-    }
 
   label {
     color: #000;

@@ -16,11 +16,10 @@ const useStyles = makeStyles(theme => ({
     }
   },
   submit: {
-    margin: theme.spacing(3, 0, 2),
+    margin: (theme.spacing(3, 0, 2), "10px"),
     display: "flex",
     backgroundColor: "#f50057",
     color: "#fafafa",
-    margin: "10px"
   },
   divSubmit: {
     display: "-webkit-inline-box",
