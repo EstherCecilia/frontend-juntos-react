@@ -7,29 +7,34 @@ import { theme } from "../../GlobalStyle/theme";
 import BurgerMenu from "./BurgerMenu";
 import Avatar from "@material-ui/core/Avatar";
 import backgroundImage from "../../images/background.jpeg";
+import perfil from "../../images/perfil.jpg";
 
 const Perfil = props => {
   const { usuario } = props;
-  const [open, setOpen] = React.useState(false);
-  console.log(usuario);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
   const classes = useStyles();
+
   return (
     <>
       <ThemeProvider theme={theme}>
         <BurgerMenu />
+
         <StyledMainDiv>
-          <h1>Perfil</h1>
-          <StyledOtherDiv>
-            <Avatar alt="Remy Sharp" src="../../images/perfilTeste.jpg" />
-          </StyledOtherDiv>
-          <StyledOtherDiv></StyledOtherDiv>
+          <div className={classes.form} o>
+            <StyledOtherDiv>
+              <h1>Meu perfil</h1>
+
+              <Avatar
+                style={{ margin: "auto", width: "100px", height: "100px" }}
+                alt="Remy Sharp"
+                src={perfil}
+              />
+            </StyledOtherDiv>
+            <StyledOtherDiv>
+              <h2>{usuario.name}</h2>
+              <p>{usuario.course}</p>
+              <p>{usuario.birthdate}</p>
+            </StyledOtherDiv>
+          </div>
         </StyledMainDiv>
       </ThemeProvider>
     </>
@@ -136,29 +141,5 @@ const StyledOtherDiv = styled.div`
     text-align: center;
   }
 `;
-
-/*const StyledDivRadio = styled.div`
-    div {
-        color: ${({theme}) => theme.primaryRed};
-    }
-
-    label {
-        color: ${({theme}) => theme.primaryRed};
-        font-size: 14px;
-        font-weight: bold;
-        display: block;
-        margin-top: 20px;
-        padding-bottom: 10px;
-    }
-
-    input {
-        font-weight: bold;
-        display: inline;
-        cursor: pointer;
-        border-radius: 50%;
-        color: ${({theme}) => theme.primaryRed};
-    }
-
-`;*/
 
 export default Perfil;

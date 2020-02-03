@@ -9,16 +9,16 @@ import TextField from "./atoms/TextField";
 import backgroundImage from "../../images/background.jpeg";
 import BurgerMenu from "./BurgerMenu";
 import RenderSelectField from "./atoms/SelectField/renderSelectField";
-import DatePicker from './atoms/DatePicker/index';
+import DatePicker from "./atoms/DatePicker/index";
 import ComboBox from "./atoms/ComboBox";
 
 const SignupForm = props => {
   const { handleSubmit } = props;
   const { data } = props;
-  const optionLabel = (courses => { 
-    return (`${courses._source.name}`) //(${courses._source.campus})
-  });
-  
+  const optionLabel = courses => {
+    return `${courses._source.name}`; //(${courses._source.campus})
+  };
+
   console.log(data);
   //console.log(optionLabel);
 
@@ -67,8 +67,7 @@ const SignupForm = props => {
               getOptionLabel={optionLabel}
               label="Cursos"
               width="180px"
-            >
-            </Field>
+            ></Field>
           </StyledOtherDiv>
 
           <StyledOtherDiv>
@@ -87,10 +86,9 @@ const SignupForm = props => {
               id="data"
               placeholder="Data de Nascimento"
               InputLabelProps={{
-                shrink: true,
+                shrink: true
               }}
-            >
-            </TextField>
+            ></TextField>
           </StyledOtherDiv>
 
           <StyledOtherDiv>
@@ -112,7 +110,12 @@ const SignupForm = props => {
 
           <Button
             type="submit"
-            style={{ width: "200px", borderRadius: "10px", color: "#fafafa", padding: "10px" }}
+            style={{
+              width: "200px",
+              borderRadius: "10px",
+              color: "#fafafa",
+              padding: "10px"
+            }}
             color="primary"
             className={classes.submit}
           >
@@ -219,7 +222,7 @@ const StyledOtherDiv = styled.div`
     border-bottom: 1px solid ${({ theme }) => theme.primaryDark};
   }
 
-  input[type=date]::-webkit-inner-spin-button {
+  input[type="date"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     display: none;
   }

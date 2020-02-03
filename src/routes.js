@@ -24,8 +24,6 @@ export default function Routes() {
 
   useEffect(() => {
     axios.get(`https://api-edu.herokuapp.com/courses?page=1`).then(res => {
-      console.log("Cursos buscado com sucesso!");
-      console.log(res.data);
       setCourses(res.data);
     });
   }, []);
@@ -37,8 +35,7 @@ export default function Routes() {
         password: values.password
       })
       .then(res => {
-        console.log(res);
-        setUsuario(res.data.student);
+        setUsuario(res.data.user.student);
         history.push("/perfil");
       });
   };
@@ -74,7 +71,6 @@ export default function Routes() {
 
     console.log(values);
   };
-  console.log(courses);
 
   return (
     <div>
