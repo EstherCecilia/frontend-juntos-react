@@ -15,7 +15,9 @@ import ComboBox from "./atoms/ComboBox";
 const SignupForm = props => {
   const { handleSubmit } = props;
   const { data } = props;
-  const optionLabel = (courses => courses.name);
+  const optionLabel = (courses => { 
+    return (`${courses._source.name}`) //(${courses._source.campus})
+  });
   
   console.log(data);
   //console.log(optionLabel);

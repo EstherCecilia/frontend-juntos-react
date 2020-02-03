@@ -25,8 +25,8 @@ export default function Routes() {
   useEffect(() => {
     axios.get(`https://api-edu.herokuapp.com/courses?page=1`).then(res => {
       console.log("Cursos buscado com sucesso!");
-      //console.log(res.data.docs);
-      setCourses(res.data.docs);
+      console.log(res.data);
+      setCourses(res.data);
     });
   }, []);
 
