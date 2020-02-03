@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { Route, Switch, Router } from "react-router-dom";
 import Main from "./Components/Pages/Main";
 import Login from "./Components/Pages/Login";
 import Signup from "./Components/Pages/Signup";
@@ -8,11 +8,19 @@ import Contato from "./Components/Pages/Contato";
 import store from "./store";
 import { Provider } from "react-redux";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
+
+import { createBrowserHistory } from "history";
+const history = createBrowserHistory({
+  basename: "/"
+});
+window.redirect = history.push;
 
 export default function Routes() {
   const [courses, setCourses] = useState([]);
   const [usuario, setUsuario] = useState([]);
   const [token, setToken] = useState([]);
+  const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
     axios.get(`https://api-edu.herokuapp.com/courses?page=1`).then(res => {
@@ -23,18 +31,16 @@ export default function Routes() {
   }, []);
 
   const handleSignIn = values => {
- axios
-        .post(`https://api-edu.herokuapp.com/login`, {
-          email: values.email,
-          password: values.password
-        })
-        .then(res => {
-          console.log(res);
-          setUsuario(res.data.student)
-          //Tem que mudar o link to="/sobre"
-        });
-    
-
+    axios
+      .post(`https://api-edu.herokuapp.com/login`, {
+        email: values.email,
+        password: values.password
+      })
+      .then(res => {
+        console.log(res);
+        setUsuario(res.data.student);
+        history.push("/perfil");
+      });
   };
 
   const Submit = values => {
@@ -73,7 +79,7 @@ export default function Routes() {
   return (
     <div>
       <Provider store={store}>
-        <BrowserRouter>
+        <Router history={history}>
           <Switch>
             <Route exact path="/" component={Main} />
             <Route
@@ -89,11 +95,11 @@ export default function Routes() {
               component={() => <Contato onSubmit={Contact} />}
             />
             <Route
-              path="/sobre"
-              component={() => <Perfil usuario={usuario}/>}
+              path="/perfil"
+              component={() => <Perfil usuario={usuario} />}
             />
           </Switch>
-        </BrowserRouter>
+        </Router>
       </Provider>
     </div>
   );

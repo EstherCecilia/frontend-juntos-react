@@ -5,41 +5,33 @@ import styled, { ThemeProvider } from "styled-components";
 import { Link } from "react-router-dom";
 import { theme } from "../../GlobalStyle/theme";
 import BurgerMenu from "./BurgerMenu";
-import Avatar from '@material-ui/core/Avatar';
+import Avatar from "@material-ui/core/Avatar";
 import backgroundImage from "../../images/background.jpeg";
-
-
-
 
 const Perfil = props => {
   const { usuario } = props;
   const [open, setOpen] = React.useState(false);
-
+  console.log(usuario);
   const handleOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
     setOpen(false);
-  }
+  };
   const classes = useStyles();
   return (
     <>
       <ThemeProvider theme={theme}>
         <BurgerMenu />
         <StyledMainDiv>
-            <h1>Perfil</h1>
-            <StyledOtherDiv>
+          <h1>Perfil</h1>
+          <StyledOtherDiv>
             <Avatar alt="Remy Sharp" src="../../images/perfilTeste.jpg" />
-
-            </StyledOtherDiv>
-            <StyledOtherDiv>
-             
-            </StyledOtherDiv>
-
+          </StyledOtherDiv>
+          <StyledOtherDiv></StyledOtherDiv>
         </StyledMainDiv>
       </ThemeProvider>
- 
     </>
   );
 };
