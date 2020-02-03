@@ -12,7 +12,7 @@ import backgroundImage from "../../images/background.jpeg";
 
 
 const Perfil = props => {
-  const { handleSubmit } = props;
+  const { usuario } = props;
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {

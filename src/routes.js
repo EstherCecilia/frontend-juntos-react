@@ -11,6 +11,8 @@ import axios from "axios";
 
 export default function Routes() {
   const [courses, setCourses] = useState([]);
+  const [usuario, setUsuario] = useState([]);
+  const [token, setToken] = useState([]);
 
   useEffect(() => {
     axios.get(`https://api-edu.herokuapp.com/courses?page=1`).then(res => {
@@ -21,13 +23,18 @@ export default function Routes() {
   }, []);
 
   const handleSignIn = values => {
-    // try{
-    //     await api.post("/login", values);
-    // }catch(erro){
-    //     alert("erro, verifique suas credenciais");
-    // }
-    /*const response = await api.post('/login', values);*/
-    console.log(values);
+ axios
+        .post(`https://api-edu.herokuapp.com/login`, {
+          email: values.email,
+          password: values.password
+        })
+        .then(res => {
+          console.log(res);
+          setUsuario(res.data.student)
+          //Tem que mudar o link to="/sobre"
+        });
+    
+
   };
 
   const Submit = values => {
@@ -83,7 +90,7 @@ export default function Routes() {
             />
             <Route
               path="/sobre"
-              component={() => <Perfil/>}
+              component={() => <Perfil usuario={usuario}/>}
             />
           </Switch>
         </BrowserRouter>
