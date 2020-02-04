@@ -36,6 +36,8 @@ export default function Routes() {
       })
       .then(res => {
         setUsuario(res.data.user.student);
+        localStorage.setItem('token', res.data.token)
+        console.log(localStorage.getItem('token'))
         history.push("/perfil");
       });
   };
