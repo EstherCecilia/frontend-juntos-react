@@ -1,13 +1,11 @@
 import React from "react";
-import { reduxForm } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
-import styled, { ThemeProvider } from "styled-components";
-import { Link } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
 import { theme } from "../../GlobalStyle/theme";
 import BurgerMenu from "./BurgerMenu";
 import Avatar from "@material-ui/core/Avatar";
-import backgroundImage from "../../images/background.jpeg";
 import perfil from "../../images/perfil.jpg";
+import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
 const Perfil = props => {
   const { usuario } = props;
@@ -79,67 +77,5 @@ const useStyles = makeStyles(theme => ({
   },
   divSubmit: { display: "-webkit-inline-box", margin: "auto" }
 }));
-
-const StyledMainDiv = styled.div`
-  background-attachment: fixed;
-  /* width: 320px; */
-  align-content: center;
-  align-items: center;
-  vertical-align: middle;
-  background-image: url(${backgroundImage});
-  border-radius: 2px;
-  padding: 30px 20px;
-  margin: 0 auto;
-
-  strong {
-    font-size: 20px;
-    text-align: center;
-    display: block;
-    color: ${({ theme }) => theme.primaryRed};
-  }
-
-  form {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  button[type="submit"] {
-    width: 100%;
-    border: 0;
-    margin-top: 30px;
-    background: ${({ theme }) => theme.primaryRed};
-    border-radius: 2px;
-    padding: 15px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    color: ${({ theme }) => theme.primaryDark};
-    cursor: pointer;
-    transition: background 0.5s;
-  }
-`;
-
-const StyledOtherDiv = styled.div`
-  margin-top: 10px;
-
-  input {
-    width: 100%;
-    height: 32px;
-    font-size: 14px;
-    color: grey;
-    border: 0;
-    border-bottom: 1px solid ${({ theme }) => theme.primaryDark};
-  }
-
-  label {
-    color: #000;
-    font-size: 14px;
-    font-weight: bold;
-    display: block;
-  }
-
-  a {
-    text-align: center;
-  }
-`;
 
 export default Perfil;

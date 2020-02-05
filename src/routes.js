@@ -29,8 +29,6 @@ export default function Routes() {
     });
   }, []);
 
-
-        
   const handleSignIn = values => {
     axios
       .post(`https://api-edu.herokuapp.com/login`, {
@@ -39,29 +37,29 @@ export default function Routes() {
       })
       .then(res => {
         setUsuario(res.data.user.student);
-        localStorage.setItem('token', res.data.token)
-        console.log(res.data.user.student)
-        localStorage.setItem('id', res.data.user.student._id)
-        
+        localStorage.setItem("token", res.data.token);
+        console.log(res.data.user.student);
+        localStorage.setItem("id", res.data.user.student._id);
+
         history.push("/perfil");
       });
   };
 
   const requestToken = () => {
-    const AuthToken = localStorage.getItem('token');
-    const USER_TOKEN = 'Bearer '.concat(AuthToken);
-    const URL = `https://api-edu.herokuapp.com/students/${localStorage.getItem('id')}`;
-     axios
-      .get(URL, { headers: { Authorization: USER_TOKEN } })
-      .then(res => {
-        setUsuario(res.data);
+    const AuthToken = localStorage.getItem("token");
+    const USER_TOKEN = "Bearer ".concat(AuthToken);
+    const URL = `https://api-edu.herokuapp.com/students/${localStorage.getItem(
+      "id"
+    )}`;
+    axios.get(URL, { headers: { Authorization: USER_TOKEN } }).then(res => {
+      setUsuario(res.data);
+      if (res.data.active) {
         history.push("/perfil");
-      });
+      } else {
+        window.location.reload();
+      }
+    });
   };
-  
-  console.log(localStorage.getItem('token'))
-  
-  console.log(localStorage.getItem('id'))
 
   const Submit = values => {
     if (values.senha === values.senhaConfirma) {
@@ -85,7 +83,6 @@ export default function Routes() {
     console.log(values);
   };
 
-
   return (
     <div>
       <Provider store={store}>
@@ -94,20 +91,16 @@ export default function Routes() {
             <Route exact path="/" component={Main} />
             <Route
               path="/login"
-              component={() => <Login onSubmit={handleSignIn} requestToken={requestToken} />}
+              component={() => (
+                <Login onSubmit={handleSignIn} requestToken={requestToken} />
+              )}
             />
             <Route
               path="/register"
               component={() => <Signup onSubmit={Submit} data={courses} />}
             />
-            <Route
-              path="/contact"
-              component={() => <Contato />}
-            />
-            <Route
-              path="/sobre"
-              component={() => <Sobre />}
-            />
+            <Route path="/contact" component={() => <Contato />} />
+            <Route path="/sobre" component={() => <Sobre />} />
             <Route
               path="/perfil"
               component={() => <Perfil usuario={usuario} />}
