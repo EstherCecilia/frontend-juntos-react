@@ -22,6 +22,9 @@ import Modal from '@material-ui/core/Modal';
 const LoginForm = props => {
   const { handleSubmit } = props;
   const [open, setOpen] = React.useState(false);
+  if(localStorage.getItem('token')!== undefined){
+      props.requestToken();
+  }
 
   const responseFacebook = (response) => {
     console.log(response);

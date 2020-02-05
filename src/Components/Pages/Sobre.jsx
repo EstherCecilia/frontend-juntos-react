@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-const Contato = () => {
+const Sobre = () => {
   const classes = useStyles();
   return (<ThemeProvider theme={theme}>
     <>
@@ -34,19 +34,14 @@ const Contato = () => {
         <StyledMainDiv>
           <div className={classes.form}>
           <StyledOtherDiv>
-          <h1>ENTRE EM CONTATO</h1>
+          <h1>QUEM SOMOS?</h1>
           </StyledOtherDiv>
           <StyledOtherDiv>
-            <p>Tem alguma dúvida, problema com o aplicativo ou quer nós da</p>
-            <p>um feedback? Entre em contato conosco por email.</p>
-
+            <p>Somos estusiastas por tecnologia e por meio do <span>NOME</span> temos</p>
+            <p>a missão de facilitar a vida de estudantes universitários que</p>
+            <p>precisam achar outros estudantes dispostos a ajudar com</p>
+            <p>matérias da faculdade, de forma ágil e objetiva.</p>
             </StyledOtherDiv>
-            <StyledOtherDiv>
-   <span>contatonome@gmail.com</span>
-   </StyledOtherDiv>
-   <StyledOtherDiv>
-        <Image/>
-        </StyledOtherDiv>
         </div>
         </StyledMainDiv>
 
@@ -55,7 +50,7 @@ const Contato = () => {
   );
 };
 
-export default Contato;
+export default Sobre;
 
 
 const StyledMainDiv = styled.div`

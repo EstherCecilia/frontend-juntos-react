@@ -19,7 +19,7 @@ const Perfil = props => {
         <BurgerMenu />
 
         <StyledMainDiv>
-          <div className={classes.form} o>
+          <div className={classes.form}>
             <StyledOtherDiv>
               <h1>Meu perfil</h1>
 
