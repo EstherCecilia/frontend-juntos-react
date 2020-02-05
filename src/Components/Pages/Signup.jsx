@@ -15,12 +15,18 @@ import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 const SignupForm = props => {
   const { handleSubmit } = props;
   const { data } = props;
-  const optionLabel = courses => {
-    return `${courses._source.name}`; //(${courses._source.campus})
-  };
+  
+  const courseList = [];
+  data.map(course => {
+    courseList.push({
+      name: course._source.name,
+      value: course._id
+    })
+  })
 
-  console.log(data);
-  //console.log(optionLabel);
+  console.log(courseList);
+  const optionLabel = courseList.map(course => course.name);
+  console.log(optionLabel);
 
   const classes = useStyles();
   return (
@@ -63,8 +69,8 @@ const SignupForm = props => {
               classes={classes}
               name="cursos"
               component={ComboBox}
-              options={data}
-              getOptionLabel={optionLabel}
+              options={courseList}
+              getOptionLabel={optionLabel => optionLabel.name}
               label="Cursos"
               width="180px"
             ></Field>
