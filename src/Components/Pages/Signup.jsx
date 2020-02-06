@@ -24,9 +24,9 @@ const SignupForm = props => {
     })
   })
 
-  console.log(courseList);
+  //console.log(courseList);
   const optionLabel = courseList.map(course => course.name);
-  console.log(optionLabel);
+  //console.log(optionLabel);
 
   const classes = useStyles();
   return (

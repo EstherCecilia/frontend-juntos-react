@@ -24,7 +24,7 @@ export default function Routes() {
   const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
-    axios.get(`https://api-edu.herokuapp.com/courses?page=1`).then(res => {
+    axios.get(`https://api-edu.herokuapp.com/courses?size=200`).then(res => {
       setCourses(res.data);
     });
   }, []);
