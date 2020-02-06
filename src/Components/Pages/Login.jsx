@@ -7,9 +7,10 @@ import { Link } from "react-router-dom";
 import { theme } from "../../GlobalStyle/theme";
 import BurgerMenu from "./BurgerMenu";
 import TextField from "./atoms/TextField";
-import FacebookLogin from "react-facebook-login";
-import { GoogleLogin } from "react-google-login";
-
+// import FacebookLogin from "react-facebook-login";
+// import { GoogleLogin } from "react-google-login";
+import facebook from "../../images/facebook.png";
+import gmail from "../../images/gmail.png";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 import Modal from "@material-ui/core/Modal";
 
@@ -24,13 +25,13 @@ const LoginForm = props => {
     props.requestToken();
   }
 
-  const responseFacebook = response => {
-    console.log(response);
-  };
+  // const responseFacebook = response => {
+  //   console.log(response);
+  // };
 
-  const responseGoogle = response => {
-    console.log(response);
-  };
+  // const responseGoogle = response => {
+  //   console.log(response);
+  // };
 
   const handleOpen = () => {
     setOpen(true);
@@ -83,21 +84,35 @@ const LoginForm = props => {
               <span>-OU-</span>
             </div>
             <StyledOtherDiv>
-              <FacebookLogin
+              {/* { <FacebookLogin
                 appId="596666950897064"
                 fields="name, email, picture"
                 callback={responseFacebook}
                 cssClass="my-facebook-button-class"
                 icon="fa-facebook"
-              />
+              />} */}
 
-              <GoogleLogin
+              {/* {<GoogleLogin
                 clientId="175745869829-ap2tvjungr7o5abfbngfr9246sd44te8.apps.googleusercontent.com"
                 buttonText="Login"
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
                 cookiePolicy={"single_host_origin"}
-              />
+              />} */}
+
+              {<img 
+                style={{width:"40px", cursor: "pointer"}} 
+                onClick={()=> {alert("Hello")}} 
+                src={facebook}
+                alt="Facebook">
+              </img> }
+
+              {<img style=
+                {{width:"40px", marginLeft:"5px", cursor: "pointer"}} 
+                onClick={()=> {alert("Hello")}} 
+                src={gmail}
+                alt="Gmail">
+              </img> }
             </StyledOtherDiv>
             <StyledOtherDiv>
               <a

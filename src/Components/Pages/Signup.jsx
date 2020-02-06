@@ -15,8 +15,8 @@ import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 const SignupForm = props => {
   const { handleSubmit } = props;
   const { data } = props;
-  
   const courseList = [];
+
   data.map(course => {
     courseList.push({
       name: course._source.name,
@@ -24,9 +24,7 @@ const SignupForm = props => {
     })
   })
 
-  //console.log(courseList);
-  const optionLabel = courseList.map(course => course.name);
-  //console.log(optionLabel);
+  //const optionLabel = courseList.map(course => course.name);
 
   const classes = useStyles();
   return (

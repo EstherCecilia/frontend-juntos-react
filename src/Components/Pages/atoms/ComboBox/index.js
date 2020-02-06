@@ -2,7 +2,6 @@ import React from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import AutoComplete from '@material-ui/lab/Autocomplete';
-import InputLabel from "@material-ui/core/InputLabel";
 
 const ComboBox = ({
     options, 

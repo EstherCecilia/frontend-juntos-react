@@ -36,7 +36,7 @@ const Contato = () => {
               <h1>ENTRE EM CONTATO</h1>
             </StyledOtherDiv>
             <StyledOtherDiv>
-              <p>Tem alguma dúvida, problema com o aplicativo ou quer nós da</p>
+              <p>Tem alguma dúvida, problema com o aplicativo ou quer nos dar</p>
               <p>um feedback? Entre em contato conosco por email.</p>
             </StyledOtherDiv>
             <StyledOtherDiv>
