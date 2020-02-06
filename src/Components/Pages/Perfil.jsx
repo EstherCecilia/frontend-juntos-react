@@ -6,6 +6,7 @@ import BurgerMenu from "./BurgerMenu";
 import Avatar from "@material-ui/core/Avatar";
 import perfil from "../../images/perfil.jpg";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
+import MenuPoint from "./atoms/MenuPoint";
 
 const Perfil = props => {
   const { usuario } = props;
@@ -17,6 +18,7 @@ const Perfil = props => {
         <BurgerMenu />
 
         <StyledMainDiv>
+          <MenuPoint user={usuario} style={{ marginLeft: "90%" }} />
           <div className={classes.form}>
             <StyledOtherDiv>
               <h1>Meu perfil</h1>
