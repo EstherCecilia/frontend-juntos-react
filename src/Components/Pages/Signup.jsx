@@ -21,11 +21,16 @@ const SignupForm = props => {
   data.map(course => {
     courseList.push({
       name: course._source.name,
-      value: course._id
+      value: course._id,
+      campus: course._source.campus,
     })
   })
 
-  //const optionLabel = courseList.map(course => course.name);
+  const optionLabel = (course) => {
+    return(
+      course.name.concat(' (', course.campus, ')')
+    )
+  }
 
   const classes = useStyles();
   return (
@@ -63,15 +68,17 @@ const SignupForm = props => {
               <option value={"M"}>Masculino</option>
               <option value={"N"}>Não informar</option>
             </Field>
+          </StyledOtherDiv>
 
+          <StyledOtherDiv>
             <Field
               classes={classes}
               name="cursos"
               component={ComboBox}
               options={courseList}
-              getOptionLabel={optionLabel => optionLabel.name}
+              getOptionLabel={optionLabel}
               label="Cursos"
-              width="180px"
+              width="31.5vw"
             ></Field>
           </StyledOtherDiv>
 
