@@ -64,4 +64,8 @@ export const StyledOtherDiv = styled.div`
     font-weight: bold;
     display: block;
   }
+
+  select {
+    color: #000;
+  }
 `;
