@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState } from "react";
 import {connect} from 'react-redux';
 import { Field, reduxForm, getFormValues, formValueSelector } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
@@ -10,6 +10,7 @@ import TextField from "./atoms/TextField";
 import BurgerMenu from "./BurgerMenu";
 import RenderSelectField from "./atoms/SelectField/renderSelectField";
 import DatePicker from "./atoms/DatePicker/index";
+import Curses from "./atoms/Curses/index";
 import ComboBox from "./atoms/ComboBox";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
@@ -17,20 +18,22 @@ let SignupForm = props => {
   const { handleSubmit, data } = props;
   const courseList = [];
   
-  data.map(course => {
-    courseList.push({
-      name: course._source.name,
-      value: course._id,
-      campus: course._source.campus,
-    })
-  })
+
+
+  // data.map(course => {
+  //   courseList.push({
+  //     name: course._source.name,
+  //     value: course._id,
+  //     campus: course._source.campus,
+  //   })
+  // })
 
   const optionLabel = (course) => {
     return(
       course.name.concat(' (', course.campus, ')')
     )
   }
-
+  
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
@@ -119,7 +122,7 @@ let SignupForm = props => {
               placeholder="Confirmar senha"
             />
           </StyledOtherDiv>
-
+  <Curses />
           <Button
             type="submit"
             style={{
