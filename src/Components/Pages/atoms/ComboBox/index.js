@@ -10,7 +10,6 @@ function ComboBox ({
     getOptionLabel,
     name,
 }) {
-    //const [courses, setCourses] = useState('');
     return (
     <FormControl style={{width: width, margin: "8px"}}>
         <AutoComplete

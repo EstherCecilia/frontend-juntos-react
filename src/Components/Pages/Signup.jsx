@@ -12,28 +12,31 @@ import RenderSelectField from "./atoms/SelectField/renderSelectField";
 import DatePicker from "./atoms/DatePicker/index";
 import Curses from "./atoms/Curses/index";
 import ComboBox from "./atoms/ComboBox";
+import SelectField from './atoms/ComboBox/select';
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
 let SignupForm = props => {
   const { handleSubmit, data } = props;
   const courseList = [];
   
+  data.map(course => {
+    courseList.push({
+      value: course._id,
+      label: course.name.concat(' (', course.campus, ')'),
+      // campus: course._source.campus,
+    })
+  })
 
+  console.log(data);
 
-  // data.map(course => {
-  //   courseList.push({
-  //     name: course._source.name,
-  //     value: course._id,
-  //     campus: course._source.campus,
-  //   })
-  // })
+  const optionLabel = courseList;
 
-  const optionLabel = (course) => {
-    return(
-      course.name.concat(' (', course.campus, ')')
-    )
-  }
-  
+  // const optionLabel = (course) => {
+  //   return(
+  //     course.name.concat(' (', course.campus, ')')
+  //   )
+  // }
+
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
@@ -75,6 +78,18 @@ let SignupForm = props => {
           <StyledOtherDiv>
             <Field
               classes={classes}
+              name="cursos"
+              placeholder={"Cursos"}
+              component={SelectField}
+              options={optionLabel}
+              onChange={(event, value) => console.log(value)}
+              width="31.5vw"
+            ></Field>
+          </StyledOtherDiv>
+
+          {/* <StyledOtherDiv>
+            <Field
+              classes={classes}
               id="cursos"
               component={ComboBox}
               options={courseList}
@@ -83,7 +98,7 @@ let SignupForm = props => {
               label="Cursos"
               width="31.5vw"
             ></Field>
-          </StyledOtherDiv>
+          </StyledOtherDiv> */}
 
           <StyledOtherDiv>
             <TextField
@@ -176,6 +191,10 @@ const useStyles = makeStyles(theme => ({
     borderBottom: ("1px", "solid", "black")
   },
 
+  select: {
+    color: "#000"
+  },
+
   submit: {
     margin: theme.spacing(3, 0, 2),
     display: "center",
@@ -189,14 +208,15 @@ SignupForm = reduxForm({
   form: "simple" // a unique identifier for this form
 })(SignupForm);
 
-// const selector = formValueSelector("simple");
-// SignupForm = connect(
-//   state => {
-//     const courseValue = selector(state, "cursos")
-//     return {
-//       courseValue
-//     }
-//   }
-// )(SignupForm)
+const selector = formValueSelector("simple");
+SignupForm = connect(
+  state => {
+    const courseValue = selector(state, "cursos")
+    console.log(courseValue);
+    return {
+      courseValue
+    }
+  }
+)(SignupForm)
 
 export default SignupForm;

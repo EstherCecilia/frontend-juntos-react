@@ -68,7 +68,7 @@ export default function Routes() {
       axios
         .post(`http://api-edu.herokuapp.com/register`, {
           name: values.nome,
-          course: "5e24dc32d07b5d29174b98a6",
+          course: values.cursos,
           gender: values.genero,
           birthdate: values.data,
           email: values.email,
