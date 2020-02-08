@@ -10,7 +10,7 @@ import TextField from "./atoms/TextField";
 import BurgerMenu from "./BurgerMenu";
 import RenderSelectField from "./atoms/SelectField/renderSelectField";
 import DatePicker from "./atoms/DatePicker/index";
-import ComboBox from "./atoms/ComboBox";
+//import ComboBox from "./atoms/ComboBox";
 import SelectField from './atoms/ComboBox/select';
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
@@ -26,7 +26,7 @@ let SignupForm = props => {
     })
   })
 
-  console.log(data);
+  //console.log(data);
 
   const optionLabel = courseList;
 
@@ -78,10 +78,10 @@ let SignupForm = props => {
             <Field
               classes={classes}
               name="cursos"
+              id="cursos"
               placeholder={"Cursos"}
               component={SelectField}
               options={optionLabel}
-              onChange={(event, value) => console.log(value)}
               width="31.5vw"
             ></Field>
           </StyledOtherDiv>
@@ -207,15 +207,14 @@ SignupForm = reduxForm({
   form: "simple" // a unique identifier for this form
 })(SignupForm);
 
-const selector = formValueSelector("simple");
-SignupForm = connect(
-  state => {
-    const courseValue = selector(state, "cursos")
-    console.log(courseValue);
-    return {
-      courseValue
-    }
-  }
-)(SignupForm)
+// const selector = formValueSelector("simple");
+// SignupForm = connect(
+//   state => {
+//     const courseValue = selector(state, "cursos")
+//     return {
+//       //courseValue
+//     }
+//   }
+// )(SignupForm)
 
 export default SignupForm;
