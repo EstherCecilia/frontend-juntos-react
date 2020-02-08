@@ -19,9 +19,8 @@ let SignupForm = props => {
   
   data.map(course => {
     courseList.push({
-      name: course._source.name,
+      label: course.name.concat(' (', course.campus, ')'),
       value: course._id,
-      campus: course._source.campus,
     })
   })
 
