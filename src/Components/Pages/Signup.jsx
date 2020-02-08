@@ -13,15 +13,8 @@ import DatePicker from "./atoms/DatePicker/index";
 import ComboBox from "./atoms/ComboBox";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
-<<<<<<< HEAD
 let SignupForm = props => {
   const { handleSubmit, data } = props;
-=======
-
-const SignupForm = props => {
-  const { handleSubmit } = props;
-  const { data } = props;
->>>>>>> 98a95e3acd7c7f1707a606199ed40fa9ceee7eee
   const courseList = [];
   
   data.map(course => {
@@ -193,14 +186,14 @@ SignupForm = reduxForm({
   form: "simple" // a unique identifier for this form
 })(SignupForm);
 
-const selector = formValueSelector("simple");
-SignupForm = connect(
-  state => {
-    const courseValue = selector(state, "cursos")
-    return {
-      courseValue
-    }
-  }
-)(SignupForm)
+// const selector = formValueSelector("simple");
+// SignupForm = connect(
+//   state => {
+//     const courseValue = selector(state, "cursos")
+//     return {
+//       courseValue
+//     }
+//   }
+// )(SignupForm)
 
 export default SignupForm;
