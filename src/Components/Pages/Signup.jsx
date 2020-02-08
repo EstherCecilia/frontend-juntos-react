@@ -1,5 +1,6 @@
-import React from "react";
-import { Field, reduxForm } from "redux-form";
+import React, {useState} from "react";
+import {connect} from 'react-redux';
+import { Field, reduxForm, getFormValues, formValueSelector } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { ThemeProvider } from "styled-components";
@@ -12,11 +13,10 @@ import DatePicker from "./atoms/DatePicker/index";
 import ComboBox from "./atoms/ComboBox";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
-const SignupForm = props => {
-  const { handleSubmit } = props;
-  const { data } = props;
+let SignupForm = props => {
+  const { handleSubmit, data } = props;
   const courseList = [];
-
+  
   data.map(course => {
     courseList.push({
       name: course._source.name,
@@ -72,10 +72,11 @@ const SignupForm = props => {
           <StyledOtherDiv>
             <Field
               classes={classes}
-              name="cursos"
+              id="cursos"
               component={ComboBox}
               options={courseList}
               getOptionLabel={optionLabel}
+              onChange={(event, value) => console.log(value)}
               label="Cursos"
               width="31.5vw"
             ></Field>
@@ -181,30 +182,18 @@ const useStyles = makeStyles(theme => ({
   divSubmit: { display: "-webkit-inline-box", margin: "auto" }
 }));
 
-/*const StyledDivRadio = styled.div`
-    div {
-        color: ${({theme}) => theme.primaryRed};
-    }
-
-    label {
-        color: ${({theme}) => theme.primaryRed};
-        font-size: 14px;
-        font-weight: bold;
-        display: block;
-        margin-top: 20px;
-        padding-bottom: 10px;
-    }
-
-    input {
-        font-weight: bold;
-        display: inline;
-        cursor: pointer;
-        border-radius: 50%;
-        color: ${({theme}) => theme.primaryRed};
-    }
-
-`;*/
-
-export default reduxForm({
+SignupForm = reduxForm({
   form: "simple" // a unique identifier for this form
 })(SignupForm);
+
+const selector = formValueSelector("simple");
+SignupForm = connect(
+  state => {
+    const courseValue = selector(state, "cursos")
+    return {
+      courseValue
+    }
+  }
+)(SignupForm)
+
+export default SignupForm;

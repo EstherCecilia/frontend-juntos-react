@@ -1,25 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import AutoComplete from '@material-ui/lab/Autocomplete';
 
-const ComboBox = ({
+function ComboBox ({
     options, 
     width,
+    value,
     getOptionLabel,
-    id,
-}) => (
+    name,
+}) {
+    //const [courses, setCourses] = useState('');
+    return (
     <FormControl style={{width: width, margin: "8px"}}>
         <AutoComplete
-            id={id}
+            name={name}
             options={options}
+            value={value}
             getOptionLabel={getOptionLabel}
+            onChange={(event, value) => console.log(value)}
             width={width}
             renderInput={params => (
                 <TextField {...params} label="Cursos" fullWidth />
             )}
         />
     </FormControl>
-);
+    )
+};
 
 export default ComboBox;
