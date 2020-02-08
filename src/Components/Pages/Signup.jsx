@@ -13,8 +13,15 @@ import DatePicker from "./atoms/DatePicker/index";
 import ComboBox from "./atoms/ComboBox";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
+<<<<<<< HEAD
 let SignupForm = props => {
   const { handleSubmit, data } = props;
+=======
+
+const SignupForm = props => {
+  const { handleSubmit } = props;
+  const { data } = props;
+>>>>>>> 98a95e3acd7c7f1707a606199ed40fa9ceee7eee
   const courseList = [];
   
   data.map(course => {

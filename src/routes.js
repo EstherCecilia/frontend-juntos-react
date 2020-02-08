@@ -4,6 +4,7 @@ import Main from "./Components/Pages/Main";
 import Login from "./Components/Pages/Login";
 import Signup from "./Components/Pages/Signup";
 import Perfil from "./Components/Pages/Perfil";
+import Editar from "./Components/Pages/Editar";
 import Contato from "./Components/Pages/Contato";
 import Sobre from "./Components/Pages/Sobre";
 import store from "./store";
@@ -52,8 +53,9 @@ export default function Routes() {
       "id"
     )}`;
     axios.get(URL, { headers: { Authorization: USER_TOKEN } }).then(res => {
-      setUsuario(res.data);
+      
       if (res.data.active) {
+        setUsuario(res.data);
         history.push("/perfil");
       } else {
         window.location.reload();
@@ -100,6 +102,7 @@ export default function Routes() {
               component={() => <Signup onSubmit={Submit} data={courses} />}
             />
             <Route path="/contact" component={() => <Contato />} />
+            <Route path="/editar" component={() => <Editar />} />
             <Route path="/sobre" component={() => <Sobre />} />
             <Route
               path="/perfil"
