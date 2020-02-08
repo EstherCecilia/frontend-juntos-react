@@ -21,10 +21,12 @@ let SignupForm = props => {
   data.map(course => {
     courseList.push({
       value: course._id,
-      label: course._source.name.concat(' (', course._source.campus, ')'),
+      label: course.name.concat(' (', course.campus, ')'),
       // campus: course._source.campus,
     })
   })
+
+  console.log(data);
 
   const optionLabel = courseList;
 
