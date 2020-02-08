@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Usuario\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add material-ui/core/Avatar
+  C:\Program Files\nodejs\node.exe C:\Users\Usuario\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add mdbreact
 
 PATH: 
   C:\Python27\;C:\Python27\Scripts;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;D:\Git\cmd;D:\Git\mingw64\bin;D:\Git\usr\bin;C:\Users\Usuario\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\Usuario\AppData\Local\Programs\Python\Python37\;C:\Users\Usuario\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;C:\Users\Usuario\AppData\Roaming\npm
@@ -14,17 +14,16 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/material-ui%2fcore/Avatar: Request "https://registry.yarnpkg.com/material-ui%2fcore/Avatar" returned a 405
-      at Request.params.callback [as _callback] (C:\Users\Usuario\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66956:18)
-      at Request.self.callback (C:\Users\Usuario\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140665:22)
-      at Request.emit (events.js:223:5)
-      at Request.<anonymous> (C:\Users\Usuario\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141637:10)
-      at Request.emit (events.js:223:5)
-      at IncomingMessage.<anonymous> (C:\Users\Usuario\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141559:12)
+  Error: https://registry.yarnpkg.com/@material-ui/icons/-/icons-4.9.1.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Users\Usuario\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141292:19)
       at Object.onceWrapper (events.js:312:28)
-      at IncomingMessage.emit (events.js:228:7)
-      at endReadableNT (_stream_readable.js:1185:12)
-      at processTicksAndRejections (internal/process/task_queues.js:81:21)
+      at ClientRequest.emit (events.js:223:5)
+      at TLSSocket.emitRequestTimeout (_http_client.js:690:9)
+      at Object.onceWrapper (events.js:312:28)
+      at TLSSocket.emit (events.js:223:5)
+      at TLSSocket.Socket._onTimeout (net.js:474:8)
+      at listOnTimeout (internal/timers.js:531:17)
+      at processTimers (internal/timers.js:475:7)
 
 npm manifest: 
   {
@@ -33,14 +32,19 @@ npm manifest:
     "private": true,
     "dependencies": {
       "@material-ui/core": "^4.9.0",
+      "@material-ui/icons": "^4.9.1",
+      "@material-ui/lab": "^4.0.0-alpha.41",
       "@testing-library/jest-dom": "^4.2.4",
       "@testing-library/react": "^9.3.2",
       "@testing-library/user-event": "^7.1.2",
       "axios": "^0.19.2",
       "cors": "^2.8.5",
+      "material-ui-popup-state": "^1.5.1",
       "prop-types": "^15.7.2",
       "react": "^16.12.0",
       "react-dom": "^16.12.0",
+      "react-facebook-login": "^4.1.1",
+      "react-google-login": "^5.1.0",
       "react-redux": "^7.1.3",
       "react-router-dom": "^5.1.2",
       "react-scripts": "3.3.0",
@@ -1023,6 +1027,13 @@ Lockfile:
     dependencies:
       regenerator-runtime "^0.13.2"
   
+  "@babel/runtime@^7.1.5":
+    version "7.8.4"
+    resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.8.4.tgz#d79f5a2040f7caa24d53e563aad49cbc05581308"
+    integrity sha512-neAp3zt80trRVBI1x0azq6c57aNBqYZH8KhMm3TaB7wEI5Q4A2SHfBHE8w9gOhI/lrqxtEbXZgQIrHP+wvSGwQ==
+    dependencies:
+      regenerator-runtime "^0.13.2"
+  
   "@babel/template@^7.4.0", "@babel/template@^7.7.4":
     version "7.7.4"
     resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.7.4.tgz#428a7d9eecffe27deac0a98e23bf8e3675d2a77b"
@@ -1334,6 +1345,24 @@ Lockfile:
       react-is "^16.8.0"
       react-transition-group "^4.3.0"
   
+  "@material-ui/icons@^4.9.1":
+    version "4.9.1"
+    resolved "https://registry.yarnpkg.com/@material-ui/icons/-/icons-4.9.1.tgz#fdeadf8cb3d89208945b33dbc50c7c616d0bd665"
+    integrity sha512-GBitL3oBWO0hzBhvA9KxqcowRUsA0qzwKkURyC8nppnC3fw54KPKZ+d4V1Eeg/UnDRSzDaI9nGCdel/eh9AQMg==
+    dependencies:
+      "@babel/runtime" "^7.4.4"
+  
+  "@material-ui/lab@^4.0.0-alpha.41":
+    version "4.0.0-alpha.41"
+    resolved "https://registry.yarnpkg.com/@material-ui/lab/-/lab-4.0.0-alpha.41.tgz#3848fd0ad224f02d86f737b60ce78c1524c122a3"
+    integrity sha512-nVXW5eHOLtExRSlfd6Hxa0hna1xenqCunoQv1MbGAVqW3XzLgWdCE2xKWwG3Ewdt/CZ4QUF5+KTTLVtZIqIeOw==
+    dependencies:
+      "@babel/runtime" "^7.4.4"
+      "@material-ui/utils" "^4.7.1"
+      clsx "^1.0.4"
+      prop-types "^15.7.2"
+      react-is "^16.8.0"
+  
   "@material-ui/styles@^4.9.0":
     version "4.9.0"
     resolved "https://registry.yarnpkg.com/@material-ui/styles/-/styles-4.9.0.tgz#10c31859f6868cfa9d3adf6b6c3e32c9d676bc76"
@@ -1364,6 +1393,13 @@ Lockfile:
       "@babel/runtime" "^7.4.4"
       "@material-ui/utils" "^4.7.1"
       prop-types "^15.7.2"
+  
+  "@material-ui/types@^4.1.1":
+    version "4.1.1"
+    resolved "https://registry.yarnpkg.com/@material-ui/types/-/types-4.1.1.tgz#b65e002d926089970a3271213a3ad7a21b17f02b"
+    integrity sha512-AN+GZNXytX9yxGi0JOfxHrRTbhFybjUJ05rnsBVjcB+16e466Z0Xe5IxawuOayVZgTBNDxmPKo5j4V6OnMtaSQ==
+    dependencies:
+      "@types/react" "*"
   
   "@material-ui/types@^5.0.0":
     version "5.0.0"
@@ -2920,6 +2956,11 @@ Lockfile:
       isobject "^3.0.0"
       static-extend "^0.1.1"
   
+  classnames@^2.2.6:
+    version "2.2.6"
+    resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+    integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
+  
   clean-css@4.2.x:
     version "4.2.1"
     resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.1.tgz#2d411ef76b8569b6d0c84068dabe85b0aa5e5c17"
@@ -2989,7 +3030,7 @@ Lockfile:
       kind-of "^6.0.2"
       shallow-clone "^3.0.0"
   
-  clsx@^1.0.2:
+  clsx@^1.0.2, clsx@^1.0.4:
     version "1.0.4"
     resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.0.4.tgz#0c0171f6d5cb2fe83848463c15fcc26b4df8c2ec"
     integrity sha512-1mQ557MIZTrL/140j+JVdRM6e31/OA4vTYxXgqIIZlndyfjHpyawKZia1Im05Vp9BWmImkcNrNtFYQMyFcgJDg==
@@ -6805,6 +6846,16 @@ Lockfile:
     dependencies:
       object-visit "^1.0.0"
   
+  material-ui-popup-state@^1.5.1:
+    version "1.5.1"
+    resolved "https://registry.yarnpkg.com/material-ui-popup-state/-/material-ui-popup-state-1.5.1.tgz#e5087693986ec63690580c639d54b7aa96981f72"
+    integrity sha512-UkCbn3H8U602zpYY/mlYdoT8JVqSB5CT022uDmRvjNS0hrtQ98Qxb6JyeVMvEM8YrAA2E8jIFDGCovWCZ40Dcg==
+    dependencies:
+      "@babel/runtime" "^7.1.5"
+      "@material-ui/types" "^4.1.1"
+      classnames "^2.2.6"
+      prop-types "^15.0.0"
+  
   md5.js@^1.3.4:
     version "1.3.5"
     resolved "https://registry.yarnpkg.com/md5.js/-/md5.js-1.3.5.tgz#b5d07b8e3216e3e27cd728d72f70d1e6a342005f"
@@ -8715,7 +8766,7 @@ Lockfile:
       kleur "^3.0.3"
       sisteransi "^1.0.3"
   
-  prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+  prop-types@^15.0.0, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
     version "15.7.2"
     resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
     integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8935,6 +8986,19 @@ Lockfile:
     version "6.0.4"
     resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.4.tgz#0d165d6d27488e660bc08e57bdabaad741366f7a"
     integrity sha512-ueZzLmHltszTshDMwyfELDq8zOA803wQ1ZuzCccXa1m57k1PxSHfflPD5W9YIiTXLs0JTLzoj6o1LuM5N6zzNA==
+  
+  react-facebook-login@^4.1.1:
+    version "4.1.1"
+    resolved "https://registry.yarnpkg.com/react-facebook-login/-/react-facebook-login-4.1.1.tgz#005121236a6ac0dee02099976fb1a3265f9d633e"
+    integrity sha512-COnHEHlYGTKipz4963safFAK9PaNTcCiXfPXMS/yxo8El+/AJL5ye8kMJf23lKSSGGPgqFQuInskIHVqGqTvSw==
+  
+  react-google-login@^5.1.0:
+    version "5.1.0"
+    resolved "https://registry.yarnpkg.com/react-google-login/-/react-google-login-5.1.0.tgz#ed9f1069310419dfe263ffcab986a246140752b7"
+    integrity sha512-G5sh6EWJbQxk2hAel0EUB6r1Nyz9BRW/fEyCHV8g108l37/k/ctXDi4I3v1NCYzGN8SQFWq1I2l4mqMkxIVHLQ==
+    dependencies:
+      "@types/react" "*"
+      prop-types "^15.6.0"
   
   react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
     version "16.12.0"

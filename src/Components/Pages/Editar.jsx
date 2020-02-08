@@ -7,9 +7,12 @@ import { theme } from "../../GlobalStyle/theme";
 import TextField from "./atoms/TextField";
 import BurgerMenu from "./BurgerMenu";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
+import { Link } from "react-router-dom";
 
-const Editar = props => {
-  const { handleSubmit } = props;
+const Editar = () => {
+  const  handleSubmit = () =>{
+      console.log("Aqui")
+  };
 
   const classes = useStyles();
   return (

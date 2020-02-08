@@ -12,6 +12,7 @@ import DatePicker from "./atoms/DatePicker/index";
 import ComboBox from "./atoms/ComboBox";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
+
 const SignupForm = props => {
   const { handleSubmit } = props;
   const { data } = props;
