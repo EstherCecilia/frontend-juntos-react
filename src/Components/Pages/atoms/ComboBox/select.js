@@ -1,38 +1,16 @@
 import React, {useState, useEffect} from "react";
 import FormControl from "@material-ui/core/FormControl";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import Select from "react-dropdown-select";
-import InputLabel from "@material-ui/core/InputLabel";
-
-// function SelectField ({
-//     name,
-//     input,
-//     placeholder,
-//     width,
-//     options,
-//     children,
-//     meta: { touched, error },
-// }) {
-//     return(
-//     <FormControl error={touched && error} style={{width: width, minWidth: "100px", margin: "8px"}}>
-//         {/* <InputLabel htmlFor="age-native-simple">{label}</InputLabel> */}
-//         <Select 
-//             {...input}
-//             name={name}
-//             placeholder={placeholder}
-//             options={options}
-//             onChange={(event, value) => console.log(value)}
-//        >{children}</Select>
-//     </FormControl>
-//     );
-// };
+import Select from "react-select";
+//import Select from "react-dropdown-select";
 
 const ReduxFormSelect = props => {
     const { input, options } = props;
   
     return (
-        <FormControl style={{width: "31.5vw", minWidth: "100px", margin: "8px"}}>
+        <FormControl style={{width: "31.5vw", minWidth: "100px"}}>
             <Select 
+                className="selectField"
+                styles={customStyles}
                 {...input} 
                 onChange={value => input.onChange(value)} 
                 onBlur={() => input.onBlur(input.value)} 
@@ -43,6 +21,18 @@ const ReduxFormSelect = props => {
     )
   }
 
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      borderBottom: '1px solid black',
+      color: "black",
+      backgroundColor: state.isSelected ? '#e6ffff' : 'white',
+    }),
+    control: (provided) => ({
+      ...provided,
+      marginTop: "5%",
+    })
+  }
 
   export default ReduxFormSelect;
 
