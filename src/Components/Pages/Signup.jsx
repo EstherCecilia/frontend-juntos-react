@@ -11,6 +11,7 @@ import BurgerMenu from "./BurgerMenu";
 import RenderSelectField from "./atoms/SelectField/renderSelectField";
 import DatePicker from "./atoms/DatePicker/index";
 import ComboBox from "./atoms/ComboBox";
+import SelectField from './atoms/ComboBox/select';
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
 let SignupForm = props => {
@@ -19,16 +20,21 @@ let SignupForm = props => {
   
   data.map(course => {
     courseList.push({
-      label: course.name.concat(' (', course.campus, ')'),
       value: course._id,
+      label: course.name.concat(' (', course.campus, ')'),
+      // campus: course._source.campus,
     })
   })
 
-  const optionLabel = (course) => {
-    return(
-      course.name.concat(' (', course.campus, ')')
-    )
-  }
+  //console.log(data);
+
+  const optionLabel = courseList;
+
+  // const optionLabel = (course) => {
+  //   return(
+  //     course.name.concat(' (', course.campus, ')')
+  //   )
+  // }
 
   const classes = useStyles();
   return (
@@ -71,6 +77,18 @@ let SignupForm = props => {
           <StyledOtherDiv>
             <Field
               classes={classes}
+              name="cursos"
+              id="cursos"
+              placeholder={"Cursos"}
+              component={SelectField}
+              options={optionLabel}
+              width="31.5vw"
+            ></Field>
+          </StyledOtherDiv>
+
+          {/* <StyledOtherDiv>
+            <Field
+              classes={classes}
               id="cursos"
               component={ComboBox}
               options={courseList}
@@ -79,7 +97,7 @@ let SignupForm = props => {
               label="Cursos"
               width="31.5vw"
             ></Field>
-          </StyledOtherDiv>
+          </StyledOtherDiv> */}
 
           <StyledOtherDiv>
             <TextField
@@ -172,6 +190,10 @@ const useStyles = makeStyles(theme => ({
     borderBottom: ("1px", "solid", "black")
   },
 
+  select: {
+    color: "#000"
+  },
+
   submit: {
     margin: theme.spacing(3, 0, 2),
     display: "center",
@@ -185,14 +207,14 @@ SignupForm = reduxForm({
   form: "simple" // a unique identifier for this form
 })(SignupForm);
 
-const selector = formValueSelector("simple");
-SignupForm = connect(
-  state => {
-    const courseValue = selector(state, "cursos")
-    return {
-      courseValue
-    }
-  }
-)(SignupForm)
+// const selector = formValueSelector("simple");
+// SignupForm = connect(
+//   state => {
+//     const courseValue = selector(state, "cursos")
+//     return {
+//       //courseValue
+//     }
+//   }
+// )(SignupForm)
 
 export default SignupForm;
