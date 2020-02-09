@@ -12,6 +12,7 @@ const ReduxFormSelect = props => {
                 className="selectField"
                 styles={customStyles}
                 {...input} 
+                isClearable
                 onChange={value => input.onChange(value)} 
                 onBlur={() => input.onBlur(input.value)} 
                 options={options}
@@ -31,6 +32,12 @@ const ReduxFormSelect = props => {
     control: (provided) => ({
       ...provided,
       marginTop: "5%",
+      backgroundColor: "000"
+    }),
+    placeholder: (provided) => ({
+        ...provided,
+        color: "black",
+        fontWeight: "bold",
     })
   }
 
