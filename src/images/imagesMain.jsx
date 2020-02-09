@@ -20,7 +20,7 @@ const ImgApple = styled.img`
 
     @media screen and (min-width: 601px) {
         width: 10.5vw;
-        margin-bottom: 9px;
+        margin-bottom: 0.75vw;
     }
 
     @media screen and (max-width: 600px) {

@@ -8,7 +8,6 @@ import Image from '../../images/imagesMain';
 const Main = () => {
     return (
         <ThemeProvider theme={theme}>
-        <>
             <GlobalStyles />
             <BurgerMenu/>
             <div>
@@ -17,8 +16,7 @@ const Main = () => {
                   <StyledP>Encontre monitores dentro da sua faculdade!</StyledP>
                 </div>
             </div>
-        </>
-        <Image/>
+          <Image/>
         </ThemeProvider>
     );
 }

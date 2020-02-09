@@ -31,10 +31,10 @@ const StyledMenu = styled.nav`
   transform: translateX(-100%);
   justify-content: center;
   background: ${({ theme }) => theme.primaryLight};
-  height: 100vh;
+  height: 100%;
   text-align: left;
   padding: 1rem;
-  position: absolute;
+  position: fixed;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   top: 0;
   left: 0;
