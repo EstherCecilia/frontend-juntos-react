@@ -4,7 +4,7 @@ import Select from "react-select";
 //import Select from "react-dropdown-select";
 
 const ReduxFormSelect = props => {
-    const { input, options } = props;
+    const { input, options, placeholder, isClearable, isMulti, isSearchable } = props;
   
     return (
         <FormControl style={{width: "31.5vw", minWidth: "100px"}}>
@@ -12,11 +12,13 @@ const ReduxFormSelect = props => {
                 className="selectField"
                 styles={customStyles}
                 {...input} 
-                isClearable
+                isClearable={isClearable}
+                isMulti={isMulti}
+                isSearchable={isSearchable}
                 onChange={value => input.onChange(value)} 
                 onBlur={() => input.onBlur(input.value)} 
                 options={options}
-                placeholder={"Cursos"}
+                placeholder={placeholder}
             />
         </FormControl>
     )
@@ -28,6 +30,9 @@ const ReduxFormSelect = props => {
       borderBottom: '1px solid black',
       color: "black",
       backgroundColor: state.isSelected ? '#e6ffff' : 'white',
+      '&:hover': {
+        backgroundColor: "#e6ffff",
+      }
     }),
     control: (provided, state) => ({
       ...provided,

@@ -1,6 +1,5 @@
-import React, {useState } from "react";
-import {connect} from 'react-redux';
-import { Field, reduxForm, getFormValues, formValueSelector } from "redux-form";
+import React from "react";
+import { Field, reduxForm } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { ThemeProvider } from "styled-components";
@@ -8,16 +7,26 @@ import { Link } from "react-router-dom";
 import { theme } from "../../GlobalStyle/theme";
 import TextField from "./atoms/TextField";
 import BurgerMenu from "./BurgerMenu";
-import RenderSelectField from "./atoms/SelectField/renderSelectField";
 import DatePicker from "./atoms/DatePicker/index";
 import Courses from "./atoms/Courses/index";
-//import ComboBox from "./atoms/ComboBox";
-import SelectField from './atoms/ComboBox/select';
+import SelectField from './atoms/SelectField/select';
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
 let SignupForm = props => {
   const { handleSubmit, data } = props;
   const courseList = [];
+  const genders = [{
+    value: 1,
+    label: "Masculino"
+  },
+  {
+    value: 2,
+    label: "Feminino"
+  },
+  {
+    value: 3,
+    label: "Não Informar"
+  }]
   
   data.map(course => {
     courseList.push({
@@ -64,15 +73,13 @@ let SignupForm = props => {
           <StyledOtherDiv>
             <Field
               name="genero"
-              component={RenderSelectField}
-              label="Gênero"
-              width="180px"
-            >
-              <option value={""}></option>
-              <option value={"F"}>Feminino</option>
-              <option value={"M"}>Masculino</option>
-              <option value={"N"}>Não informar</option>
-            </Field>
+              id="genero"
+              isSearchable={false}
+              placeholder={"Gênero"}
+              component={SelectField}
+              width="31.5vw"
+              options={genders}
+            />
           </StyledOtherDiv>
 
           <StyledOtherDiv>
