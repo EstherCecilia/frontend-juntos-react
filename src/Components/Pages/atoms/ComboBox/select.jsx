@@ -29,10 +29,15 @@ const ReduxFormSelect = props => {
       color: "black",
       backgroundColor: state.isSelected ? '#e6ffff' : 'white',
     }),
-    control: (provided) => ({
+    control: (provided, state) => ({
       ...provided,
       marginTop: "5%",
-      backgroundColor: "000"
+      backgroundColor: "0",
+      borderColor: "#000",
+      boxShadow: state.isFocused ? "#000" : 0,
+      '&:hover': {
+        borderColor: "#000"
+      },
     }),
     placeholder: (provided) => ({
         ...provided,
