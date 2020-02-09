@@ -10,8 +10,8 @@ import TextField from "./atoms/TextField";
 import BurgerMenu from "./BurgerMenu";
 import RenderSelectField from "./atoms/SelectField/renderSelectField";
 import DatePicker from "./atoms/DatePicker/index";
-import Curses from "./atoms/Curses/index";
-import ComboBox from "./atoms/ComboBox";
+import Courses from "./atoms/Courses/index";
+//import ComboBox from "./atoms/ComboBox";
 import SelectField from './atoms/ComboBox/select';
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
@@ -137,7 +137,7 @@ let SignupForm = props => {
               placeholder="Confirmar senha"
             />
           </StyledOtherDiv>
-  <Curses />
+          <Courses />
           <Button
             type="submit"
             style={{

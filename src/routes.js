@@ -64,12 +64,12 @@ export default function Routes() {
   };
 
   const Submit = values => {
-    console.log(localStorage.getItem("curses"))
+    console.log(localStorage.getItem("courses"))
     if (values.senha === values.senhaConfirma) {
       axios
         .post(`http://api-edu.herokuapp.com/register`, {
           name: values.nome,
-          course: "5e24dc32d07b5d29174b98a6",
+          course: values.cursos.value,
           gender: values.genero,
           birthdate: values.data,
           email: values.email,
