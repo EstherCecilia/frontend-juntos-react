@@ -1,26 +1,27 @@
 import React, {useState, useEffect} from "react";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "react-select";
+import FormHelperText from "@material-ui/core/FormHelperText";
 //import Select from "react-dropdown-select";
 
 const ReduxFormSelect = props => {
     const { input, options, placeholder, isClearable, isMulti, isSearchable } = props;
   
     return (
-        <FormControl style={{width: "31.5vw", minWidth: "100px"}}>
-            <Select 
-                className="selectField"
-                styles={customStyles}
-                {...input} 
-                isClearable={isClearable}
-                isMulti={isMulti}
-                isSearchable={isSearchable}
-                onChange={value => input.onChange(value)} 
-                onBlur={() => input.onBlur(input.value)} 
-                options={options}
-                placeholder={placeholder}
-            />
-        </FormControl>
+      <FormControl style={{width: "31.5vw", minWidth: "100px"}}>
+          <Select 
+            className="selectField"
+            styles={customStyles}
+            {...input} 
+            isClearable={isClearable}
+            isMulti={isMulti}
+            isSearchable={isSearchable}
+            onChange={value => input.onChange(value)} 
+            onBlur={() => input.onBlur(input.value)} 
+            options={options}
+            placeholder={placeholder}
+          />
+      </FormControl>
     )
   }
 

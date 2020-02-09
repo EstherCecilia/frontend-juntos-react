@@ -73,6 +73,7 @@ export default function Routes() {
           gender: values.genero.value,
           birthdate: values.data,
           email: values.email,
+          subject: values.materias.value,
           password: values.senha
         })
         .then(res => {
@@ -80,7 +81,7 @@ export default function Routes() {
           console.log(res);
         });
     } else {
-      alert("Senha incorreta!");
+      alert("Dados incorretos");
     }
     localStorage.setItem("curses", [])
     console.log(values);

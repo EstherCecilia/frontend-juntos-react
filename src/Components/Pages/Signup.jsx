@@ -28,6 +28,20 @@ let SignupForm = props => {
     label: "Não Informar"
   }]
   
+  const subjects = [{
+    value: 1,
+    label: "Cálculo 1"
+  },{
+    value: 2,
+    label: "Cálculo 2"
+  },{
+    value: 3, 
+    label: "Engenharia de Software 1"
+  },{
+    value: 4,
+    label: "Projeto e Análise de Algoritmos"
+  }];
+  
   data.map(course => {
     courseList.push({
       value: course._id,
@@ -88,6 +102,7 @@ let SignupForm = props => {
               classes={classes}
               name="cursos"
               id="cursos"
+              required
               isClearable
               placeholder={"Cursos"}
               component={SelectField}
@@ -147,6 +162,20 @@ let SignupForm = props => {
             />
           </StyledOtherDiv>
           <Courses />
+          <StyledOtherDiv>
+            <Field
+              classes={classes}
+              required
+              name="materias"
+              id="materias"
+              isClearable
+              isMulti
+              placeholder={"Matérias"}
+              component={SelectField}
+              options={subjects}
+              width="31.5vw"
+            ></Field>
+          </StyledOtherDiv>
           <Button
             type="submit"
             style={{
