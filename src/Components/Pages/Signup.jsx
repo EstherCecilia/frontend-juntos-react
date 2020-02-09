@@ -16,15 +16,15 @@ let SignupForm = props => {
   const { handleSubmit, data } = props;
   const courseList = [];
   const genders = [{
-    value: 1,
+    value: "M",
     label: "Masculino"
   },
   {
-    value: 2,
+    value: "F",
     label: "Feminino"
   },
   {
-    value: 3,
+    value: "N",
     label: "Não Informar"
   }]
   

@@ -70,7 +70,7 @@ export default function Routes() {
         .post(`http://api-edu.herokuapp.com/register`, {
           name: values.nome,
           course: values.cursos.value,
-          gender: values.genero,
+          gender: values.genero.value,
           birthdate: values.data,
           email: values.email,
           password: values.senha
