@@ -40,6 +40,7 @@ export default function TextField({
         {...props}
         component={Component}
         required={required}
+        color={"secondary"}
         {...mask}
       ></Field>
     </FormControl>

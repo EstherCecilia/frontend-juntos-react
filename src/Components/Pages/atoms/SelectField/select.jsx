@@ -31,23 +31,40 @@ const ReduxFormSelect = props => {
       color: "black",
       backgroundColor: state.isSelected ? '#e6ffff' : 'white',
       '&:hover': {
-        backgroundColor: "#e6ffff",
+        backgroundColor: "#FF2E63",
       }
     }),
     control: (provided, state) => ({
       ...provided,
       marginTop: "5%",
       backgroundColor: "0",
-      borderColor: "#000",
-      boxShadow: state.isFocused ? "#000" : 0,
+      borderColor: state.isFocused ? "#FF2E63" : "#000",
+      boxShadow: state.isFocused ? "#FF2E63" : "#000",
       '&:hover': {
-        borderColor: "#000"
+        borderColor: state.isFocudes ? "#000" : "#FF2E63",
+        boxShadow: "#FF2E63"
       },
     }),
-    placeholder: (provided) => ({
+    placeholder: (provided, state) => ({
         ...provided,
-        color: "black",
+        color: state.isFocused ? "#FF2E63" : "black",
         fontWeight: "bold",
+        fontSize: "14px",
+    }),
+    dropdownIndicator: (provided, state) => ({
+      ...provided,
+      color: state.isFocused ? "#FF2E63" : "black",
+      '&:hover': {
+        color: "#FF2E63"
+      }
+    }),
+    clearIndicator: (provided) => ({
+      ...provided,
+      color: "black",
+    }),
+    indicatorsContainer: (provided) => ({
+      ...provided,
+      color: "black",
     })
   }
 

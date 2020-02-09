@@ -75,6 +75,7 @@ let SignupForm = props => {
               name="genero"
               id="genero"
               isSearchable={false}
+              isClearable
               placeholder={"Gênero"}
               component={SelectField}
               width="31.5vw"
@@ -87,6 +88,7 @@ let SignupForm = props => {
               classes={classes}
               name="cursos"
               id="cursos"
+              isClearable
               placeholder={"Cursos"}
               component={SelectField}
               options={optionLabel}
