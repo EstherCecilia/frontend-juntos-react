@@ -1,14 +1,14 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../GlobalStyle/theme";
 import BurgerMenu from "./BurgerMenu";
 import Avatar from "@material-ui/core/Avatar";
 import perfil from "../../images/perfil.jpg";
 import perfilF from "../../images/perfilF.jpg";
-import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 import MenuPoint from "./atoms/MenuPoint";
 import moment from "moment";
+import backgroundImage from "../../images/background.jpeg";
 
 const Perfil = props => {
   var image = perfil;
@@ -89,5 +89,23 @@ const useStyles = makeStyles(theme => ({
   },
   divSubmit: { display: "-webkit-inline-box", margin: "auto" }
 }));
+
+
+
+const StyledMainDiv = styled.div`
+  /* width: 320px; */
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: url(${backgroundImage});
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 2px;
+  z-index: -1;
+`
+
+const StyledOtherDiv = styled.div`
+  margin-top: 5px;
+`
 
 export default Perfil;
