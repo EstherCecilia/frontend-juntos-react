@@ -256,8 +256,9 @@ SignupForm = connect(
     let courseValue = "";
     if(selector(state, "cursos") != undefined){
       courseValue = selector(state, "cursos")
-      console.log(courseValue.value);
+      courseValue = courseValue.value;
     }
+    console.log(courseValue);
     
     return {
       courseValue
