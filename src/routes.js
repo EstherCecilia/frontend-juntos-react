@@ -29,12 +29,13 @@ export default function Routes() {
     axios.get(`https://api-edu.herokuapp.com/courses?size=200`).then(res => {
       setCourses(res.data);
     });
-  }, []);
-
-  useEffect(() => {
-    axios.get(`https://api-edu.herokuapp.com/subjects?course=5e2c694d02d79a14ca44de2e&size=150`).then(res => {
-      setSubjects(res.data);
-    });
+    axios
+      .get(
+        `https://api-edu.herokuapp.com/subjects?course=5e2c694d02d79a14ca44de2e&size=150`
+      )
+      .then(res => {
+        setSubjects(res.data);
+      });
   }, []);
 
   const handleSignIn = values => {
@@ -115,7 +116,13 @@ export default function Routes() {
             />
             <Route
               path="/register"
-              component={() => <Signup onSubmit={Submit} cursos={courses} materias={subjects} />}
+              component={() => (
+                <Signup
+                  onSubmit={Submit}
+                  cursos={courses}
+                  materias={subjects}
+                />
+              )}
             />
             <Route path="/contact" component={() => <Contato />} />
             <Route path="/editar" component={() => <Editar />} />

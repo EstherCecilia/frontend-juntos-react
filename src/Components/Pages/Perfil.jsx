@@ -34,8 +34,8 @@ const Perfil = props => {
             <StyledOtherDiv>
               <h2>{usuario.name}</h2>
               <p>
-                <span>{usuario.course.name}</span> -{" "}
-                <span>{usuario.course.campus}</span>
+                {/* <span>{usuario.course.name}</span> -{" "}
+                <span>{usuario.course.campus}</span> */}
               </p>
               <p>{dt}</p>
             </StyledOtherDiv>
