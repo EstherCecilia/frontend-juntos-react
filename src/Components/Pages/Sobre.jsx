@@ -4,8 +4,7 @@ import { theme } from "../../GlobalStyle/theme";
 import Image from "../../images/imagesMain";
 import BurgerMenu from "./BurgerMenu";
 import styled, { ThemeProvider } from "styled-components";
-import backgroundImage from "../../images/background.jpeg";
-//import { StyledMainDiv } from "./Styled";
+import { StyledMainDiv, StyledOtherDiv } from '../Pages/Styled/ajusteBackground';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -51,23 +50,4 @@ const Sobre = () => {
   );
 };
 
-const StyledMainDiv = styled.div`
-  /* width: 320px; */
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-image: url(${backgroundImage});
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border-radius: 2px;
-  z-index: -1;
-
-  h1 {
-    margin-top: 12vw;
-  }
-`
-
-const StyledOtherDiv = styled.div`
-  margin-top: 5px;
-`
 export default Sobre;

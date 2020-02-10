@@ -6,8 +6,9 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../../GlobalStyle/theme";
 import TextField from "./atoms/TextField";
 import BurgerMenu from "./BurgerMenu";
-import { StyledMainDiv, StyledOtherDiv } from "./Styled";
+import { StyledMainDiv, StyledOtherDiv } from '../Pages/Styled/ajusteBackground';
 import { createBrowserHistory } from "history";
+
 const history = createBrowserHistory({
   basename: "/"
 });
@@ -33,9 +34,9 @@ const Editar = () => {
         icon={faPlusCircle}
         size="2x"
       /> */}
-      <StyledMainDiv>
+      <StyledMainDiv className="editar">
         <form className={classes.form} onSubmit={handleSubmit}>
-          <h1>EDITAR INFORMAÇÕES</h1>
+          <strong>EDITAR INFORMAÇÕES</strong>
           <StyledOtherDiv>
             <TextField
               show

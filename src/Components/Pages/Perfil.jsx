@@ -8,7 +8,7 @@ import perfil from "../../images/perfil.jpg";
 import perfilF from "../../images/perfilF.jpg";
 import MenuPoint from "./atoms/MenuPoint";
 import moment from "moment";
-import backgroundImage from "../../images/background.jpeg";
+import { StyledMainDiv, StyledOtherDiv } from '../Pages/Styled/ajusteBackground';
 
 const Perfil = props => {
   var image = perfil;
@@ -28,7 +28,7 @@ const Perfil = props => {
           <MenuPoint user={usuario} style={{ marginLeft: "90%" }} />
           <div className={classes.form}>
             <StyledOtherDiv>
-              <h1>Meu perfil</h1>
+              <strong>Meu perfil</strong>
 
               <Avatar
                 style={{ margin: "auto", width: "100px", height: "100px" }}
@@ -89,23 +89,5 @@ const useStyles = makeStyles(theme => ({
   },
   divSubmit: { display: "-webkit-inline-box", margin: "auto" }
 }));
-
-
-
-const StyledMainDiv = styled.div`
-  /* width: 320px; */
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-image: url(${backgroundImage});
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border-radius: 2px;
-  z-index: -1;
-`
-
-const StyledOtherDiv = styled.div`
-  margin-top: 5px;
-`
 
 export default Perfil;
