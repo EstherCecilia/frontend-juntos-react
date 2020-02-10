@@ -5,15 +5,20 @@ import { theme } from "../../GlobalStyle/theme";
 import BurgerMenu from "./BurgerMenu";
 import Avatar from "@material-ui/core/Avatar";
 import perfil from "../../images/perfil.jpg";
+import perfilF from "../../images/perfilF.jpg";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 import MenuPoint from "./atoms/MenuPoint";
 import moment from "moment";
 
 const Perfil = props => {
+  var image = perfil;
   const { usuario } = props;
   const classes = useStyles();
   const dt = moment(usuario.birthdate, "YYYY-MM-DD").format("DD-MM-YYYY");
 
+  if (usuario.gender === "F") {
+    image = perfilF;
+  }
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -28,7 +33,7 @@ const Perfil = props => {
               <Avatar
                 style={{ margin: "auto", width: "100px", height: "100px" }}
                 alt="Remy Sharp"
-                src={perfil}
+                src={image}
               />
             </StyledOtherDiv>
             <StyledOtherDiv>

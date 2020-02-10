@@ -78,12 +78,13 @@ export default function Routes() {
     } else {
       check = false;
     }
+    console.log(values);
     if (values.senha === values.senhaConfirma) {
       axios
         .post(`http://api-edu.herokuapp.com/register`, {
           name: values.nome,
-          course: values.cursos,
-          gender: values.genero,
+          course: values.cursos.value,
+          gender: values.genero.value,
           birthdate: values.data,
           email: values.email,
           subject: values.materias,
