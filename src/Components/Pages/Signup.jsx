@@ -1,5 +1,6 @@
 import React from "react";
-import { Field, reduxForm } from "redux-form";
+import { Field, reduxForm, formValueSelector } from "redux-form";
+import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { ThemeProvider } from "styled-components";
@@ -12,7 +13,7 @@ import SelectField from "./atoms/SelectField/select";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
 let SignupForm = props => {
-  const { handleSubmit, data } = props;
+  const { handleSubmit, cursos, materias } = props;
   const courseList = [];
   const genders = [
     {
@@ -29,26 +30,16 @@ let SignupForm = props => {
     }
   ];
 
-  const subjects = [
-    {
-      value: 1,
-      label: "Cálculo 1"
-    },
-    {
-      value: 2,
-      label: "Cálculo 2"
-    },
-    {
-      value: 3,
-      label: "Engenharia de Software 1"
-    },
-    {
-      value: 4,
-      label: "Projeto e Análise de Algoritmos"
-    }
-  ];
+  const subjectList = [];
 
-  data.map(course => {
+  materias.map(subject => {
+    subjectList.push({
+      value: subject._id,
+      label: subject.name,
+    })
+  })
+
+  cursos.map(course => {
     courseList.push({
       value: course._id,
       label: course.name.concat(" (", course.campus, ")")
@@ -58,7 +49,8 @@ let SignupForm = props => {
 
   //console.log(data);
 
-  const optionLabel = courseList;
+  const optionLabelCourse = courseList;
+  const optionLabelSubject = subjectList;
 
   // const optionLabel = (course) => {
   //   return(
@@ -112,7 +104,7 @@ let SignupForm = props => {
               isClearable
               placeholder={"Cursos"}
               component={SelectField}
-              options={optionLabel}
+              options={optionLabelCourse}
               width="31.5vw"
             ></Field>
           </StyledOtherDiv>
@@ -184,7 +176,7 @@ let SignupForm = props => {
               isMulti
               placeholder={"Matérias"}
               component={SelectField}
-              options={subjects}
+              options={subjectList}
               width="31.5vw"
             ></Field>
           </StyledOtherDiv>
@@ -258,14 +250,19 @@ SignupForm = reduxForm({
   form: "simple" // a unique identifier for this form
 })(SignupForm);
 
-// const selector = formValueSelector("simple");
-// SignupForm = connect(
-//   state => {
-//     const courseValue = selector(state, "cursos")
-//     return {
-//       //courseValue
-//     }
-//   }
-// )(SignupForm)
+const selector = formValueSelector("simple");
+SignupForm = connect(
+  state => {
+    let courseValue = "";
+    if(selector(state, "cursos") != undefined){
+      courseValue = selector(state, "cursos")
+      console.log(courseValue.value);
+    }
+    
+    return {
+      courseValue
+    }
+  }
+)(SignupForm)
 
 export default SignupForm;

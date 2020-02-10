@@ -20,6 +20,7 @@ window.redirect = history.push;
 
 export default function Routes() {
   const [courses, setCourses] = useState([]);
+  const [subjects, setSubjects] = useState([]);
   const [usuario, setUsuario] = useState([]);
   const [token, setToken] = useState([]);
   const [redirect, setRedirect] = useState(false);
@@ -27,6 +28,12 @@ export default function Routes() {
   useEffect(() => {
     axios.get(`https://api-edu.herokuapp.com/courses?size=200`).then(res => {
       setCourses(res.data);
+    });
+  }, []);
+
+  useEffect(() => {
+    axios.get(`https://api-edu.herokuapp.com/subjects?course=5e2c694d02d79a14ca44de2e&size=150`).then(res => {
+      setSubjects(res.data);
     });
   }, []);
 
@@ -65,7 +72,6 @@ export default function Routes() {
   const Submit = values => {
     // console.log(localStorage.getItem("courses"))
     let check = false;
-    console.log(values);
     if (values.monitor) {
       check = true;
     } else {
@@ -109,7 +115,7 @@ export default function Routes() {
             />
             <Route
               path="/register"
-              component={() => <Signup onSubmit={Submit} data={courses} />}
+              component={() => <Signup onSubmit={Submit} cursos={courses} materias={subjects} />}
             />
             <Route path="/contact" component={() => <Contato />} />
             <Route path="/editar" component={() => <Editar />} />
