@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import { Field, reduxForm, formValueSelector } from "redux-form";
 import { connect } from 'react-redux';
 import { makeStyles } from "@material-ui/core/styles";
@@ -13,8 +14,17 @@ import SelectField from "./atoms/SelectField/select";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
 let SignupForm = props => {
-  const { handleSubmit, cursos, materias } = props;
+  const { handleSubmit, cursos } = props;
   const courseList = [];
+  const [id, setId] = useState([]);
+  const [subjects, setSubjects] = useState([]);
+
+  useEffect(() => {
+    axios.get(`https://api-edu.herokuapp.com/subjects?course=${id}&size=150`).then(res => {
+      setSubjects(res.data);
+    });
+  }, [id]);
+  
   const genders = [
     {
       value: "M",
@@ -32,7 +42,7 @@ let SignupForm = props => {
 
   const subjectList = [];
 
-  materias.map(subject => {
+  subjects.map(subject => {
     subjectList.push({
       value: subject._id,
       label: subject.name,
@@ -103,6 +113,11 @@ let SignupForm = props => {
               required
               isClearable
               placeholder={"Cursos"}
+              onChange={value => {
+                if(value !== null){
+                  setId(value.value)
+                }
+              }}
               component={SelectField}
               options={optionLabelCourse}
               width="31.5vw"
@@ -250,20 +265,20 @@ SignupForm = reduxForm({
   form: "simple" // a unique identifier for this form
 })(SignupForm);
 
-const selector = formValueSelector("simple");
-SignupForm = connect(
-  state => {
-    let courseValue = "";
-    if(selector(state, "cursos") != undefined){
-      courseValue = selector(state, "cursos")
-      courseValue = courseValue.value;
-    }
-    console.log(courseValue);
+// const selector = formValueSelector("simple");
+// SignupForm = connect(
+//   state => {
+//     let courseValue = "";
+//     if(selector(state, "cursos") != undefined){
+//       courseValue = selector(state, "cursos")
+//       courseValue = courseValue.value;
+//     }
+//     console.log(courseValue);
     
-    return {
-      courseValue
-    }
-  }
-)(SignupForm)
+//     return {
+//       courseValue
+//     }
+//   }
+// )(SignupForm)
 
 export default SignupForm;
