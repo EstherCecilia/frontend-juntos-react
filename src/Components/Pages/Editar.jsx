@@ -1,5 +1,5 @@
 import React from "react";
-import { Field, reduxForm } from "redux-form";
+import { reduxForm } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { ThemeProvider } from "styled-components";
@@ -7,11 +7,15 @@ import { theme } from "../../GlobalStyle/theme";
 import TextField from "./atoms/TextField";
 import BurgerMenu from "./BurgerMenu";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
-import { Link } from "react-router-dom";
+import { createBrowserHistory } from "history";
+const history = createBrowserHistory({
+  basename: "/"
+});
 
 const Editar = () => {
-  const  handleSubmit = () =>{
-      console.log("Aqui")
+  const handleSubmit = () => {
+    alert("Dados editado com sucesso!");
+    history.push("/login");
   };
 
   const classes = useStyles();
