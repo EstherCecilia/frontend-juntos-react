@@ -8,47 +8,53 @@ import { theme } from "../../GlobalStyle/theme";
 import TextField from "./atoms/TextField";
 import BurgerMenu from "./BurgerMenu";
 import DatePicker from "./atoms/DatePicker/index";
-import Courses from "./atoms/Courses/index";
-import SelectField from './atoms/SelectField/select';
+import SelectField from "./atoms/SelectField/select";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 
 let SignupForm = props => {
   const { handleSubmit, data } = props;
   const courseList = [];
-  const genders = [{
-    value: "M",
-    label: "Masculino"
-  },
-  {
-    value: "F",
-    label: "Feminino"
-  },
-  {
-    value: "N",
-    label: "Não Informar"
-  }]
-  
-  const subjects = [{
-    value: 1,
-    label: "Cálculo 1"
-  },{
-    value: 2,
-    label: "Cálculo 2"
-  },{
-    value: 3, 
-    label: "Engenharia de Software 1"
-  },{
-    value: 4,
-    label: "Projeto e Análise de Algoritmos"
-  }];
-  
+  const genders = [
+    {
+      value: "M",
+      label: "Masculino"
+    },
+    {
+      value: "F",
+      label: "Feminino"
+    },
+    {
+      value: "N",
+      label: "Não Informar"
+    }
+  ];
+
+  const subjects = [
+    {
+      value: 1,
+      label: "Cálculo 1"
+    },
+    {
+      value: 2,
+      label: "Cálculo 2"
+    },
+    {
+      value: 3,
+      label: "Engenharia de Software 1"
+    },
+    {
+      value: 4,
+      label: "Projeto e Análise de Algoritmos"
+    }
+  ];
+
   data.map(course => {
     courseList.push({
       value: course._id,
-      label: course.name.concat(' (', course.campus, ')'),
+      label: course.name.concat(" (", course.campus, ")")
       // campus: course._source.campus,
-    })
-  })
+    });
+  });
 
   //console.log(data);
 
@@ -161,8 +167,14 @@ let SignupForm = props => {
               placeholder="Confirmar senha"
             />
           </StyledOtherDiv>
-          <Courses />
           <StyledOtherDiv>
+            <label htmlFor="monitor">Monitor</label>
+            <Field
+              name="monitor"
+              id="monitor"
+              component="input"
+              type="checkbox"
+            />
             <Field
               classes={classes}
               required

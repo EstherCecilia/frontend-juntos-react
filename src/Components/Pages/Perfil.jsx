@@ -7,10 +7,12 @@ import Avatar from "@material-ui/core/Avatar";
 import perfil from "../../images/perfil.jpg";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled";
 import MenuPoint from "./atoms/MenuPoint";
+import moment from "moment";
 
 const Perfil = props => {
   const { usuario } = props;
   const classes = useStyles();
+  const dt = moment(usuario.birthdate, "YYYY-MM-DD").format("DD-MM-YYYY");
 
   return (
     <>
@@ -31,8 +33,11 @@ const Perfil = props => {
             </StyledOtherDiv>
             <StyledOtherDiv>
               <h2>{usuario.name}</h2>
-              <p>{usuario.course}</p>
-              <p>{usuario.birthdate}</p>
+              <p>
+                <span>{usuario.course.name}</span> -{" "}
+                <span>{usuario.course.campus}</span>
+              </p>
+              <p>{dt}</p>
             </StyledOtherDiv>
           </div>
         </StyledMainDiv>

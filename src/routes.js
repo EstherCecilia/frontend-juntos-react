@@ -53,7 +53,6 @@ export default function Routes() {
       "id"
     )}`;
     axios.get(URL, { headers: { Authorization: USER_TOKEN } }).then(res => {
-      
       if (res.data.active) {
         setUsuario(res.data);
         history.push("/perfil");
@@ -64,7 +63,14 @@ export default function Routes() {
   };
 
   const Submit = values => {
-    console.log(localStorage.getItem("courses"))
+    // console.log(localStorage.getItem("courses"))
+    let check = false;
+    console.log(values);
+    if (values.monitor) {
+      check = true;
+    } else {
+      check = false;
+    }
     if (values.senha === values.senhaConfirma) {
       axios
         .post(`http://api-edu.herokuapp.com/register`, {
@@ -74,7 +80,8 @@ export default function Routes() {
           birthdate: values.data,
           email: values.email,
           subject: values.materias.value,
-          password: values.senha
+          password: values.senha,
+          isHelper: check
         })
         .then(res => {
           alert("Dados cadastrados com sucesso!");
@@ -83,7 +90,8 @@ export default function Routes() {
     } else {
       alert("Dados incorretos");
     }
-    localStorage.setItem("curses", [])
+
+    localStorage.setItem("curses", []);
     console.log(values);
   };
 

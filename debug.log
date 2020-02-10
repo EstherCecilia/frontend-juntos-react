@@ -21,3 +21,5 @@
 [0208/194033.792:ERROR:process_info.cc(359)] UncheckedAllocate
 [0208/194210.907:ERROR:process_info.cc(359)] UncheckedAllocate
 [0208/194421.687:ERROR:process_info.cc(359)] UncheckedAllocate
+[0210/131938.655:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0210/135340.123:ERROR:crash_report_database_win.cc(428)] unexpected header
