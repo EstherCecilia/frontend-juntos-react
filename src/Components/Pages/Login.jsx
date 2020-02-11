@@ -52,7 +52,7 @@ const LoginForm = props => {
               <TextField
                 show
                 type="email"
-                width="15vw"
+                width="20vw"
                 className="inputPlaceholder"
                 id="email"
                 placeholder="Email"
@@ -62,7 +62,7 @@ const LoginForm = props => {
               <TextField
                 show
                 type="password"
-                width="15vw"
+                width="20vw"
                 className="inputPlaceholder"
                 id="password"
                 placeholder="Password"
@@ -197,12 +197,13 @@ const useStyles = makeStyles(theme => ({
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
     textAlign: "center",
+    alignItems: "center",
     marginLeft: "auto",
     marginRight: "auto"
   },
 
   input: {
-    width: "180px",
+    width: "100%",
     height: "32px",
     fontSize: "14px",
     display: "center",

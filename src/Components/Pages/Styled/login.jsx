@@ -4,23 +4,30 @@ import backgroundImage from "../../../images/background.jpeg";
 export const StyledMainDiv = styled.div`
   /* width: 320px; */
   font-family: 'Nunito Sans';
-  display: flex;
   position: fixed;
-  background-position: center;
+  height: 100%;
+  width: 100%;
   background-image: url(${backgroundImage});
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
   border-radius: 2px;
-  padding: 30px;
+  position: fixed;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  z-index: -1;
 
   strong {
     font-size: 20px;
     text-align: center;
     display: flex;
     color: ${({ theme }) => theme.primaryRed};
+  }
+
+  h1 {
+    font-size: 3em;
+    font-family: 'Nunito Sans';
+    align-content: center;
+    text-align: center;
   }
 
   form {
@@ -49,8 +56,8 @@ export const StyledOtherDiv = styled.div`
   input {
     width: 100%;
     height: 32px;
-    width: 200px;
     color: black;
+    font-size: 14px;
     border: 0;
     border-bottom: 1px solid ${({ theme }) => theme.primaryDark};
   }
