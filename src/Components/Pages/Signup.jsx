@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import axios from "axios";
 import { Field, reduxForm, formValueSelector } from "redux-form";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { ThemeProvider } from "styled-components";
@@ -18,13 +18,16 @@ let SignupForm = props => {
   const courseList = [];
   const [id, setId] = useState([]);
   const [subjects, setSubjects] = useState([]);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    axios.get(`https://api-edu.herokuapp.com/subjects?course=${id}`).then(res => {
-      setSubjects(res.data);
-    });
+    axios
+      .get(`https://api-edu.herokuapp.com/subjects?course=${id}`)
+      .then(res => {
+        setSubjects(res.data);
+      });
   }, [id]);
-  
+
   const genders = [
     {
       value: "M",
@@ -45,9 +48,9 @@ let SignupForm = props => {
   subjects.map(subject => {
     subjectList.push({
       value: subject._id,
-      label: subject.name,
-    })
-  })
+      label: subject.name
+    });
+  });
 
   cursos.map(course => {
     courseList.push({
@@ -114,8 +117,8 @@ let SignupForm = props => {
               isClearable
               placeholder={"Cursos"}
               onChange={value => {
-                if(value !== null){
-                  setId(value.value)
+                if (value !== null) {
+                  setId(value.value);
                 }
               }}
               component={SelectField}
@@ -181,19 +184,24 @@ let SignupForm = props => {
               id="monitor"
               component="input"
               type="checkbox"
+              onChange={value => {
+                setShow(value);
+              }}
             />
-            <Field
-              classes={classes}
-              required
-              name="materias"
-              id="materias"
-              isClearable
-              isMulti
-              placeholder={"Matérias"}
-              component={SelectField}
-              options={subjectList}
-              width="31.5vw"
-            ></Field>
+            {show ? (
+              <Field
+                classes={classes}
+                required
+                name="materias"
+                id="materias"
+                isClearable
+                isMulti
+                placeholder={"Matérias"}
+                component={SelectField}
+                options={subjectList}
+                width="31.5vw"
+              ></Field>
+            ) : null}
           </StyledOtherDiv>
           <Button
             type="submit"
@@ -274,7 +282,7 @@ SignupForm = reduxForm({
 //       courseValue = courseValue.value;
 //     }
 //     console.log(courseValue);
-    
+
 //     return {
 //       courseValue
 //     }
