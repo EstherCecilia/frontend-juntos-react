@@ -127,7 +127,6 @@ let SignupForm = props => {
             />
           </StyledOtherDiv>
 
-          
           <StyledOtherDiv>
             <Field
               classes={classes}
@@ -146,9 +145,7 @@ let SignupForm = props => {
               width="31.5vw"
             ></Field>
           </StyledOtherDiv>
-
-
-
+          
           <StyledOtherDiv>
             <TextField
               show
@@ -166,8 +163,8 @@ let SignupForm = props => {
             />
           </StyledOtherDiv>
           <StyledOtherDiv>
-            <div style={{display: "inline-flex", width: "300px"}}>
-            <span style={{width: "300px"}}>Deseja ajudar em alguma matéria ?</span>
+            <div style={{display: "inline-flex", width: "25vw"}}>
+            <span style={{width: "25vw", fontFamily: "Nunito Sans"}}>Deseja ajudar em alguma matéria ?</span>
             <Field
               style={{width: "25px", marginTop: "-3px"}}
               name="monitor"
