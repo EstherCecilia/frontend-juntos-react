@@ -52,7 +52,7 @@ const LoginForm = props => {
               <TextField
                 show
                 type="email"
-                width="180px"
+                width="15vw"
                 className="inputPlaceholder"
                 id="email"
                 placeholder="Email"
@@ -62,7 +62,7 @@ const LoginForm = props => {
               <TextField
                 show
                 type="password"
-                width="180px"
+                width="15vw"
                 className="inputPlaceholder"
                 id="password"
                 placeholder="Password"
@@ -74,8 +74,8 @@ const LoginForm = props => {
               placeholder="Login"
               variant="contained"
               style={{
-                width: "200px",
-                height: "35px",
+                width: "18vw",
+                height: "2vh",
                 color: "#fafafa",
                 borderRadius: "10px",
                 textAlign: "center",
@@ -163,14 +163,14 @@ const LoginForm = props => {
             <TextField
               show
               type="email"
-              width="180px"
+              width="15vw"
               id="email"
               placeholder="Email"
             />
           </StyledOtherDiv>
           <Button
             type="submit"
-            style={{ width: "200px", color: "#fafafa", borderRadius: "10px" }}
+            style={{ width: "20vw", height: "5vh", color: "#fafafa", borderRadius: "10px", lineHeight: "0.5vh" }}
             className={classes.submit}
           >
             ENVIAR

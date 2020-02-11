@@ -82,14 +82,14 @@ let SignupForm = props => {
             <TextField
               show
               type="text"
-              width="180px"
+              width="15vw"
               id="nome"
               placeholder="Nome"
             />
             <TextField
               show
               type="text"
-              width="180px"
+              width="15vw"
               id="telefone"
               placeholder="Telefone"
             />
@@ -115,7 +115,7 @@ let SignupForm = props => {
               id="cursos"
               required
               isClearable
-              placeholder={"Cursos"}
+              placeholder={"Curso"}
               onChange={value => {
                 if (value !== null) {
                   setId(value.value);
@@ -144,7 +144,7 @@ let SignupForm = props => {
             <TextField
               show
               type="email"
-              width="180px"
+              width="15vw"
               id="email"
               placeholder="Email"
             />
@@ -152,7 +152,7 @@ let SignupForm = props => {
               show
               type="date"
               component={DatePicker}
-              width="180px"
+              width="15vw"
               id="data"
               placeholder="Data de Nascimento"
               InputLabelProps={{
@@ -165,14 +165,14 @@ let SignupForm = props => {
             <TextField
               show
               type="password"
-              width="180px"
+              width="15vw"
               id="senha"
               placeholder="Senha"
             />
             <TextField
               show
               type="password"
-              width="180px"
+              width="15vw"
               id="senhaConfirma"
               placeholder="Confirmar senha"
             />
@@ -204,8 +204,8 @@ let SignupForm = props => {
           <Button
             type="submit"
             style={{
-              width: "350px",
-              height: "35px",
+              width: "30vw",
+              height: "2vh",
               color: "#fafafa",
               borderRadius: "10px",
               textAlign: "center",
