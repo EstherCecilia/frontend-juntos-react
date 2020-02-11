@@ -94,52 +94,6 @@ let SignupForm = props => {
               placeholder="Telefone"
             />
           </StyledOtherDiv>
-
-          <StyledOtherDiv>
-            <Field
-              name="genero"
-              id="genero"
-              isSearchable={false}
-              isClearable
-              placeholder={"Gênero"}
-              component={SelectField}
-              width="31.5vw"
-              options={genders}
-            />
-          </StyledOtherDiv>
-
-          <StyledOtherDiv>
-            <Field
-              classes={classes}
-              name="cursos"
-              id="cursos"
-              required
-              isClearable
-              placeholder={"Curso"}
-              onChange={value => {
-                if (value !== null) {
-                  setId(value.value);
-                }
-              }}
-              component={SelectField}
-              options={optionLabelCourse}
-              width="31.5vw"
-            ></Field>
-          </StyledOtherDiv>
-
-          {/* <StyledOtherDiv>
-            <Field
-              classes={classes}
-              id="cursos"
-              component={ComboBox}
-              options={courseList}
-              getOptionLabel={optionLabel}
-              onChange={(event, value) => console.log(value)}
-              label="Cursos"
-              width="31.5vw"
-            ></Field>
-          </StyledOtherDiv> */}
-
           <StyledOtherDiv>
             <TextField
               show
@@ -160,6 +114,40 @@ let SignupForm = props => {
               }}
             ></TextField>
           </StyledOtherDiv>
+          <StyledOtherDiv>
+            <Field
+              name="genero"
+              id="genero"
+              isSearchable={false}
+              isClearable
+              placeholder={"Gênero"}
+              component={SelectField}
+              width="31.5vw"
+              options={genders}
+            />
+          </StyledOtherDiv>
+
+          
+          <StyledOtherDiv>
+            <Field
+              classes={classes}
+              name="cursos"
+              id="cursos"
+              required
+              isClearable
+              placeholder={"Curso"}
+              onChange={value => {
+                if (value !== null) {
+                  setId(value.value);
+                }
+              }}
+              component={SelectField}
+              options={optionLabelCourse}
+              width="31.5vw"
+            ></Field>
+          </StyledOtherDiv>
+
+
 
           <StyledOtherDiv>
             <TextField
@@ -178,15 +166,20 @@ let SignupForm = props => {
             />
           </StyledOtherDiv>
           <StyledOtherDiv>
-            <label htmlFor="monitor">Monitor</label>
+            <div style={{display: "inline-flex", width: "300px"}}>
+            <span style={{width: "300px"}}>Deseja ajudar em alguma matéria ?</span>
             <Field
+              style={{width: "25px", marginTop: "-3px"}}
               name="monitor"
               id="monitor"
               component="input"
               type="checkbox"
               onChange={() => setShow(!(show))}
             />
+            </div>
+            
             {show ? (
+              <div style={{display:"block", margin:"auto"}}>
               <Field
                 classes={classes}
                 required
@@ -199,7 +192,9 @@ let SignupForm = props => {
                 options={subjectList}
                 width="31.5vw"
               ></Field>
+              </div>
             ) : null}
+            
           </StyledOtherDiv>
           <Button
             type="submit"
