@@ -4,7 +4,7 @@ import { theme } from "../../GlobalStyle/theme";
 import Image from "../../images/imagesMain";
 import BurgerMenu from "./BurgerMenu";
 import { ThemeProvider } from "styled-components";
-import { StyledMainDiv, StyledOtherDiv } from '../Pages/Styled/ajusteBackground';
+import { StyledMainDiv, StyledOtherDiv } from '../Pages/Styled/telasSecundarias';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -32,14 +32,14 @@ const Contato = () => {
           <div className={classes.form}>
             <h1>ENTRE EM CONTATO</h1>
             <StyledOtherDiv>
-              <p>Tem alguma dúvida, problema com o aplicativo ou quer nos dar</p>
+              <p className="text">Tem alguma dúvida, problema com o aplicativo ou quer nos dar</p>
               <p>um feedback? Entre em contato conosco por email.</p>
             </StyledOtherDiv>
             <StyledOtherDiv>
               <span>contatonome@gmail.com</span>
             </StyledOtherDiv>
             <StyledOtherDiv>
-              <Image />
+              <Image className="images"/>
             </StyledOtherDiv>
           </div>
         </StyledMainDiv>

@@ -11,7 +11,7 @@ import TextField from "./atoms/TextField";
 // import { GoogleLogin } from "react-google-login";
 import facebook from "../../images/facebook.png";
 import gmail from "../../images/gmail.png";
-import { StyledMainDiv, StyledOtherDiv } from "./Styled";
+import { StyledMainDiv, StyledOtherDiv } from "./Styled/login";
 import Modal from "@material-ui/core/Modal";
 
 /*function rand() {

@@ -11,7 +11,7 @@ import TextField from "./atoms/TextField";
 import BurgerMenu from "./BurgerMenu";
 import DatePicker from "./atoms/DatePicker/index";
 import SelectField from "./atoms/SelectField/select";
-import { StyledMainDiv, StyledOtherDiv } from "./Styled";
+import { StyledMainDiv, StyledOtherDiv } from "./Styled/main";
 
 let SignupForm = props => {
   const { handleSubmit, cursos } = props;

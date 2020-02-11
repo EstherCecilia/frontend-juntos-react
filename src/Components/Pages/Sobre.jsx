@@ -4,7 +4,7 @@ import { theme } from "../../GlobalStyle/theme";
 import Image from "../../images/imagesMain";
 import BurgerMenu from "./BurgerMenu";
 import styled, { ThemeProvider } from "styled-components";
-import { StyledMainDiv, StyledOtherDiv } from '../Pages/Styled/ajusteBackground';
+import { StyledMainDiv, StyledOtherDiv } from '../Pages/Styled/telasSecundarias';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,7 +33,7 @@ const Sobre = () => {
           <div className={classes.form}>
             <h1>QUEM SOMOS?</h1>
             <StyledOtherDiv>
-              <p>
+              <p className="textAbout">
                 Somos estusiastas por tecnologia e por meio do <span>NOME</span>{" "}
                 temos
               </p>
@@ -42,6 +42,9 @@ const Sobre = () => {
               </p>
               <p>precisam achar outros estudantes dispostos a ajudar com</p>
               <p>matérias da faculdade, de forma ágil e objetiva.</p>
+            </StyledOtherDiv>
+            <StyledOtherDiv>
+              <Image className="images"/>
             </StyledOtherDiv>
           </div>
         </StyledMainDiv>
