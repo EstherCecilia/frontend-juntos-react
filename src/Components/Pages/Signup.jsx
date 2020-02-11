@@ -19,7 +19,6 @@ let SignupForm = props => {
   const [id, setId] = useState([]);
   const [subjects, setSubjects] = useState([]);
   const [show, setShow] = useState(false);
-  console.log(show);
 
   useEffect(() => {
     axios

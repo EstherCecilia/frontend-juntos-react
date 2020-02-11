@@ -42,7 +42,7 @@ const ReduxFormSelect = props => {
       borderColor: state.isFocused ? "#FF2E63" : "#000",
       boxShadow: state.isFocused ? "#FF2E63" : "#000",
       '&:hover': {
-        borderColor: state.isFocudes ? "#000" : "#FF2E63",
+        borderColor: state.isFocused ? "#FF2E63" : "#000",
         boxShadow: "#FF2E63"
       },
     }),
