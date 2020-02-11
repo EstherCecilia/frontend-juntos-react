@@ -19,6 +19,7 @@ let SignupForm = props => {
   const [id, setId] = useState([]);
   const [subjects, setSubjects] = useState([]);
   const [show, setShow] = useState(false);
+  console.log(show);
 
   useEffect(() => {
     axios
@@ -184,9 +185,7 @@ let SignupForm = props => {
               id="monitor"
               component="input"
               type="checkbox"
-              onChange={value => {
-                setShow(value);
-              }}
+              onChange={() => setShow(!(show))}
             />
             {show ? (
               <Field
