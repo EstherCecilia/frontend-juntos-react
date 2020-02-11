@@ -22,7 +22,7 @@ export const StyledMainDiv = styled.div`
 
   h1 {
     font-size: 3em;
-    font-family: 'Nunito Sans', 'sans-serif';
+    font-family: 'Nunito Sans';
   }
 
   form {
@@ -67,7 +67,7 @@ export const StyledOtherDiv = styled.div`
     font-size: 14px;
     font-weight: bold;
     display: block;
-    font-family: 'Nunito Sans', 'sans-serif';
+    font-family: 'Nunito Sans';
   }
 
   select {

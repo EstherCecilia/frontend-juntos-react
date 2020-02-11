@@ -17,13 +17,13 @@ export const StyledMainDiv = styled.div`
   h1 {
       margin-top: 8vw;
       font-size: 3em;
-      font-family: 'Nunito Sans', 'sans-serif';
+      font-family: 'Nunito Sans';
       color: '#252A34';
       font-weight: bold;
   }
 
   p {
-      font-family: 'Nunito Sans', 'sans-serif';
+      font-family: 'Nunito Sans';
   }
 
   span {

@@ -51,6 +51,7 @@ const StyledMenu = styled.nav`
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
+    font-family: 'Nunito Sans'
   }
 
   p {
@@ -70,6 +71,8 @@ const StyledMenu = styled.nav`
     color: ${({ theme }) => theme.primaryDark};
     text-decoration: none;
     transition: color 0.3s linear;
+    font-family: 'Nunito Sans';
+    
 
     @media (max-width: ${({ theme }) => theme.mobile}) {
       font-size: 1.5rem;

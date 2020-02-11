@@ -62,7 +62,7 @@ export const StyledOtherDiv = styled.div`
     color: #000;
     font-size: 14px;
     font-weight: bold;
-    font-family: 'Nunito Sans', 'sans-serif';
+    font-family: 'Nunito Sans';
     display: block;
   }
 `;

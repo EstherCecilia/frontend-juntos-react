@@ -37,11 +37,11 @@ export const StyledMainDiv = styled.div`
       font-size: 3em;
       align-content: center;
       text-align: center;
-      font-family: 'Nunito Sans', 'sans-serif';
+      font-family: 'Nunito Sans';
   }
 
   h2 {
-    font-family: 'Nunito Sans', 'sans-serif';
+    font-family: 'Nunito Sans';
   }
 
   h1 {
@@ -66,6 +66,6 @@ export const StyledOtherDiv = styled.div`
     font-size: 14px;
     font-weight: bold;
     display: block;
-    font-family: 'Nunito Sans', 'sans-serif';
+    font-family: 'Nunito Sans';
   }
 `
