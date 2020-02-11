@@ -12,7 +12,7 @@ const Main = () => {
             <BurgerMenu/>
             <div>
                 <div position="relative">
-                  <StyledH1>Nome</StyledH1>
+                  <StyledH1>NOME</StyledH1>
                   <StyledP>Encontre monitores dentro da sua faculdade!</StyledP>
                 </div>
             </div>
@@ -23,19 +23,19 @@ const Main = () => {
 
 const StyledH1 = styled.h1`
   @media only screen and (min-width: 600px) {
-    font-size: 3vw;
+    font-size: 3em;
     margin-bottom: 2vw;
     margin-left: 2vw;
   }
 
   @media only screen and (max-width: 600px) {
-    font-size: 4vw;
+    font-size: 3em;
     margin-bottom: 2vw;
     margin-left: 2vw;
   }
 
   @media only screen and (min-width: 1400px) {
-    font-size: 3vw;
+    font-size: 3em;
     margin-bottom: 2vw;
     margin-left: 1vw;
   }

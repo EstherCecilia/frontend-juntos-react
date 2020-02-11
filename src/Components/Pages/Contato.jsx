@@ -36,10 +36,10 @@ const Contato = () => {
               <p>um feedback? Entre em contato conosco por email.</p>
             </StyledOtherDiv>
             <StyledOtherDiv>
-              <span>contatonome@gmail.com</span>
+              <span className="email">contatonome@gmail.com</span>
             </StyledOtherDiv>
             <StyledOtherDiv>
-              <Image className="images"/>
+              <Image/>
             </StyledOtherDiv>
           </div>
         </StyledMainDiv>

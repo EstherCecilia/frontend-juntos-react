@@ -14,17 +14,20 @@ export const StyledMainDiv = styled.div`
   padding-top: 30px;
   z-index: -1;
 
-  form {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  strong {
-      font-size: 2em;
-  }
-
   h1 {
-      margin-top: 10vw;
+      margin-top: 8vw;
+      font-size: 3em;
+      font-family: 'Nunito Sans', 'sans-serif';
+      color: '#252A34';
+      font-weight: bold;
+  }
+
+  p {
+      font-family: 'Nunito Sans', 'sans-serif';
+  }
+
+  span {
+    font-weight: bold;
   }
 `
 
@@ -32,7 +35,7 @@ export const StyledOtherDiv = styled.div`
   margin-top: 30px;
 
   .text{
-      margin-top: 6vw;
+      margin-top: 7vw;
   }
 
   .textAbout {

@@ -44,7 +44,7 @@ const Sobre = () => {
               <p>matérias da faculdade, de forma ágil e objetiva.</p>
             </StyledOtherDiv>
             <StyledOtherDiv>
-              <Image className="images"/>
+              <Image/>
             </StyledOtherDiv>
           </div>
         </StyledMainDiv>
