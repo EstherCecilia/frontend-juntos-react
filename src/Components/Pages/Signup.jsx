@@ -204,10 +204,12 @@ let SignupForm = props => {
           <Button
             type="submit"
             style={{
-              width: "200px",
-              borderRadius: "10px",
+              width: "350px",
+              height: "35px",
               color: "#fafafa",
-              padding: "10px"
+              borderRadius: "10px",
+              textAlign: "center",
+              lineHeight: "0.5vh",
             }}
             color="primary"
             className={classes.submit}
@@ -215,7 +217,7 @@ let SignupForm = props => {
             Inscrever-se
           </Button>
           <Link style={{ color: "#ff2e63" }} to="/login">
-            <p style={{ color: "#FF2E63" }}>Já é cadastrado?</p>
+            <p style={{ color: "#FF2E63", fontFamily: ('Nunito Sans', 'sans-serif') }}>Já é cadastrado?</p>
           </Link>
         </form>
       </StyledMainDiv>

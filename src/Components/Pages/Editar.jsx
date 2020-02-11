@@ -36,7 +36,7 @@ const Editar = () => {
       /> */}
       <StyledMainDiv className="editar">
         <form className={classes.form} onSubmit={handleSubmit}>
-          <strong>EDITAR INFORMAÇÕES</strong>
+          <strong>EDITAR DADOS</strong>
           <StyledOtherDiv>
             <TextField
               show
@@ -74,10 +74,12 @@ const Editar = () => {
           <Button
             type="submit"
             style={{
-              width: "200px",
-              borderRadius: "10px",
+              width: "350px",
+              height: "35px",
               color: "#fafafa",
-              padding: "10px"
+              borderRadius: "10px",
+              textAlign: "center",
+              lineHeight: "0.5vh",
             }}
             color="primary"
             className={classes.submit}

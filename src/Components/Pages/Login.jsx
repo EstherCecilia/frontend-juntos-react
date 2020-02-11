@@ -75,7 +75,7 @@ const LoginForm = props => {
               variant="contained"
               style={{
                 width: "200px",
-                height: "30px",
+                height: "35px",
                 color: "#fafafa",
                 borderRadius: "10px",
                 textAlign: "center",
@@ -129,12 +129,12 @@ const LoginForm = props => {
                 }}
                 onClick={handleOpen}
               >
-                <p style={{ color: "#ff2e63" }} className="otherOptions">
+                <p style={{ color: "#ff2e63", fontFamily: ('Nunito Sans', 'sans-serif') }}>
                   Esqueceu sua senha?
                 </p>
               </a>
               <Link style={{ color: "#ff2e63" }} to="/register">
-                <p style={{ color: "#ff2e63" }} className="otherOptions">
+                <p style={{ color: "#ff2e63", fontFamily: ('Nunito Sans', 'sans-serif') }}>
                   Cadastre-se
                 </p>
               </Link>

@@ -20,6 +20,11 @@ export const StyledMainDiv = styled.div`
     color: ${({ theme }) => theme.primaryRed};
   }
 
+  h1 {
+    font-size: 3em;
+    font-family: 'Nunito Sans', 'sans-serif';
+  }
+
   form {
     margin-left: auto;
     margin-right: auto;
@@ -32,7 +37,7 @@ export const StyledMainDiv = styled.div`
     background: ${({ theme }) => theme.primaryRed};
     border-radius: 2px;
     padding: 15px 20px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     color: ${({ theme }) => theme.primaryDark};
     cursor: pointer;
@@ -62,6 +67,7 @@ export const StyledOtherDiv = styled.div`
     font-size: 14px;
     font-weight: bold;
     display: block;
+    font-family: 'Nunito Sans', 'sans-serif';
   }
 
   select {

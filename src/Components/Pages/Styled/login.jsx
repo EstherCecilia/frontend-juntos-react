@@ -33,7 +33,7 @@ export const StyledMainDiv = styled.div`
     background: ${({ theme }) => theme.primaryRed};
     border-radius: 2px;
     padding: 15px 20px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: bold;
     color: ${({ theme }) => theme.primaryDark};
     cursor: pointer;

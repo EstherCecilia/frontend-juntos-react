@@ -28,10 +28,15 @@ const Perfil = props => {
           <MenuPoint user={usuario} style={{ marginLeft: "90%" }} />
           <div className={classes.form}>
             <StyledOtherDiv>
-              <strong>Meu perfil</strong>
+              <strong>MEU PERFIL</strong>
 
               <Avatar
-                style={{ margin: "auto", width: "100px", height: "100px" }}
+                style={{ 
+                  margin: "auto", 
+                  width: "12vw", 
+                  height: "12vw", 
+                  marginTop: "8vh", 
+                  alignContent: "center" }}
                 alt="Remy Sharp"
                 src={image}
               />

@@ -8,7 +8,7 @@ const ReduxFormSelect = props => {
     const { input, options, placeholder, isClearable, isMulti, isSearchable } = props;
   
     return (
-      <FormControl style={{width: "31.5vw", minWidth: "100px"}}>
+      <FormControl style={{width: "31.5vw", minWidth: "100px", fontFamily: ('Nunito Sans', 'sans-serif')}}>
           <Select 
             className="selectField"
             styles={customStyles}

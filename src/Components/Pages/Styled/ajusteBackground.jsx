@@ -26,7 +26,7 @@ export const StyledMainDiv = styled.div`
     background: ${({ theme }) => theme.primaryRed};
     border-radius: 2px;
     padding: 15px 20px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     color: ${({ theme }) => theme.primaryDark};
     cursor: pointer;
@@ -34,7 +34,14 @@ export const StyledMainDiv = styled.div`
   }
 
   strong {
-      font-size: 2em;
+      font-size: 3em;
+      align-content: center;
+      text-align: center;
+      font-family: 'Nunito Sans', 'sans-serif';
+  }
+
+  h2 {
+    font-family: 'Nunito Sans', 'sans-serif';
   }
 
   h1 {
@@ -59,5 +66,6 @@ export const StyledOtherDiv = styled.div`
     font-size: 14px;
     font-weight: bold;
     display: block;
+    font-family: 'Nunito Sans', 'sans-serif';
   }
 `
