@@ -47,12 +47,13 @@ const LoginForm = props => {
         <BurgerMenu />
         <StyledMainDiv>
           <form className={classes.form} onSubmit={handleSubmit}>
-            <h1>Login</h1>
+            <h1>LOGIN</h1>
             <StyledOtherDiv>
               <TextField
                 show
                 type="email"
                 width="180px"
+                className="inputPlaceholder"
                 id="email"
                 placeholder="Email"
               />
@@ -62,6 +63,7 @@ const LoginForm = props => {
                 show
                 type="password"
                 width="180px"
+                className="inputPlaceholder"
                 id="password"
                 placeholder="Password"
               />
@@ -69,19 +71,23 @@ const LoginForm = props => {
 
             <Button
               type="submit"
+              placeholder="Login"
+              variant="contained"
               style={{
                 width: "200px",
-                height: "50px",
+                height: "30px",
                 color: "#fafafa",
-                borderRadius: "10px"
+                borderRadius: "10px",
+                textAlign: "center",
+                lineHeight: "0.5vh",
               }}
               color="#FF2E63"
               className={classes.submit}
             >
-              Logar
+              Login
             </Button>
             <div>
-              <span>-OU-</span>
+              <span>-ou-</span>
             </div>
             <StyledOtherDiv>
               {/* { <FacebookLogin
@@ -196,7 +202,7 @@ const useStyles = makeStyles(theme => ({
   },
 
   input: {
-    width: "100%",
+    width: "180px",
     height: "32px",
     fontSize: "14px",
     display: "center",
