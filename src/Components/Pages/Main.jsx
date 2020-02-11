@@ -22,6 +22,7 @@ const Main = () => {
 }
 
 const StyledH1 = styled.h1`
+  font-family: 'Nunito Sans', 'sans-serif';
   @media only screen and (min-width: 600px) {
     font-size: 3em;
     margin-bottom: 2vw;

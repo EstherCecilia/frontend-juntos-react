@@ -62,10 +62,7 @@ export const StyledOtherDiv = styled.div`
     color: #000;
     font-size: 14px;
     font-weight: bold;
+    font-family: 'Nunito Sans', 'sans-serif';
     display: block;
-  }
-
-  select {
-    color: #000;
   }
 `;
