@@ -23,6 +23,8 @@ export const StyledMainDiv = styled.div`
   h1 {
     font-size: 3em;
     font-family: 'Nunito Sans';
+    align-content: center;
+    text-align: center;
   }
 
   form {

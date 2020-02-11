@@ -3,16 +3,18 @@ import backgroundImage from "../../../images/background.jpeg";
 
 export const StyledMainDiv = styled.div`
   /* width: 320px; */
-  font-family: 'Nunito Sans', 'sans-serif';
+  font-family: 'Nunito Sans';
+  display: flex;
+  position: fixed;
   background-position: center;
   background-image: url(${backgroundImage});
   background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
   border-radius: 2px;
-  padding: 30px 20px;
+  padding: 30px;
 
   strong {
     font-size: 20px;

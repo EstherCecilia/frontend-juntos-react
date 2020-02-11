@@ -5,7 +5,6 @@ export const StyledMainDiv = styled.div`
   /* width: 320px; */
   height: 100%;
   width: 100%;
-  position: absolute;
   background-image: url(${backgroundImage});
   background-repeat: no-repeat;
   background-size: 100% 100%;
