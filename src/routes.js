@@ -86,7 +86,7 @@ export default function Routes() {
           course: values.cursos,
           gender: values.genero,
           phone: values.telefone,
-          birthdate: values.data,
+          //birthdate: values.data,
           email: values.email,
           password: values.senha,
           isHelper: check
