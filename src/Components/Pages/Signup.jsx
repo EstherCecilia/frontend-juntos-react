@@ -23,7 +23,7 @@ let SignupForm = props => {
 
   useEffect(() => {
     axios
-      .get(`https://api-edu.herokuapp.com/subjects?course=${id}`)
+      .get(`https://api-edu.herokuapp.com/subjects?course=${id}&size=100`)
       .then(res => {
         setSubjects(res.data);
       });
