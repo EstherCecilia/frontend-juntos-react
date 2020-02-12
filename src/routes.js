@@ -86,14 +86,29 @@ export default function Routes() {
           gender: values.genero.value,
           birthdate: values.data,
           email: values.email,
-          subject: values.materias,
           password: values.senha,
           isHelper: check
         })
         .then(res => {
+          console.log(res);
+          const USER_TOKEN = "Bearer ".concat(res.data.token);
+
+          if (check) {
+            let subjects = values.materias.map(subjects => subjects.value);
+            axios
+              .post(
+                `http://api-edu.herokuapp.com/helpers`,
+                {
+                  subjects: subjects
+                },
+                { headers: { Authorization: USER_TOKEN } }
+              )
+              .then(res => {
+                console.log(res);
+              });
+          }
           alert("Dados cadastrados com sucesso!");
-          
-        window.location.reload();
+          // window.location.reload();
         });
     } else {
       alert("Dados incorretos");

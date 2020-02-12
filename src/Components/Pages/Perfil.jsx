@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import styled, { ThemeProvider } from "styled-components";
 import { theme } from "../../GlobalStyle/theme";
@@ -8,13 +8,29 @@ import perfil from "../../images/perfil.jpg";
 import perfilF from "../../images/perfilF.jpg";
 import MenuPoint from "./atoms/MenuPoint";
 import moment from "moment";
-import { StyledMainDiv, StyledOtherDiv } from '../Pages/Styled/ajusteBackground';
+import axios from "axios";
+import {
+  StyledMainDiv,
+  StyledOtherDiv
+} from "../Pages/Styled/ajusteBackground";
 
 const Perfil = props => {
   var image = perfil;
   const { usuario } = props;
   const classes = useStyles();
   const dt = moment(usuario.birthdate, "YYYY-MM-DD").format("DD-MM-YYYY");
+  const [helpers, setHelpers] = useState([]);
+  console.log(usuario);
+  useEffect(() => {
+    axios
+      .get(
+        `https://api-edu.herokuapp.com/helpers//${localStorage.getItem("id")}`
+      )
+      .then(res => {
+        setHelpers(res.subjects);
+        console.log(res);
+      });
+  }, []);
 
   if (usuario.gender === "F") {
     image = perfilF;
@@ -31,12 +47,13 @@ const Perfil = props => {
               <strong>MEU PERFIL</strong>
 
               <Avatar
-                style={{ 
-                  margin: "auto", 
-                  width: "12vw", 
-                  height: "12vw", 
-                  marginTop: "8vh", 
-                  alignContent: "center" }}
+                style={{
+                  margin: "auto",
+                  width: "12vw",
+                  height: "12vw",
+                  marginTop: "8vh",
+                  alignContent: "center"
+                }}
                 alt="Remy Sharp"
                 src={image}
               />
@@ -48,6 +65,11 @@ const Perfil = props => {
                 <span>{usuario.course.campus}</span>
               </p>
               <p>{dt}</p>
+            </StyledOtherDiv>
+            <StyledOtherDiv>
+              {helpers.map(helper => (
+                <span>{helper}</span>
+              ))}
             </StyledOtherDiv>
           </div>
         </StyledMainDiv>
