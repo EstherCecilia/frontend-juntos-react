@@ -56,16 +56,16 @@ const StyledMenu = styled.nav`
 
   p {
     display: block;
-    padding: 15px;
+    padding: 1.5vw;
     border: 0;
-    border-top: 2px solid #ff2e63;
+    border-top: 0.2vw solid #ff2e63;
   }
 
   a {
     font-size: 1.5vw;
     text-transform: uppercase;
     padding: auto 0;
-    margin-bottom: 30px;
+    margin-bottom: 2.5vw;
     font-weight: bold;
     letter-spacing: 0.3rem;
     color: ${({ theme }) => theme.primaryDark};
