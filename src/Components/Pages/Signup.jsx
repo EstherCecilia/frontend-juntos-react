@@ -12,7 +12,7 @@ import BurgerMenu from "./BurgerMenu";
 import DatePicker from "./atoms/DatePicker/index";
 import SelectField from "./atoms/SelectField/select";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled/main";
-import { required, minLength, number, email } from './validation/validateFields';
+//import { required, minLength, number, email } from './validation/validateFields';
 
 let SignupForm = props => {
   const { handleSubmit, cursos } = props;
@@ -80,7 +80,7 @@ let SignupForm = props => {
               width="15vw"
               id="nome"
               placeholder="Nome"
-              validate={required}
+              //validate={required}
             />
             <TextField
               show
@@ -88,7 +88,7 @@ let SignupForm = props => {
               width="15vw"
               id="telefone"
               placeholder="Telefone"
-              validate={required}
+              //validate={required, number}
             />
           </StyledOtherDiv>
           <StyledOtherDiv>
@@ -98,7 +98,7 @@ let SignupForm = props => {
               width="15vw"
               id="email"
               placeholder="Email"
-              validate={[required, email]}
+              //validate={[required, email]}
             />
             <TextField
               show
@@ -121,7 +121,7 @@ let SignupForm = props => {
               placeholder={"Gênero"}
               component={SelectField}
               width="31.5vw"
-              validate={required}
+              //validate={required}
               options={genders}
             />
           </StyledOtherDiv>
@@ -139,7 +139,7 @@ let SignupForm = props => {
                   setId(value.value);
                 }
               }}
-              validate={required}
+              //validate={required}
               component={SelectField}
               options={optionLabelCourse}
               width="31.5vw"
@@ -152,7 +152,7 @@ let SignupForm = props => {
               type="password"
               width="15vw"
               id="senha"
-              validate={required, minLength(6)}
+              //validate={required, minLength(6)}
               placeholder="Senha"
             />
             <TextField
@@ -160,7 +160,7 @@ let SignupForm = props => {
               type="password"
               width="15vw"
               id="senhaConfirma"
-              validate={required, minLength(6)}
+              //validate={required, minLength(6)}
               placeholder="Confirmar senha"
             />
           </StyledOtherDiv>
@@ -186,7 +186,7 @@ let SignupForm = props => {
                 id="materias"
                 isClearable
                 isMulti
-                validate={required}
+                //validate={required}
                 placeholder={"Matérias"}
                 component={SelectField}
                 options={subjectList}

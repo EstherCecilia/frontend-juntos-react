@@ -49,7 +49,7 @@ function Component({
   input,
   label,
   type,
-  meta: { form, dispatch, error },
+  meta: { form, dispatch, error, submitFailed },
   valueToSet,
   required,
   ...props
