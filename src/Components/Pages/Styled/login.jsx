@@ -4,14 +4,12 @@ import backgroundImage from "../../../images/background.jpeg";
 export const StyledMainDiv = styled.div`
   /* width: 320px; */
   font-family: 'Nunito Sans';
-  position: fixed;
   height: 100%;
   width: 100%;
   background-image: url(${backgroundImage});
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border-radius: 2px;
-  position: fixed;
   padding-bottom: 10px;
   padding-top: 20px;
   z-index: -1;
