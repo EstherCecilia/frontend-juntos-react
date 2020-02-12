@@ -22,7 +22,6 @@ export default function TextField({
   placeholder = "",
   data,
   value,
-  required,
   width = "100px",
   mask,
   ...props
@@ -39,7 +38,6 @@ export default function TextField({
         valueToSet={value}
         {...props}
         component={Component}
-        required={required}
         color={"secondary"}
         {...mask}
       ></Field>

@@ -72,6 +72,7 @@ export default function Routes() {
 
   const Submit = values => {
     // console.log(localStorage.getItem("courses"))
+    //console.log(values.course.value);
     let check = false;
     if (values.monitor) {
       check = true;
@@ -84,13 +85,14 @@ export default function Routes() {
           name: values.nome,
           course: values.cursos.value,
           gender: values.genero.value,
+          phone: values.telefone,
           birthdate: values.data,
           email: values.email,
           password: values.senha,
           isHelper: check
         })
         .then(res => {
-          console.log(res);
+          //console.log(res);
           const USER_TOKEN = "Bearer ".concat(res.data.token);
 
           if (check) {
