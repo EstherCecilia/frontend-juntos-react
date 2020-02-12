@@ -10,7 +10,7 @@ import TextField from "./atoms/TextField";
 // import FacebookLogin from "react-facebook-login";
 // import { GoogleLogin } from "react-google-login";
 import facebook from "../../images/facebook.png";
-import gmail from "../../images/gmail.png";
+import google from "../../images/g+.png";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled/login";
 import Modal from "@material-ui/core/Modal";
 
@@ -107,16 +107,16 @@ const LoginForm = props => {
               />} */}
 
               {<img 
-                style={{width:"40px", cursor: "pointer"}} 
+                style={{width:"3.2vw", cursor: "pointer"}} 
                 onClick={()=> {alert("Hello")}} 
                 src={facebook}
                 alt="Facebook">
               </img> }
 
               {<img style=
-                {{width:"40px", marginLeft:"5px", cursor: "pointer"}} 
+                {{width:"3vw", marginLeft:"5px", cursor: "pointer"}} 
                 onClick={()=> {alert("Hello")}} 
-                src={gmail}
+                src={google}
                 alt="Gmail">
               </img> }
             </StyledOtherDiv>
@@ -129,12 +129,12 @@ const LoginForm = props => {
                 }}
                 onClick={handleOpen}
               >
-                <p style={{ color: "#ff2e63", fontFamily: ('Nunito Sans', 'sans-serif') }}>
+                <p style={{ color: "#ff2e63", fontFamily: 'Nunito Sans' }}>
                   Esqueceu sua senha?
                 </p>
               </a>
               <Link style={{ color: "#ff2e63" }} to="/register">
-                <p style={{ color: "#ff2e63", fontFamily: ('Nunito Sans', 'sans-serif') }}>
+                <p style={{ color: "#ff2e63", fontFamily: 'Nunito Sans' }}>
                   Cadastre-se
                 </p>
               </Link>
