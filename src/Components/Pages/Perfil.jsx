@@ -9,6 +9,7 @@ import perfilF from "../../images/perfilF.jpg";
 import MenuPoint from "./atoms/MenuPoint";
 import Chip from "@material-ui/core/Chip";
 import axios from "axios";
+import SchoolSharpIcon from '@material-ui/icons/SchoolSharp';
 import {
   StyledMainDiv,
   StyledOtherDiv
@@ -99,8 +100,12 @@ const Perfil = props => {
                   <Chip
                     label={helper}
                     style={{
-                      margin: "theme.spacing(0.5)"
+                      margin: "theme.spacing(0.5)",
                     }}
+                    color='secondary'
+                    icon={<SchoolSharpIcon/>}
+                    size='small'
+                    variant='outlined'
                   />
                 ))}
               </StyledOtherDiv>
