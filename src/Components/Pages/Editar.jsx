@@ -41,14 +41,14 @@ const Editar = () => {
             <TextField
               show
               type="text"
-              width="180px"
+              width="15vw"
               id="nome"
               placeholder="Nome"
             />
             <TextField
               show
               type="text"
-              width="180px"
+              width="15vw"
               id="telefone"
               placeholder="Telefone"
             />
