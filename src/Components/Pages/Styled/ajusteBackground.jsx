@@ -9,8 +9,10 @@ export const StyledMainDiv = styled.div`
   background-image: url(${backgroundImage});
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; */
   border-radius: 2px;
-  position: fixed;
   padding-top: 30px;
   z-index: -1;
 
@@ -39,7 +41,7 @@ export const StyledMainDiv = styled.div`
   }
 
   h1 {
-      margin-top: 0vw;
+    margin-top: -2vh;
       font-family: 'Nunito Sans';
       font-size: 3em;
   }

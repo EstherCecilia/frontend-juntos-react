@@ -67,7 +67,6 @@ const Perfil = props => {
     <>
       <ThemeProvider theme={theme}>
         <BurgerMenu />
-
         <StyledMainDiv>
           <MenuPoint user={usuario} style={{ marginLeft: "90%" }} />
           <div className={classes.form}>
@@ -101,6 +100,10 @@ const Perfil = props => {
                     label={helper}
                     style={{
                       margin: "theme.spacing(0.5)",
+                      display: "block",
+                      width: "35vw",
+                      marginLeft: "auto",
+                      marginRight: "auto",
                     }}
                     color='secondary'
                     icon={<SchoolSharpIcon/>}

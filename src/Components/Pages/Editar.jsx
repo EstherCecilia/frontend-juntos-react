@@ -36,7 +36,7 @@ const Editar = () => {
       /> */}
       <StyledMainDiv className="editar">
         <form className={classes.form} onSubmit={handleSubmit}>
-          <strong>EDITAR DADOS</strong>
+          <h1>EDITAR DADOS</h1>
           <StyledOtherDiv>
             <TextField
               show
