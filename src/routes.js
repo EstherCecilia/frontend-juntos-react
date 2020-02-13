@@ -84,7 +84,7 @@ export default function Routes() {
           name: values.nome,
           course: values.cursos.value,
           gender: values.genero.value,
-          birthdate: values.data,
+          phone: values.telefone,
           email: values.email,
           password: values.senha,
           isHelper: check
@@ -108,7 +108,7 @@ export default function Routes() {
               });
           }
           alert("Dados cadastrados com sucesso!");
-          // window.location.reload();
+          window.location.reload();
         });
     } else {
       alert("Dados incorretos");

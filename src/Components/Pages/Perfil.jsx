@@ -13,23 +13,34 @@ import {
   StyledMainDiv,
   StyledOtherDiv
 } from "../Pages/Styled/ajusteBackground";
+import { createBrowserHistory } from "history";
+
+const history = createBrowserHistory({
+  basename: "/"
+});
 
 const Perfil = props => {
   var image = perfil;
   const { usuario } = props;
   const classes = useStyles();
-  const dt = moment(usuario.birthdate, "YYYY-MM-DD").format("DD-MM-YYYY");
   const [helpers, setHelpers] = useState([]);
-  console.log(usuario);
+
+  if (usuario.name === undefined) {
+    history.push("/login");
+  }
   useEffect(() => {
-    axios
-      .get(
-        `https://api-edu.herokuapp.com/helpers//${localStorage.getItem("id")}`
-      )
-      .then(res => {
-        setHelpers(res.subjects);
-        console.log(res);
-      });
+    if (usuario.isHelper) {
+      const AuthToken = localStorage.getItem("token");
+      const USER_TOKEN = "Bearer ".concat(AuthToken);
+      axios
+        .get(
+          `https://api-edu.herokuapp.com/helpers/${localStorage.getItem("id")}`,
+          { headers: { Authorization: USER_TOKEN } }
+        )
+        .then(res => {
+          setHelpers(res.subjects);
+        });
+    }
   }, []);
 
   if (usuario.gender === "F") {
@@ -64,13 +75,15 @@ const Perfil = props => {
                 <span>{usuario.course.name}</span> -{" "}
                 <span>{usuario.course.campus}</span>
               </p>
-              <p>{dt}</p>
+              <p>{usuario.phone}</p>
             </StyledOtherDiv>
-            <StyledOtherDiv>
-              {helpers.map(helper => (
+            {usuario.isHelper ? (
+              <StyledOtherDiv>
+                {/* {helpers.map(helper => (
                 <span>{helper}</span>
-              ))}
-            </StyledOtherDiv>
+              ))} */}
+              </StyledOtherDiv>
+            ) : null}
           </div>
         </StyledMainDiv>
       </ThemeProvider>
