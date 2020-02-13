@@ -27,13 +27,13 @@ const StyledH1 = styled.h1`
   @media only screen and (min-width: 600px) {
     font-size: 3em;
     margin-bottom: 2vw;
-    margin-left: 2vw;
+    margin-left: 0.3vw;
   }
 
   @media only screen and (max-width: 600px) {
     font-size: 3em;
     margin-bottom: 2vw;
-    margin-left: 2vw;
+    margin-left: 1vw;
   }
 
   @media only screen and (min-width: 1400px) {
