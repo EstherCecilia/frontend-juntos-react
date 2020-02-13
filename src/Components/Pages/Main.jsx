@@ -3,7 +3,8 @@ import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../../GlobalStyle/global';
 import { theme } from '../../GlobalStyle/theme';
 import BurgerMenu from './BurgerMenu';
-import Image from '../../images/imagesMain';
+import Image from '../../images/jsx/imagesMain';
+import Logo from '../../images/jsx/logo';
 
 const Main = () => {
     return (
@@ -12,7 +13,10 @@ const Main = () => {
             <BurgerMenu/>
             <div>
                 <div position="relative">
-                  <StyledH1>JUNTOS<sup>&trade;</sup></StyledH1>
+                    <StyledH1>JUNTOS
+                      <sup>&trade;</sup>
+                      <Logo/>
+                    </StyledH1>
                   <StyledP>Encontre monitores dentro da sua faculdade!</StyledP>
                 </div>
             </div>
@@ -24,21 +28,23 @@ const Main = () => {
 const StyledH1 = styled.h1`
   font-family: 'Nunito Sans';
   font-weight: lighter;
+  margin-top: 5vw;
+
   @media only screen and (min-width: 600px) {
-    font-size: 3em;
-    margin-bottom: 2vw;
-    margin-left: 0.3vw;
+    font-size: 2em;
+    margin-bottom: 4vw;
+    margin-left: 0.5vw;
   }
 
   @media only screen and (max-width: 600px) {
     font-size: 3em;
-    margin-bottom: 2vw;
+    margin-bottom: 3vw;
     margin-left: 1vw;
   }
 
   @media only screen and (min-width: 1400px) {
     font-size: 3em;
-    margin-bottom: 2vw;
+    margin-bottom: 3vw;
     margin-left: 1vw;
   }
 
@@ -50,19 +56,13 @@ const StyledH1 = styled.h1`
 const StyledP = styled.p`
   @media screen and (min-width: 601px) {
     font-size: 2vw;
-    margin-bottom: 4vw;
+    margin-bottom: 1vw;
     margin-right: 40vw;
-  }
-
-  @media screen and (max-width: 600px) {
-    font-size: 3vw;
-    margin-bottom: 15vw;
-    margin-right: 15vw;
   }
 
   @media only screen and (min-width: 1400px) {
     font-size: 2vw;
-    margin-bottom: 4vw;
+    margin-bottom: 2vw;
     margin-right: 40vw;
   }
 `;
