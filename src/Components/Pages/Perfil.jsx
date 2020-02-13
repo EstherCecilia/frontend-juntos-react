@@ -42,20 +42,14 @@ const Perfil = props => {
       //     setHelpers(res.subjects);
       //   });
       axios
-        .get(`https://api-edu.herokuapp.com/helpers`, {
+        .get(`https://api-edu.herokuapp.com/helpers/${localStorage.getItem("id")}`, {
           headers: { Authorization: USER_TOKEN }
         })
         .then(res => {
-          console.log(res);
-          let variavel = res.data.map(subject => {
-            if (localStorage.getItem("id") === subject.student._id) {
-              console.log(subject.subjects);
-              let variavel = subject.subjects.map(sub => sub.name);
-              // let x = subject.subjects.map(var => {var.name)};
-              console.log(variavel);
+              let variavel = res.data[0].subjects.map(sub => sub.name);
+             
               setHelpers(variavel);
-            }
-          });
+            
         });
     }
   }, []);
