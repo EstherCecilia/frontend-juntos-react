@@ -9,7 +9,7 @@ import perfilF from "../../images/perfilF.jpg";
 import MenuPoint from "./atoms/MenuPoint";
 import Chip from "@material-ui/core/Chip";
 import axios from "axios";
-import SchoolSharpIcon from '@material-ui/icons/SchoolSharp';
+import SchoolSharpIcon from "@material-ui/icons/SchoolSharp";
 import {
   StyledMainDiv,
   StyledOtherDiv
@@ -95,22 +95,18 @@ const Perfil = props => {
             </StyledOtherDiv>
             {usuario.isHelper ? (
               <StyledOtherDiv>
-                {helpers.map(helper => (
-                  <Chip
-                    label={helper}
-                    style={{
-                      margin: "theme.spacing(0.5)",
-                      display: "block",
-                      width: "35vw",
-                      marginLeft: "auto",
-                      marginRight: "auto",
-                    }}
-                    color='secondary'
-                    icon={<SchoolSharpIcon/>}
-                    size='small'
-                    variant='outlined'
-                  />
-                ))}
+                <div style={{ marginLeft: "20%", marginRight: "20%" }}>
+                  {helpers.map(helper => (
+                    <Chip
+                      label={helper}
+                      style={{
+                        backgroundColor: "#73cecc",
+                        margin: "2px"
+                      }}
+                      icon={<SchoolSharpIcon />}
+                    />
+                  ))}
+                </div>
               </StyledOtherDiv>
             ) : null}
           </div>
