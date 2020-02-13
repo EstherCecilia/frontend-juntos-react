@@ -33,15 +33,15 @@ const Sobre = () => {
           <div className={classes.form}>
             <h1>QUEM SOMOS?</h1>
             <StyledOtherDiv>
-              <p className="textAbout">
+              <p className="topTextAbout">
                 Somos estusiastas por tecnologia e por meio do <span>JUNTOS</span>{" "}
                 temos
               </p>
-              <p>
+              <p className="textAbout"> 
                 a missão de facilitar a vida de estudantes universitários que
               </p>
-              <p>precisam achar outros estudantes dispostos a ajudar com</p>
-              <p>matérias da faculdade, de forma ágil e objetiva.</p>
+              <p className="textAbout">precisam achar outros estudantes dispostos a ajudar com</p>
+              <p className="textAbout">matérias da faculdade, de forma ágil e objetiva.</p>
             </StyledOtherDiv>
             <StyledOtherDiv>
               <Image/>

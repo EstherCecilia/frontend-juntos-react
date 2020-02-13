@@ -27,12 +27,12 @@ export default function MenuPopupState(user) {
           <Menu {...bindMenu(popupState)}>
             <MenuItem>
               <Link to="/editar">
-                <span>Editar</span>
+                <span style={{fontFamily: 'Nunito Sans'}}>Editar</span>
               </Link>
             </MenuItem>
             <MenuItem onClick={() => handleClick()}>
               <Link to="/login">
-                <span>Logout</span>
+                <span style={{fontFamily: 'Nunito Sans'}}>Logout</span>
               </Link>
             </MenuItem>
           </Menu>

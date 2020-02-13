@@ -32,8 +32,8 @@ const Contato = () => {
           <div className={classes.form}>
             <h1>ENTRE EM CONTATO</h1>
             <StyledOtherDiv>
-              <p className="text">Tem alguma dúvida, problema com o aplicativo ou quer nos dar</p>
-              <p>um feedback? Entre em contato conosco por email.</p>
+              <p className="topText">Tem alguma dúvida, problema com o aplicativo ou quer nos dar</p>
+              <p className="text">um feedback? Entre em contato conosco por email.</p>
             </StyledOtherDiv>
             <StyledOtherDiv>
               <span className="email">contato@juntos.com</span>

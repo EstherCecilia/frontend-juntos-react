@@ -33,11 +33,25 @@ export const StyledMainDiv = styled.div`
 export const StyledOtherDiv = styled.div`
   margin-top: 4vh;
 
+  .topText{
+    font-size: 1.5vw;
+    margin-top: 7vw;
+    font-family: 'Nunito Sans';
+  }
+
   .text{
-      margin-top: 7vw;
+      font-size: 1.5vw;
+      font-family: 'Nunito Sans';
+  }
+
+  .topTextAbout {
+    margin-top: 7vw;
+    font-size: 1.5vw;
+    font-family: 'Nunito Sans';
   }
 
   .textAbout {
-      margin-top: 7vw;
+      font-size: 1.5vw;
+      font-family: 'Nunito Sans';
   }
 `
