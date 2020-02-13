@@ -74,7 +74,7 @@ const Editar = () => {
           <Button
             type="submit"
             style={{
-              width: "30vw",
+              width: "27vw",
               height: "2vh",
               color: "#fafafa",
               borderRadius: "10px",
