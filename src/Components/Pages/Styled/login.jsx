@@ -12,6 +12,7 @@ export const StyledMainDiv = styled.div`
   border-radius: 2px;
   padding-top: 30px;
   padding-bottom: 75px;
+  position: fixed;
   z-index: -1;
 
   strong {
