@@ -27,7 +27,6 @@ function DatePickers({
     placeholder = "",
     data,
     value,
-    required,
     mask,
     ...props
 }) {

@@ -33,19 +33,15 @@ export const StyledMainDiv = styled.div`
     transition: background 0.5s;
   }
 
-  strong {
-      font-size: 3em;
-      align-content: center;
-      text-align: center;
-      font-family: 'Nunito Sans';
-  }
 
   h2 {
     font-family: 'Nunito Sans';
   }
 
   h1 {
-      margin-top: 10vw;
+      margin-top: 0vw;
+      font-family: 'Nunito Sans';
+      font-size: 3em;
   }
 `
 

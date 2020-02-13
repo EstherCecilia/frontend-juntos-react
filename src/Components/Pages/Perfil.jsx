@@ -55,7 +55,7 @@ const Perfil = props => {
           <MenuPoint user={usuario} style={{ marginLeft: "90%" }} />
           <div className={classes.form}>
             <StyledOtherDiv>
-              <strong>MEU PERFIL</strong>
+              <h1>MEU PERFIL</h1>
 
               <Avatar
                 style={{

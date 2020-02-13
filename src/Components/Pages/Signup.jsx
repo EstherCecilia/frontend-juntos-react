@@ -12,6 +12,7 @@ import BurgerMenu from "./BurgerMenu";
 import DatePicker from "./atoms/DatePicker/index";
 import SelectField from "./atoms/SelectField/select";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled/main";
+//import { required, minLength, number, email } from './validation/validateFields';
 
 let SignupForm = props => {
   const { handleSubmit, cursos } = props;
@@ -22,7 +23,7 @@ let SignupForm = props => {
 
   useEffect(() => {
     axios
-      .get(`https://api-edu.herokuapp.com/subjects?course=${id}`)
+      .get(`https://api-edu.herokuapp.com/subjects?course=${id}&size=100`)
       .then(res => {
         setSubjects(res.data);
       });
@@ -65,12 +66,6 @@ let SignupForm = props => {
   const optionLabelCourse = courseList;
   const optionLabelSubject = subjectList;
 
-  // const optionLabel = (course) => {
-  //   return(
-  //     course.name.concat(' (', course.campus, ')')
-  //   )
-  // }
-
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
@@ -85,6 +80,7 @@ let SignupForm = props => {
               width="15vw"
               id="nome"
               placeholder="Nome"
+              //validate={required}
             />
             <TextField
               show
@@ -92,6 +88,7 @@ let SignupForm = props => {
               width="15vw"
               id="telefone"
               placeholder="Telefone"
+              //validate={required, number}
             />
           </StyledOtherDiv>
           <StyledOtherDiv>
@@ -101,6 +98,7 @@ let SignupForm = props => {
               width="15vw"
               id="email"
               placeholder="Email"
+              //validate={[required, email]}
             />
             <TextField
               show
@@ -123,6 +121,7 @@ let SignupForm = props => {
               placeholder={"Gênero"}
               component={SelectField}
               width="31.5vw"
+              //validate={required}
               options={genders}
             />
           </StyledOtherDiv>
@@ -140,6 +139,7 @@ let SignupForm = props => {
                   setId(value.value);
                 }
               }}
+              //validate={required}
               component={SelectField}
               options={optionLabelCourse}
               width="31.5vw"
@@ -152,6 +152,7 @@ let SignupForm = props => {
               type="password"
               width="15vw"
               id="senha"
+              //validate={required, minLength(6)}
               placeholder="Senha"
             />
             <TextField
@@ -159,6 +160,7 @@ let SignupForm = props => {
               type="password"
               width="15vw"
               id="senhaConfirma"
+              //validate={required, minLength(6)}
               placeholder="Confirmar senha"
             />
           </StyledOtherDiv>
@@ -184,6 +186,7 @@ let SignupForm = props => {
                 id="materias"
                 isClearable
                 isMulti
+                //validate={required}
                 placeholder={"Matérias"}
                 component={SelectField}
                 options={subjectList}
@@ -209,7 +212,7 @@ let SignupForm = props => {
             Inscrever-se
           </Button>
           <Link style={{ color: "#ff2e63" }} to="/login">
-            <p style={{ color: "#FF2E63", fontFamily: ('Nunito Sans', 'sans-serif') }}>Já é cadastrado?</p>
+            <p style={{ color: "#FF2E63", fontFamily: 'Nunito Sans' }}>Já é cadastrado?</p>
           </Link>
         </form>
       </StyledMainDiv>
@@ -262,23 +265,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 SignupForm = reduxForm({
-  form: "simple" // a unique identifier for this form
+  form: "simple", // a unique identifier for this form
 })(SignupForm);
-
-// const selector = formValueSelector("simple");
-// SignupForm = connect(
-//   state => {
-//     let courseValue = "";
-//     if(selector(state, "cursos") != undefined){
-//       courseValue = selector(state, "cursos")
-//       courseValue = courseValue.value;
-//     }
-//     console.log(courseValue);
-
-//     return {
-//       courseValue
-//     }
-//   }
-// )(SignupForm)
 
 export default SignupForm;

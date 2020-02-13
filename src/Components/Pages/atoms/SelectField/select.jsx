@@ -5,10 +5,10 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 //import Select from "react-dropdown-select";
 
 const ReduxFormSelect = props => {
-    const { input, options, placeholder, isClearable, isMulti, isSearchable } = props;
+    const { input, options, placeholder, isClearable, isMulti, isSearchable, meta: { touched, error, warning } } = props;
   
     return (
-      <FormControl style={{width: "31.5vw", minWidth: "100px", fontFamily: ('Nunito Sans', 'sans-serif')}}>
+      <FormControl style={{width: "31.5vw", minWidth: "100px", fontFamily: 'Nunito Sans'}}>
           <Select 
             className="selectField"
             styles={customStyles}
@@ -20,7 +20,9 @@ const ReduxFormSelect = props => {
             onBlur={() => input.onBlur(input.value)} 
             options={options}
             placeholder={placeholder}
-          />
+          >
+          {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+        </Select>
       </FormControl>
     )
   }
