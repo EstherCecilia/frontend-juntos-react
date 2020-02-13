@@ -41,7 +41,7 @@ const Editar = () => {
             <TextField
               show
               type="text"
-              width="20vw"
+              width="15vw"
               id="nome"
               placeholder="Nome"
             />
