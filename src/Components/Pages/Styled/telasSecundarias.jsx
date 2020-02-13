@@ -54,4 +54,9 @@ export const StyledOtherDiv = styled.div`
       font-size: 1.5vw;
       font-family: 'Nunito Sans';
   }
+
+  .email {
+    font-size: 1.3vw;
+    font-family: 'Nunito Sans';
+  }
 `
