@@ -100,8 +100,10 @@ const Perfil = props => {
                     <Chip
                       label={helper}
                       style={{
-                        backgroundColor: "#73cecc",
-                        margin: "2px"
+                        backgroundColor: "#D5D0D0",
+                        margin: "2px",
+                        borderRadius: "3px",
+                        fontWeight: "bold",
                       }}
                       icon={<SchoolSharpIcon />}
                     />

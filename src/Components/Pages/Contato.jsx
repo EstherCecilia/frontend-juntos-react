@@ -36,7 +36,7 @@ const Contato = () => {
               <p>um feedback? Entre em contato conosco por email.</p>
             </StyledOtherDiv>
             <StyledOtherDiv>
-              <span className="email">contatonome@gmail.com</span>
+              <span className="email">contato@juntos.com</span>
             </StyledOtherDiv>
             <StyledOtherDiv>
               <Image/>

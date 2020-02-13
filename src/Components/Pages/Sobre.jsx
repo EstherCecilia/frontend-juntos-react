@@ -34,7 +34,7 @@ const Sobre = () => {
             <h1>QUEM SOMOS?</h1>
             <StyledOtherDiv>
               <p className="textAbout">
-                Somos estusiastas por tecnologia e por meio do <span>NOME</span>{" "}
+                Somos estusiastas por tecnologia e por meio do <span>JUNTOS</span>{" "}
                 temos
               </p>
               <p>

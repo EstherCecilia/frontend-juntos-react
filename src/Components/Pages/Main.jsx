@@ -12,7 +12,7 @@ const Main = () => {
             <BurgerMenu/>
             <div>
                 <div position="relative">
-                  <StyledH1>NOME</StyledH1>
+                  <StyledH1>JUNTOS<sup>&trade;</sup></StyledH1>
                   <StyledP>Encontre monitores dentro da sua faculdade!</StyledP>
                 </div>
             </div>
@@ -22,7 +22,8 @@ const Main = () => {
 }
 
 const StyledH1 = styled.h1`
-  font-family: 'Nunito Sans', 'sans-serif';
+  font-family: 'Nunito Sans';
+  font-weight: lighter;
   @media only screen and (min-width: 600px) {
     font-size: 3em;
     margin-bottom: 2vw;
@@ -39,6 +40,10 @@ const StyledH1 = styled.h1`
     font-size: 3em;
     margin-bottom: 2vw;
     margin-left: 1vw;
+  }
+
+  sup {
+    font-size: 1.5rem;
   }
 `;
 

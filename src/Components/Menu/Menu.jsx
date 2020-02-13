@@ -31,6 +31,7 @@ const StyledMenu = styled.nav`
   transform: translateX(-100%);
   justify-content: center;
   background: ${({ theme }) => theme.primaryLight};
+  width: 20vw;
   height: 100%;
   text-align: left;
   padding: 1rem;
@@ -51,7 +52,8 @@ const StyledMenu = styled.nav`
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
-    font-family: 'Nunito Sans'
+    font-family: 'Nunito Sans';
+    font-size: 1.5vw;
   }
 
   p {
