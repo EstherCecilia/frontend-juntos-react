@@ -10,8 +10,8 @@ export const StyledMainDiv = styled.div`
   background-repeat: no-repeat;
   background-size: 100% 100%;
   border-radius: 2px;
-  padding-bottom: 10px;
-  padding-top: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   z-index: -1;
 
   strong {
