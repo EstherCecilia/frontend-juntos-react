@@ -41,14 +41,14 @@ const Editar = () => {
             <TextField
               show
               type="text"
-              width="15vw"
+              width="14vw"
               id="nome"
               placeholder="Nome"
             />
             <TextField
               show
               type="text"
-              width="15vw"
+              width="14vw"
               id="telefone"
               placeholder="Telefone"
             />
@@ -58,14 +58,14 @@ const Editar = () => {
             <TextField
               show
               type="email"
-              width="15vw"
+              width="14vw"
               id="email"
               placeholder="Email"
             />
             <TextField
               show
               type="password"
-              width="15vw"
+              width="14vw"
               id="senha"
               placeholder="Senha"
             />
