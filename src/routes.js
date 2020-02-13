@@ -78,7 +78,7 @@ export default function Routes() {
     } else {
       check = false;
     }
-    if (values.senha === values.senhaConfirma) {
+    if (values.senha === values.senhaConfirma && check && (values.cursos != undefined) && (values.genero != undefined)) {
       axios
         .post(`http://api-edu.herokuapp.com/register`, {
           name: values.nome,
@@ -111,8 +111,25 @@ export default function Routes() {
           alert("Dados cadastrados com sucesso!");
           window.location.reload();
         });
+    } else if (values.senha === values.senhaConfirma && !check && (values.cursos != undefined) && (values.genero != undefined)) {
+        axios
+          .post(`http://api-edu.herokuapp.com/register`, {
+            name: values.nome,
+            course: values.cursos.value,
+            gender: values.genero.value,
+            phone: values.telefone,
+            email: values.email,
+            password: values.senha,
+            isHelper: check
+          })
+          .then(res => {
+            //console.log(res);
+            const USER_TOKEN = "Bearer ".concat(res.data.token);
+            alert("Dados cadastrados com sucesso!");
+            window.location.reload();
+          });
     } else {
-      alert("Dados incorretos");
+      alert("Dados incorretos ou campos vazios");
     }
 
     localStorage.setItem("curses", []);
