@@ -10,7 +10,6 @@ import Sobre from "./Components/Pages/Sobre";
 import store from "./store";
 import { Provider } from "react-redux";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
 
 import { createBrowserHistory } from "history";
 const history = createBrowserHistory({
@@ -22,8 +21,8 @@ export default function Routes() {
   const [courses, setCourses] = useState([]);
   const [subjects, setSubjects] = useState([]);
   const [usuario, setUsuario] = useState([]);
-  const [token, setToken] = useState([]);
-  const [redirect, setRedirect] = useState(false);
+  // const [token, setToken] = useState([]);
+  // const [redirect, setRedirect] = useState(false);
 
   useEffect(() => {
     axios.get(`https://api-edu.herokuapp.com/courses?size=200`).then(res => {

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Field, reduxForm, formValueSelector } from "redux-form";
-import { connect } from "react-redux";
+import { Field, reduxForm } from "redux-form";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { ThemeProvider } from "styled-components";
@@ -64,7 +63,6 @@ let SignupForm = props => {
   //console.log(data);
 
   const optionLabelCourse = courseList;
-  const optionLabelSubject = subjectList;
 
   const classes = useStyles();
   return (

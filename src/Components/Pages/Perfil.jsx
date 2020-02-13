@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { theme } from "../../GlobalStyle/theme";
 import BurgerMenu from "./BurgerMenu";
 import Avatar from "@material-ui/core/Avatar";

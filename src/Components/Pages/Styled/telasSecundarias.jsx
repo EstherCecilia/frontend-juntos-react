@@ -31,7 +31,7 @@ export const StyledMainDiv = styled.div`
 `
 
 export const StyledOtherDiv = styled.div`
-  margin-top: 30px;
+  margin-top: 4vh;
 
   .text{
       margin-top: 7vw;

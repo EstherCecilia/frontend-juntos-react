@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { theme } from "../../GlobalStyle/theme";
 import Image from "../../images/imagesMain";
 import BurgerMenu from "./BurgerMenu";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { StyledMainDiv, StyledOtherDiv } from '../Pages/Styled/telasSecundarias';
 
 const useStyles = makeStyles(theme => ({
