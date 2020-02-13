@@ -11,7 +11,7 @@ export const StyledMainDiv = styled.div`
   background-size: 100% 100%;
   border-radius: 2px;
   padding-top: 30px;
-  padding-bottom: 50px;
+  padding-bottom: 75px;
   z-index: -1;
 
   strong {
