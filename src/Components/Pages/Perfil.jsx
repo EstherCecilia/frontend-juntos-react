@@ -7,7 +7,7 @@ import Avatar from "@material-ui/core/Avatar";
 import perfil from "../../images/perfil.jpg";
 import perfilF from "../../images/perfilF.jpg";
 import MenuPoint from "./atoms/MenuPoint";
-import moment from "moment";
+import Chip from "@material-ui/core/Chip";
 import axios from "axios";
 import {
   StyledMainDiv,
@@ -32,13 +32,29 @@ const Perfil = props => {
     if (usuario.isHelper) {
       const AuthToken = localStorage.getItem("token");
       const USER_TOKEN = "Bearer ".concat(AuthToken);
+      // axios
+      //   .get(
+      //     `https://api-edu.herokuapp.com/helpers/${localStorage.getItem("id")}`,
+      //     { headers: { Authorization: USER_TOKEN } }
+      //   )
+      //   .then(res => {
+      //     setHelpers(res.subjects);
+      //   });
       axios
-        .get(
-          `https://api-edu.herokuapp.com/helpers/${localStorage.getItem("id")}`,
-          { headers: { Authorization: USER_TOKEN } }
-        )
+        .get(`https://api-edu.herokuapp.com/helpers`, {
+          headers: { Authorization: USER_TOKEN }
+        })
         .then(res => {
-          setHelpers(res.subjects);
+          console.log(res);
+          let variavel = res.data.map(subject => {
+            if (localStorage.getItem("id") === subject.student._id) {
+              console.log(subject.subjects);
+              let variavel = subject.subjects.map(sub => sub.name);
+              // let x = subject.subjects.map(var => {var.name)};
+              console.log(variavel);
+              setHelpers(variavel);
+            }
+          });
         });
     }
   }, []);
@@ -79,9 +95,14 @@ const Perfil = props => {
             </StyledOtherDiv>
             {usuario.isHelper ? (
               <StyledOtherDiv>
-                {/* {helpers.map(helper => (
-                <span>{helper}</span>
-              ))} */}
+                {helpers.map(helper => (
+                  <Chip
+                    label={helper}
+                    style={{
+                      margin: "theme.spacing(0.5)"
+                    }}
+                  />
+                ))}
               </StyledOtherDiv>
             ) : null}
           </div>

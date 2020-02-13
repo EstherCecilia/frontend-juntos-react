@@ -7,12 +7,9 @@ import PopupState, { bindTrigger, bindMenu } from "material-ui-popup-state";
 import { Link } from "react-router-dom";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 export default function MenuPopupState(user) {
-  
-
-const handleClick = () => {
-
-        localStorage.setItem("token", null);
-}
+  const handleClick = () => {
+    localStorage.setItem("token", null);
+  };
 
   return (
     <PopupState variant="popover" popupId="demo-popup-menu">
@@ -28,12 +25,16 @@ const handleClick = () => {
             <MoreVertIcon />
           </IconButton>
           <Menu {...bindMenu(popupState)}>
-            <MenuItem ><Link to="/editar">
-            <span>Editar</span>
-          </Link></MenuItem>
-            <MenuItem onClick={() => handleClick()}><Link to="/login">
-            <span>Logout</span>
-          </Link></MenuItem>
+            <MenuItem>
+              <Link to="/editar">
+                <span>Editar</span>
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={() => handleClick()}>
+              <Link to="/login">
+                <span>Logout</span>
+              </Link>
+            </MenuItem>
           </Menu>
         </>
       )}

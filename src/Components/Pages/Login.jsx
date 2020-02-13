@@ -79,7 +79,7 @@ const LoginForm = props => {
                 color: "#fafafa",
                 borderRadius: "10px",
                 textAlign: "center",
-                lineHeight: "0.5vh",
+                lineHeight: "0.5vh"
               }}
               color="#FF2E63"
               className={classes.submit}
@@ -106,19 +106,27 @@ const LoginForm = props => {
                 cookiePolicy={"single_host_origin"}
               />} */}
 
-              {<img 
-                style={{width:"3.2vw", cursor: "pointer"}} 
-                onClick={()=> {alert("Hello")}} 
-                src={facebook}
-                alt="Facebook">
-              </img> }
+              {
+                <img
+                  style={{ width: "3.2vw", cursor: "pointer" }}
+                  onClick={() => {
+                    alert("Hello");
+                  }}
+                  src={facebook}
+                  alt="Facebook"
+                ></img>
+              }
 
-              {<img style=
-                {{width:"3vw", marginLeft:"5px", cursor: "pointer"}} 
-                onClick={()=> {alert("Hello")}} 
-                src={google}
-                alt="Gmail">
-              </img> }
+              {
+                <img
+                  style={{ width: "3vw", marginLeft: "5px", cursor: "pointer" }}
+                  onClick={() => {
+                    alert("Hello");
+                  }}
+                  src={google}
+                  alt="Gmail"
+                ></img>
+              }
             </StyledOtherDiv>
             <StyledOtherDiv>
               <a
@@ -129,12 +137,12 @@ const LoginForm = props => {
                 }}
                 onClick={handleOpen}
               >
-                <p style={{ color: "#ff2e63", fontFamily: 'Nunito Sans' }}>
+                <p style={{ color: "#ff2e63", fontFamily: "Nunito Sans" }}>
                   Esqueceu sua senha?
                 </p>
               </a>
               <Link style={{ color: "#ff2e63" }} to="/register">
-                <p style={{ color: "#ff2e63", fontFamily: 'Nunito Sans' }}>
+                <p style={{ color: "#ff2e63", fontFamily: "Nunito Sans" }}>
                   Cadastre-se
                 </p>
               </Link>
@@ -170,7 +178,13 @@ const LoginForm = props => {
           </StyledOtherDiv>
           <Button
             type="submit"
-            style={{ width: "20vw", height: "5vh", color: "#fafafa", borderRadius: "10px", lineHeight: "0.5vh" }}
+            style={{
+              width: "20vw",
+              height: "5vh",
+              color: "#fafafa",
+              borderRadius: "10px",
+              lineHeight: "0.5vh"
+            }}
             className={classes.submit}
           >
             ENVIAR
