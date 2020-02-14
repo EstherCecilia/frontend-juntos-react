@@ -14,6 +14,7 @@ const Image = () => {
 
 const Div = styled.div`
     margin-bottom: 12vw;
+    margin-left: -0.8vw;
 `;
 
 const ImgApple = styled.img`
