@@ -13,6 +13,7 @@ import facebook from "../../images/facebook.png";
 import google from "../../images/g+.png";
 import { StyledMainDiv, StyledOtherDiv } from "./Styled/login";
 import Modal from "@material-ui/core/Modal";
+import Logo from '../../images/jsx/loginLogo';
 
 /*function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -47,7 +48,8 @@ const LoginForm = props => {
         <BurgerMenu />
         <StyledMainDiv>
           <form className={classes.form} onSubmit={handleSubmit}>
-            <h1>LOGIN</h1>
+            <Logo/>
+            {/* <h1>JUNTOS</h1> */}
             <StyledOtherDiv>
               <TextField
                 show
