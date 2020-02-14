@@ -14,8 +14,9 @@ const Main = () => {
       <div>
         <div position="relative">
           <StyledH1>
-            JUNT
-            <Logo />S<sup>&trade;</sup>
+            JUNTOS
+            <sup>&trade;</sup>
+            <Logo />
           </StyledH1>
           <StyledP>Encontre monitores dentro da sua faculdade!</StyledP>
         </div>

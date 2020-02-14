@@ -19,11 +19,10 @@ const Div = styled.div`
 
 const Logo = styled.img`
   @media screen and (min-width: 601px) {
-    width: 9vw;
-    height: 8vw;
-    margin-right: -2.5vw;
+    width: 12vw;
+    height: 12vw;
     margin-bottom: -2.5vw;
-    margin-left: -2.5vw;
+    margin-left: -1vw;
   }
 
   @media screen and (max-width: 600px) {
