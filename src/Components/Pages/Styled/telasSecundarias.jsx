@@ -14,7 +14,7 @@ export const StyledMainDiv = styled.div`
   z-index: -1;
 
   h1 {
-      margin-top: 8vw;
+      margin-top: 9vw;
       font-size: 3em;
       font-family: 'Nunito Sans';
       color: '#252A34';
@@ -32,6 +32,7 @@ export const StyledMainDiv = styled.div`
 
 export const StyledOtherDiv = styled.div`
   margin-top: 4vh;
+  align-content: center;
 
   .topText{
     font-size: 1.5vw;
@@ -42,6 +43,7 @@ export const StyledOtherDiv = styled.div`
   .text{
       font-size: 1.5vw;
       font-family: 'Nunito Sans';
+      margin-top: -1vw;
   }
 
   .topTextAbout {
@@ -55,8 +57,26 @@ export const StyledOtherDiv = styled.div`
       font-family: 'Nunito Sans';
   }
 
+  .textAbout1 {
+      font-size: 1.5vw;
+      margin-top: -1vw;
+      font-family: 'Nunito Sans';
+  }
+
+  .textAbout2 {
+      font-size: 1.5vw;
+      font-family: 'Nunito Sans';
+      margin-top: -1vw;
+  }
+
+  .textAbout3 {
+      font-size: 1.5vw;
+      font-family: 'Nunito Sans';
+      margin-top: -1vw;
+  }
+
   .email {
-    font-size: 1.3vw;
+    font-size: 1.5vw;
     font-family: 'Nunito Sans';
   }
 `

@@ -37,11 +37,11 @@ const Sobre = () => {
                 Somos estusiastas por tecnologia e por meio do <span>JUNTOS</span>{" "}
                 temos
               </p>
-              <p className="textAbout"> 
+              <p className="textAbout1"> 
                 a missão de facilitar a vida de estudantes universitários que
               </p>
-              <p className="textAbout">precisam achar outros estudantes dispostos a ajudar com</p>
-              <p className="textAbout">matérias da faculdade, de forma ágil e objetiva.</p>
+              <p className="textAbout2">precisam achar outros estudantes dispostos a ajudar com</p>
+              <p className="textAbout3">matérias da faculdade, de forma ágil e objetiva.</p>
             </StyledOtherDiv>
             <StyledOtherDiv>
               <Image/>
