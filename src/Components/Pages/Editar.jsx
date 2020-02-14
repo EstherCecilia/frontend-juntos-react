@@ -6,8 +6,13 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../../GlobalStyle/theme";
 import TextField from "./atoms/TextField";
 import BurgerMenu from "./BurgerMenu";
-import { StyledMainDiv, StyledOtherDiv } from '../Pages/Styled/ajusteBackground';
+import {
+  StyledMainDiv,
+  StyledOtherDiv
+} from "../Pages/Styled/ajusteBackground";
 import { createBrowserHistory } from "history";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLongArrowAltLeft } from "@fortawesome/fontawesome-free-solid";
 
 const history = createBrowserHistory({
   basename: "/"
@@ -17,6 +22,11 @@ const Editar = () => {
   const handleSubmit = () => {
     alert("Dados editado com sucesso!");
     history.push("/login");
+  };
+
+  const handleBack = () => {
+    history.push("/login");
+    window.location.reload();
   };
 
   const classes = useStyles();
@@ -35,6 +45,13 @@ const Editar = () => {
         size="2x"
       /> */}
       <StyledMainDiv className="editar">
+        <FontAwesomeIcon
+          icon={faLongArrowAltLeft}
+          onClick={handleBack}
+          size="9px"
+          style={{ marginLeft: "95%", fontSize: "35px", color: "#fafafa" }}
+        />
+        {/* <MenuPoint user={usuario} style={{ marginLeft: "90%" }} /> */}
         <form className={classes.form} onSubmit={handleSubmit}>
           <h1>EDITAR DADOS</h1>
           <StyledOtherDiv>
@@ -79,7 +96,7 @@ const Editar = () => {
               color: "#fafafa",
               borderRadius: "10px",
               textAlign: "center",
-              lineHeight: "0.5vh",
+              lineHeight: "0.5vh"
             }}
             color="primary"
             className={classes.submit}
