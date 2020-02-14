@@ -42,7 +42,7 @@ const Editar = () => {
       /> */}
       <StyledMainDiv className="editar">
         
-      <FontAwesomeIcon icon={faLongArrowAltLeft} onClick={handleBack()} size="9px" style={{ marginLeft: "95%",fontSize:"35px", color:"#fafafa" }}/>
+      <FontAwesomeIcon icon={faLongArrowAltLeft} onClick={handleBack} size="9px" style={{ marginLeft: "95%",fontSize:"35px", color:"#fafafa" }}/>
           {/* <MenuPoint user={usuario} style={{ marginLeft: "90%" }} /> */}
         <form className={classes.form} onSubmit={handleSubmit}>
           <h1>EDITAR DADOS</h1>
