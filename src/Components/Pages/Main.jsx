@@ -1,32 +1,32 @@
-import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import { GlobalStyles } from '../../GlobalStyle/global';
-import { theme } from '../../GlobalStyle/theme';
-import BurgerMenu from './BurgerMenu';
-import Image from '../../images/jsx/imagesMain';
-import Logo from '../../images/jsx/logo';
+import React from "react";
+import styled, { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "../../GlobalStyle/global";
+import { theme } from "../../GlobalStyle/theme";
+import BurgerMenu from "./BurgerMenu";
+import Image from "../../images/jsx/imagesMain";
+import Logo from "../../images/jsx/logo";
 
 const Main = () => {
-    return (
-        <ThemeProvider theme={theme}>
-            <GlobalStyles />
-            <BurgerMenu/>
-            <div>
-                <div position="relative">
-                    <StyledH1>JUNTOS
-                      <sup>&trade;</sup>
-                      <Logo/>
-                    </StyledH1>
-                  <StyledP>Encontre monitores dentro da sua faculdade!</StyledP>
-                </div>
-            </div>
-          <Image/>
-        </ThemeProvider>
-    );
-}
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <BurgerMenu />
+      <div>
+        <div position="relative">
+          <StyledH1>
+            JUNT
+            <Logo />S<sup>&trade;</sup>
+          </StyledH1>
+          <StyledP>Encontre monitores dentro da sua faculdade!</StyledP>
+        </div>
+      </div>
+      <Image />
+    </ThemeProvider>
+  );
+};
 
 const StyledH1 = styled.h1`
-  font-family: 'Nunito Sans';
+  font-family: "Nunito Sans";
   font-weight: lighter;
   margin-top: 5vw;
 
