@@ -8,14 +8,14 @@ import TextField from "./atoms/TextField";
 import BurgerMenu from "./BurgerMenu";
 import {
   StyledMainDiv,
-  StyledOtherDiv
+  StyledOtherDiv,
 } from "../Pages/Styled/ajusteBackground";
 import { createBrowserHistory } from "history";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltLeft } from "@fortawesome/fontawesome-free-solid";
 
 const history = createBrowserHistory({
-  basename: "/"
+  basename: "/",
 });
 
 const Editar = () => {
@@ -53,7 +53,7 @@ const Editar = () => {
         />
         {/* <MenuPoint user={usuario} style={{ marginLeft: "90%" }} /> */}
         <form className={classes.form} onSubmit={handleSubmit}>
-          <h1>EDITAR DADOS</h1>
+          <h1>EDITAR DADO</h1>
           <StyledOtherDiv>
             <TextField
               show
@@ -96,7 +96,7 @@ const Editar = () => {
               color: "#fafafa",
               borderRadius: "10px",
               textAlign: "center",
-              lineHeight: "0.5vh"
+              lineHeight: "0.5vh",
             }}
             color="primary"
             className={classes.submit}
@@ -109,17 +109,17 @@ const Editar = () => {
   );
 };
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
   },
 
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: theme.palette.secondary.main,
   },
 
   form: {
@@ -127,7 +127,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(1),
     textAlign: "center",
     marginLeft: "auto",
-    marginRight: "auto"
+    marginRight: "auto",
   },
 
   input: {
@@ -137,18 +137,18 @@ const useStyles = makeStyles(theme => ({
     display: "center",
     color: "#000",
     border: 0,
-    borderBottom: ("1px", "solid", "black")
+    borderBottom: ("1px", "solid", "black"),
   },
 
   submit: {
     margin: theme.spacing(3, 0, 2),
     display: "center",
     backgroundColor: "#000",
-    color: "#fafafa"
+    color: "#fafafa",
   },
-  divSubmit: { display: "-webkit-inline-box", margin: "auto" }
+  divSubmit: { display: "-webkit-inline-box", margin: "auto" },
 }));
 
 export default reduxForm({
-  form: "editar" // a unique identifier for this form
+  form: "editar", // a unique identifier for this form
 })(Editar);
